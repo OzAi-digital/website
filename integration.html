@@ -331,8 +331,8 @@
         </div>
         <div class="footer-col">
           <h4>Legal</h4>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
+          <a href="/privacy.html">Privacy Policy</a>
+          <a href="/terms.html">Terms of Service</a>
         </div>
       </div>
     </div>
@@ -342,5 +342,16 @@
   </footer>
 
 </div>
+<!-- Cookie Banner -->
+<div class="cookie-banner" id="cookieBanner">
+  <span>We use cookies to improve your experience and analyse site traffic. See our <a href="/privacy.html">Privacy Policy</a>.</span>
+  <button class="cookie-banner-btn cookie-accept" onclick="acceptCookies()">Accept</button>
+  <button class="cookie-banner-btn cookie-decline" onclick="declineCookies()">Decline</button>
+</div>
+<script>
+function acceptCookies(){document.getElementById("cookieBanner").classList.remove("visible");localStorage.setItem("ozai_cookies","accepted")}
+function declineCookies(){document.getElementById("cookieBanner").classList.remove("visible");localStorage.setItem("ozai_cookies","declined")}
+if(!localStorage.getItem("ozai_cookies")){setTimeout(function(){document.getElementById("cookieBanner").classList.add("visible")},1500)}
+</script>
 </body>
 </html>
