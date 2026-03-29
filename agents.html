@@ -214,6 +214,248 @@
       </div>
     </section>
 
+    <!-- AGENT TOPOLOGIES -->
+    <section class="section section-dark" id="topologies">
+      <div class="container">
+        <div class="section-header">
+          <h2>Agent Topologies</h2>
+          <p>There is no one-size-fits-all architecture for AI agents. The right topology depends on task complexity, latency requirements, and how much autonomy you need. Here are the patterns we design and deploy.</p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature fade-up" style="background:var(--bg-dark-2);border-color:rgba(255,255,255,0.08)">
+            <div class="feature-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <h3 style="color:#fff">Single Agent</h3>
+            <p style="color:rgba(255,255,255,.6)">One LLM with a set of tools, working autonomously on a focused task. The simplest topology and often the right starting point. Well suited to customer support, document processing, data extraction, and internal Q&amp;A.</p>
+          </div>
+          <div class="feature fade-up" style="animation-delay:.06s;background:var(--bg-dark-2);border-color:rgba(255,255,255,0.08)">
+            <div class="feature-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </div>
+            <h3 style="color:#fff">Sequential / Pipeline</h3>
+            <p style="color:rgba(255,255,255,.6)">Agents pass work to each other in a defined order, each specialising in one step. Think research agent &rarr; analysis agent &rarr; report-writing agent. Predictable, debuggable, and easy to monitor.</p>
+          </div>
+          <div class="feature fade-up" style="animation-delay:.12s;background:var(--bg-dark-2);border-color:rgba(255,255,255,0.08)">
+            <div class="feature-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"/><path d="M12 8l-6 6"/><path d="M12 8l6 6"/><path d="M12 8v6"/><circle cx="6" cy="18" r="3"/><circle cx="12" cy="18" r="3"/><circle cx="18" cy="18" r="3"/></svg>
+            </div>
+            <h3 style="color:#fff">Hierarchical / Manager-Worker</h3>
+            <p style="color:rgba(255,255,255,.6)">A manager agent breaks down complex goals, delegates sub-tasks to specialist worker agents, and aggregates results. Ideal for multi-step workflows that require coordination across different domains or skill sets.</p>
+          </div>
+          <div class="feature fade-up" style="background:var(--bg-dark-2);border-color:rgba(255,255,255,0.08)">
+            <div class="feature-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><line x1="9" y1="6" x2="15" y2="6"/><line x1="9" y1="18" x2="15" y2="18"/><line x1="6" y1="9" x2="6" y2="15"/><line x1="18" y1="9" x2="18" y2="15"/><line x1="8.5" y1="8.5" x2="15.5" y2="15.5"/><line x1="15.5" y1="8.5" x2="8.5" y2="15.5"/></svg>
+            </div>
+            <h3 style="color:#fff">Collaborative / Swarm</h3>
+            <p style="color:rgba(255,255,255,.6)">Multiple peer agents discuss, debate, and reach consensus without a central controller. Powerful for brainstorming, code review, adversarial testing, and any task that benefits from diverse perspectives.</p>
+          </div>
+          <div class="feature fade-up" style="animation-delay:.06s;background:var(--bg-dark-2);border-color:rgba(255,255,255,0.08)">
+            <div class="feature-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h3 style="color:#fff">Router / Dispatcher</h3>
+            <p style="color:rgba(255,255,255,.6)">A lightweight router agent analyses the incoming request and routes it to the best specialist agent. Low latency, efficient resource use, and easy to scale by adding new specialist agents behind the router.</p>
+          </div>
+          <div class="feature fade-up" style="animation-delay:.12s;background:var(--bg-dark-2);border-color:rgba(255,255,255,0.08)">
+            <div class="feature-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <h3 style="color:#fff">Supervisor with Human-in-the-Loop</h3>
+            <p style="color:rgba(255,255,255,.6)">The agent works autonomously on routine decisions but escalates to a human for high-stakes, ambiguous, or policy-sensitive situations. Balances efficiency with accountability &mdash; critical for regulated industries.</p>
+          </div>
+          <div class="feature fade-up" style="background:var(--bg-dark-2);border-color:rgba(255,255,255,0.08)">
+            <div class="feature-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <h3 style="color:#fff">Reflection / Self-Critique</h3>
+            <p style="color:rgba(255,255,255,.6)">The agent reviews its own output, identifies weaknesses, and iterates before delivering a final result. Dramatically improves quality for writing, coding, analysis, and any task where a second pass catches errors.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LATEST AGENT CONCEPTS -->
+    <section class="section" id="concepts">
+      <div class="container">
+        <div class="section-header">
+          <h2>Cutting-Edge Agent Concepts</h2>
+          <p>The agent landscape is evolving rapidly. These are the patterns and capabilities shaping the next generation of AI systems &mdash; and we work with all of them.</p>
+        </div>
+        <div class="industry-grid">
+          <div class="industry-card fade-up">
+            <div class="industry-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h3>Tool Use &amp; Function Calling</h3>
+            <p>Agents that go beyond text generation to call APIs, query databases, execute code, browse the web, send emails, and interact with any system that exposes an interface. The foundation of useful agents.</p>
+          </div>
+          <div class="industry-card fade-up" style="animation-delay:.04s">
+            <div class="industry-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+            </div>
+            <h3>Memory Systems</h3>
+            <p>Short-term memory (conversation context), long-term memory (vector stores and knowledge bases), and episodic memory (learning from past interactions). Memory transforms stateless LLMs into agents that remember and improve.</p>
+          </div>
+          <div class="industry-card fade-up" style="animation-delay:.08s">
+            <div class="industry-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Guardrails &amp; Safety</h3>
+            <p>Input and output validation, content filtering, cost limits, rate limiting, and toxicity detection. Production agents need multiple layers of protection to operate safely and reliably in business environments.</p>
+          </div>
+          <div class="industry-card fade-up" style="animation-delay:.12s">
+            <div class="industry-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+            </div>
+            <h3>Agent Evaluation &amp; Testing</h3>
+            <p>Benchmarking agent performance across accuracy, latency, cost, and safety. Automated testing frameworks, regression suites, and evaluation datasets ensure agents work correctly before and after deployment.</p>
+          </div>
+          <div class="industry-card fade-up" style="animation-delay:.16s">
+            <div class="industry-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
+            <h3>Agentic RAG</h3>
+            <p>Agents that dynamically decide what to retrieve, from which source, and how to use it &mdash; rather than following a fixed retrieval pipeline. They can reformulate queries, cross-reference multiple knowledge bases, and verify retrieved information before responding.</p>
+          </div>
+          <div class="industry-card fade-up" style="animation-delay:.2s">
+            <div class="industry-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3>Computer Use / Browser Agents</h3>
+            <p>Agents that navigate GUIs, fill out forms, click buttons, and interact with web applications just like a human would. Unlocks automation for legacy systems and applications without APIs.</p>
+          </div>
+          <div class="industry-card fade-up" style="animation-delay:.24s">
+            <div class="industry-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3>Code Generation Agents</h3>
+            <p>Agents that write, test, debug, and refactor code autonomously. Tools like Claude Code, GitHub Copilot, Cursor, Windsurf, and Devin are transforming software development by handling implementation while developers focus on architecture and design.</p>
+          </div>
+          <div class="industry-card fade-up" style="animation-delay:.28s">
+            <div class="industry-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="5" width="22" height="14" rx="2"/><circle cx="8" cy="12" r="2"/><path d="M14 9h4"/><path d="M14 12h4"/><path d="M14 15h4"/></svg>
+            </div>
+            <h3>Multi-Modal Agents</h3>
+            <p>Agents that process and reason across text, images, audio, and video. Analyse photographs, transcribe meetings, interpret charts, generate images, and work with any media type your business produces.</p>
+          </div>
+          <div class="industry-card fade-up" style="animation-delay:.32s">
+            <div class="industry-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+            </div>
+            <h3>Agent Observability</h3>
+            <p>Tracing agent decisions, debugging reasoning chains, monitoring token usage and costs, and identifying failure modes. Tools like LangSmith, Langfuse, Helicone, and Arize Phoenix give full visibility into what your agents are doing and why.</p>
+          </div>
+          <div class="industry-card fade-up" style="animation-delay:.36s">
+            <div class="industry-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+            </div>
+            <h3>MCP (Model Context Protocol)</h3>
+            <p>Anthropic's open standard for connecting AI agents to external tools and data sources. MCP provides a universal protocol so agents can interact with any service &mdash; databases, APIs, file systems, development tools &mdash; through a single, standardised interface.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR AGENT STACK -->
+    <section class="section section-alt" id="stack">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Agent Stack</h2>
+          <p>We are vendor-agnostic and work across the full landscape of agent technologies. Here is what we bring to the table.</p>
+        </div>
+        <div class="stack-wrapper">
+          <div class="stack-group">
+            <div class="stack-label">Foundation Models</div>
+            <div class="stack-tags">
+              <span class="tag tag-lg">GPT-4o</span>
+              <span class="tag tag-lg">GPT-4 Turbo</span>
+              <span class="tag tag-lg">Claude Opus</span>
+              <span class="tag tag-lg">Claude Sonnet</span>
+              <span class="tag tag-lg">Claude Haiku</span>
+              <span class="tag tag-lg">Gemini Pro</span>
+              <span class="tag tag-lg">Gemini Flash</span>
+              <span class="tag tag-lg">Gemini Ultra</span>
+              <span class="tag tag-lg">Llama 3.1 / 3.2</span>
+              <span class="tag tag-lg">Mistral Large</span>
+              <span class="tag tag-lg">Mistral Medium</span>
+              <span class="tag tag-lg">Cohere Command R+</span>
+              <span class="tag tag-lg">DeepSeek</span>
+            </div>
+          </div>
+          <div class="stack-group">
+            <div class="stack-label">Orchestration Frameworks</div>
+            <div class="stack-tags">
+              <span class="tag tag-lg">LangChain</span>
+              <span class="tag tag-lg">LangGraph</span>
+              <span class="tag tag-lg">CrewAI</span>
+              <span class="tag tag-lg">AutoGen</span>
+              <span class="tag tag-lg">Semantic Kernel</span>
+              <span class="tag tag-lg">Haystack</span>
+              <span class="tag tag-lg">DSPy</span>
+            </div>
+          </div>
+          <div class="stack-group">
+            <div class="stack-label">Agent Platforms</div>
+            <div class="stack-tags">
+              <span class="tag tag-lg">OpenAI Assistants</span>
+              <span class="tag tag-lg">Anthropic Claude Agent SDK</span>
+              <span class="tag tag-lg">Amazon Bedrock Agents</span>
+              <span class="tag tag-lg">Google Vertex AI Agents</span>
+            </div>
+          </div>
+          <div class="stack-group">
+            <div class="stack-label">Developer Tools</div>
+            <div class="stack-tags">
+              <span class="tag tag-lg">Claude Code</span>
+              <span class="tag tag-lg">GitHub Copilot</span>
+              <span class="tag tag-lg">Cursor</span>
+              <span class="tag tag-lg">Windsurf</span>
+            </div>
+          </div>
+          <div class="stack-group">
+            <div class="stack-label">Vector Databases</div>
+            <div class="stack-tags">
+              <span class="tag tag-lg">Pinecone</span>
+              <span class="tag tag-lg">Weaviate</span>
+              <span class="tag tag-lg">Chroma</span>
+              <span class="tag tag-lg">Qdrant</span>
+              <span class="tag tag-lg">pgvector</span>
+              <span class="tag tag-lg">Milvus</span>
+            </div>
+          </div>
+          <div class="stack-group">
+            <div class="stack-label">Observability</div>
+            <div class="stack-tags">
+              <span class="tag tag-lg">LangSmith</span>
+              <span class="tag tag-lg">Langfuse</span>
+              <span class="tag tag-lg">Helicone</span>
+              <span class="tag tag-lg">Arize Phoenix</span>
+            </div>
+          </div>
+          <div class="stack-group">
+            <div class="stack-label">Automation Platforms</div>
+            <div class="stack-tags">
+              <span class="tag tag-lg">n8n</span>
+              <span class="tag tag-lg">Make</span>
+              <span class="tag tag-lg">Zapier</span>
+              <span class="tag tag-lg">Activepieces</span>
+            </div>
+          </div>
+          <div class="stack-group">
+            <div class="stack-label">Deployment &amp; Infrastructure</div>
+            <div class="stack-tags">
+              <span class="tag tag-lg">Docker</span>
+              <span class="tag tag-lg">Kubernetes</span>
+              <span class="tag tag-lg">AWS Lambda</span>
+              <span class="tag tag-lg">Cloud Run</span>
+              <span class="tag tag-lg">Vercel</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- RAG -->
     <section class="section" id="rag">
       <div class="container">
