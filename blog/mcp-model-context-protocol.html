@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCP Explained: Why Model Context Protocol Changes Everything for AI Agents — OzAI</title>
+  <meta name="description" content="Model Context Protocol (MCP) is Anthropic's open standard for connecting AI models to external tools and data. Here is why it matters for Australian businesses building AI agents.">
+  <meta property="og:title" content="MCP Explained: Why Model Context Protocol Changes Everything for AI Agents — OzAI">
+  <meta property="og:description" content="Model Context Protocol (MCP) is the open standard that makes AI agent integrations portable, secure, and composable. Here is what it means for enterprise AI.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ozai.digital/blog/mcp-model-context-protocol.html">
+  <meta property="og:image" content="https://ozai.digital/logo-linkedin.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://ozai.digital/blog/mcp-model-context-protocol.html">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../icon-180.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div class="page">
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="/" class="logo" aria-label="OzAI home">
+        <svg class="logo-mark" width="36" height="36" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogo" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogo)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
+        <span class="logo-text">OzAI</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#services">Services</a>
+        <a href="/#about">About</a>
+        <a href="/#team">Team</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <a href="/#contact" class="btn btn-sm">Get in Touch</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section">
+      <div class="container" style="max-width:780px">
+        <p style="margin-bottom:.5rem"><a href="/blog.html" style="color:var(--accent);text-decoration:none">&larr; Back to Insights</a></p>
+        <div class="pill" style="margin-bottom:1rem">30 March 2026</div>
+        <h1 style="margin-bottom:1.5rem">MCP Explained: Why Model Context Protocol Changes Everything for AI Agents</h1>
+
+        <div class="legal-content">
+
+<p>If you have been building AI agents or following the space closely, you will have noticed a recurring pain point: every time you want an AI model to interact with an external tool or data source, you need to build a custom integration. Connect to Slack? Custom code. Query a database? Custom code. Read files from a shared drive? More custom code. Each integration is bespoke, fragile, and locked to the specific AI model you built it for.</p>
+
+<p>Model Context Protocol — MCP — is Anthropic's answer to this problem. It is an open standard that defines how AI models connect to external tools and data sources, and it is rapidly becoming the foundation for how production AI agents are built.</p>
+
+<h2>The Problem MCP Solves</h2>
+
+<p>Before MCP, the AI integration landscape looked like the early days of the internet before HTTP. Every vendor had their own approach. OpenAI had function calling with one schema. Anthropic had tool use with a different schema. Google had yet another approach. If you built an integration for one model, you could not reuse it with another.</p>
+
+<p>This created several problems for businesses. Integration work was duplicated across every AI project. Switching AI providers meant rebuilding all your tool connections. There was no standard way to define security boundaries around what an AI agent could access. And every integration was a custom piece of code that needed to be maintained individually.</p>
+
+<p>For enterprises running multiple AI systems across different departments — each potentially using different foundation models — this was becoming unmanageable.</p>
+
+<h2>How MCP Works</h2>
+
+<p>MCP follows a client-server architecture that will feel familiar to anyone who has worked with APIs or microservices.</p>
+
+<p><strong>MCP Servers</strong> expose tools, resources, and prompts to AI models through a standardised interface. An MCP server might provide access to a file system, a database, a Slack workspace, a Salesforce instance, or any other system. The server defines what capabilities it offers, what parameters each tool accepts, and what data it returns.</p>
+
+<p><strong>MCP Clients</strong> are the AI models (or the applications hosting them) that connect to MCP servers to use those capabilities. When a model needs to look up a customer record, send a message, or query a database, it does so through the MCP client interface.</p>
+
+<p>The protocol itself handles capability discovery (the client learns what tools are available), invocation (the client calls a tool with parameters), and response handling (the client receives structured results). Critically, all of this happens through a single, well-defined protocol rather than dozens of custom integrations.</p>
+
+<p>Think of it like USB for AI. Before USB, every peripheral needed its own connector and driver. MCP provides a universal standard that any AI model can use to connect to any tool.</p>
+
+<h2>MCP vs Function Calling vs Custom APIs</h2>
+
+<p>A reasonable question is: how does MCP differ from function calling, which models like GPT-4 and Claude already support?</p>
+
+<p>Function calling defines how a model requests that a function be executed — it is the mechanism by which a model says "I want to call this function with these parameters." But function calling does not standardise how the function itself is implemented, discovered, or made available. Each application defines its own functions in its own way.</p>
+
+<p>MCP operates one level above function calling. It standardises how tools are described, discovered, and accessed. An MCP server can be written once and used by any MCP-compatible client, regardless of which foundation model is behind it. Function calling is typically the underlying mechanism that MCP clients use to interact with servers, but MCP adds the portability and standardisation layer on top.</p>
+
+<p>Custom APIs, meanwhile, are the traditional approach — build a REST or GraphQL endpoint, write client code to call it, handle authentication, parse responses, and manage errors. This works, but every integration is a standalone piece of engineering. MCP provides a structured framework that eliminates much of this boilerplate.</p>
+
+<p>In practice, the three approaches are complementary. MCP servers often wrap existing APIs, and MCP clients use function calling under the hood. The value of MCP is in the standardisation layer that makes everything interoperable and portable.</p>
+
+<h2>Why MCP Matters for Enterprise</h2>
+
+<p>For Australian businesses building production AI systems, MCP addresses several enterprise concerns that previous approaches did not.</p>
+
+<p><strong>Portability.</strong> An MCP server built to connect to your Salesforce instance works with Claude, GPT-4, Gemini, or any other MCP-compatible model. If you switch AI providers — or use different models for different tasks — your integrations carry over. This reduces vendor lock-in and protects your investment in integration work.</p>
+
+<p><strong>Security boundaries.</strong> MCP servers define explicit capability boundaries. An agent connecting to your database through an MCP server can only perform the operations that the server exposes. There is no risk of the model constructing arbitrary SQL queries or accessing tables it should not see. The server acts as a controlled gateway, which aligns well with enterprise security requirements and the principle of least privilege.</p>
+
+<p><strong>Composable architectures.</strong> Because MCP servers are modular and self-describing, you can compose complex agent systems from simple, well-tested building blocks. One agent might connect to MCP servers for your CRM, email system, and knowledge base simultaneously. Another agent might connect to servers for your financial system and reporting tools. The architecture is flexible without being chaotic.</p>
+
+<p><strong>Auditability.</strong> All interactions between agents and tools flow through the MCP protocol, creating a natural audit trail. For organisations operating under the Privacy Act 2024 amendments or industry-specific compliance requirements, this structured approach to tool access makes governance significantly easier.</p>
+
+<h2>The Growing Ecosystem</h2>
+
+<p>Since Anthropic open-sourced MCP in late 2024, the ecosystem has grown rapidly. There are now MCP servers available for file systems, PostgreSQL and other databases, Slack, GitHub, Google Drive, Salesforce, Jira, Confluence, AWS services, and dozens of other platforms. The community is actively building new servers, and several enterprise software vendors have begun shipping official MCP servers for their products.</p>
+
+<p>This ecosystem effect is what makes MCP transformative rather than merely useful. The more MCP servers that exist, the faster businesses can build capable AI agents — because the integration work is already done.</p>
+
+<h2>What This Means for Australian Businesses</h2>
+
+<p>For Australian organisations building AI agents or planning to, MCP changes the calculus in several ways.</p>
+
+<p>First, it dramatically reduces the cost and time of building agent integrations. Instead of weeks of custom integration work for each tool, you can connect to existing MCP servers in hours. This makes AI agent projects more commercially viable, particularly for mid-market businesses that cannot afford extensive custom development.</p>
+
+<p>Second, it makes your AI investments more durable. Integrations built on MCP are not tied to a single AI vendor. As the model landscape continues to evolve — and it will — your integration layer remains stable.</p>
+
+<p>Third, it aligns well with Australian regulatory requirements. The structured, auditable nature of MCP interactions supports the transparency and governance obligations that the Privacy Act 2024 amendments will require for automated decision-making systems commencing December 2026.</p>
+
+<h2>How OzAI Can Help</h2>
+
+<p>At OzAI, we build AI agents with MCP at the core of our architecture. Our <a href="/agents.html">agent development services</a> use MCP to create modular, portable, and secure agent systems that integrate with your existing business tools. Whether you need a customer service agent that connects to your CRM and knowledge base, or an operations agent that orchestrates workflows across multiple systems, we build on MCP to ensure your solution is production-ready, maintainable, and future-proof.</p>
+
+<p>If you are exploring AI agents for your business or want to understand how MCP could simplify your integration challenges, <a href="/#contact">book a discovery call</a> with our team.</p>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="logo" aria-label="OzAI home">
+          <svg class="logo-mark" width="28" height="28" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogoF" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogoF)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
+          <span class="logo-text">OzAI</span>
+        </a>
+        <p class="footer-tagline">Pragmatic AI consulting for Australian businesses.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="/consulting.html">AI Strategy &amp; Consulting</a>
+          <a href="/integration.html">Systems Integration</a>
+          <a href="/agents.html">AI Agents &amp; Automation</a>
+          <a href="/enablement.html">AI Enablement &amp; Training</a>
+          <a href="/managed.html">Managed AI Services</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="/#about">About</a>
+          <a href="/#team">Team</a>
+          <a href="/#industries">Industries</a>
+          <a href="/#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="/privacy.html">Privacy Policy</a>
+          <a href="/terms.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 OzAI Pty Ltd. All rights reserved. Melbourne &middot; Sydney, Australia.</p>
+    </div>
+  </footer>
+
+</div>
+<!-- Cookie Banner -->
+<div class="cookie-banner" id="cookieBanner">
+  <span>We use cookies to improve your experience and analyse site traffic. See our <a href="/privacy.html">Privacy Policy</a>.</span>
+  <button class="cookie-banner-btn cookie-accept" onclick="acceptCookies()">Accept</button>
+  <button class="cookie-banner-btn cookie-decline" onclick="declineCookies()">Decline</button>
+</div>
+<script>
+function acceptCookies(){document.getElementById("cookieBanner").classList.remove("visible");localStorage.setItem("ozai_cookies","accepted")}
+function declineCookies(){document.getElementById("cookieBanner").classList.remove("visible");localStorage.setItem("ozai_cookies","declined")}
+if(!localStorage.getItem("ozai_cookies")){setTimeout(function(){document.getElementById("cookieBanner").classList.add("visible")},1500)}
+</script>
+</body>
+</html>

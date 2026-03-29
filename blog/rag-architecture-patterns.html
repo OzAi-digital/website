@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG Architecture Patterns for Australian Enterprise — OzAI</title>
+  <meta name="description" content="A practical guide to RAG architecture patterns — basic, agentic, corrective, and graph RAG — for Australian enterprise, with data sovereignty considerations.">
+  <meta property="og:title" content="RAG Architecture Patterns for Australian Enterprise — OzAI">
+  <meta property="og:description" content="A practical guide to RAG architecture patterns for Australian enterprise, with data sovereignty considerations.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ozai.digital/blog/rag-architecture-patterns.html">
+  <meta property="og:image" content="https://ozai.digital/logo-linkedin.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../icon-180.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div class="page">
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="/" class="logo" aria-label="OzAI home">
+        <svg class="logo-mark" width="36" height="36" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogo" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogo)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
+        <span class="logo-text">OzAI</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#services">Services</a>
+        <a href="/#about">About</a>
+        <a href="/#team">Team</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <a href="/#contact" class="btn btn-sm">Get in Touch</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section">
+      <div class="container" style="max-width:780px">
+        <p style="margin-bottom:.5rem"><a href="/blog.html" style="color:var(--accent);text-decoration:none">&larr; Back to Insights</a></p>
+        <div class="pill" style="margin-bottom:1rem">28 March 2026</div>
+        <h1 style="margin-bottom:1.5rem">RAG Architecture Patterns for Australian Enterprise</h1>
+
+        <div class="legal-content">
+
+<p>Retrieval-Augmented Generation — RAG — has quickly become the most practical way for enterprises to ground large language models (LLMs) in their own data. Rather than fine-tuning a model or relying solely on its pre-trained knowledge, RAG retrieves relevant documents at query time and feeds them to the model as context. The result is answers that are accurate, up-to-date, and grounded in your organisation's information.</p>
+
+<p>For Australian businesses, RAG is particularly attractive because it lets you keep sensitive data in your own systems while still leveraging powerful foundation models. But not all RAG implementations are equal. The architecture you choose determines how well the system handles complex queries, how reliably it finds the right information, and how gracefully it deals with gaps in your knowledge base.</p>
+
+<p>Here are four patterns we see working in enterprise settings, from straightforward to sophisticated.</p>
+
+<h2>Pattern 1: Basic RAG</h2>
+
+<p>Basic RAG follows a simple pipeline: take the user's query, convert it into a vector embedding, search a vector database for the most similar document chunks, then pass those chunks to an LLM along with the original question. The model generates an answer using the retrieved context.</p>
+
+<p>This pattern is well-suited to FAQ systems, internal knowledge bases, and customer support applications where questions map fairly directly to existing documentation. It is straightforward to implement using tools like LangChain with a vector store such as Pinecone, Weaviate, or pgvector.</p>
+
+<p>The limitation is that basic RAG treats every query the same way. It always retrieves, always from the same source, and has no mechanism to evaluate whether the retrieved context actually answers the question. For simple, well-scoped use cases, that is perfectly fine. For anything more complex, you need a smarter approach.</p>
+
+<h2>Pattern 2: Agentic RAG</h2>
+
+<p>Agentic RAG places an AI agent in front of the retrieval step. Instead of blindly searching every time, the agent reasons about the query first. It decides <em>whether</em> retrieval is needed, <em>what</em> to search for, <em>where</em> to search, and how to combine information from multiple sources.</p>
+
+<p>Consider a scenario where an employee asks, "What is our leave policy for part-time staff in Victoria?" An agentic RAG system might first search the HR policy database, then check the Victorian employment law reference, and finally synthesise a response that draws on both sources. The agent can also decide that some queries — like "What is the capital of Australia?" — do not require retrieval at all and can be answered directly.</p>
+
+<p>This pattern shines when your organisation has multiple knowledge bases, structured databases, and APIs that contain relevant information. The agent acts as a smart router, choosing the right tool for each query. Frameworks such as LangChain's agent module and CrewAI make this pattern increasingly accessible.</p>
+
+<h2>Pattern 3: Corrective RAG (CRAG)</h2>
+
+<p>Corrective RAG adds a quality-evaluation step after retrieval. Once documents are retrieved, a separate evaluation — often another LLM call — assesses whether the retrieved context is actually relevant and sufficient to answer the question. If the context scores poorly, the system re-retrieves using a reformulated query or falls back to alternative sources.</p>
+
+<p>This pattern significantly reduces hallucination in production systems. In a legal or compliance context, for example, returning a confidently wrong answer is far worse than returning no answer at all. Corrective RAG gives the system the ability to say, "I did not find enough relevant information to answer this reliably," or to try a different search strategy before responding.</p>
+
+<p>The trade-off is latency. Each evaluation step adds processing time. For interactive use cases, you need to balance thoroughness against response speed. In batch processing or back-office scenarios, the extra latency is usually acceptable.</p>
+
+<h2>Pattern 4: Graph RAG</h2>
+
+<p>Graph RAG combines traditional vector retrieval with knowledge graphs. While vector search excels at finding semantically similar text, it struggles with queries that require understanding relationships between entities — "Which suppliers have contracts expiring this quarter that also have outstanding compliance issues?"</p>
+
+<p>A knowledge graph stores entities (suppliers, contracts, compliance records) and their relationships explicitly. Graph RAG queries both the knowledge graph and the vector store, then merges the results before generation. This is powerful for domains with complex, interconnected data: supply chains, regulatory compliance, financial services, and healthcare.</p>
+
+<p>Building and maintaining a knowledge graph requires more upfront investment than a vector-only approach. The entities and relationships need to be extracted, validated, and kept current. But for organisations with complex data relationships, Graph RAG delivers answers that simpler patterns simply cannot.</p>
+
+<h2>Data Sovereignty Considerations for Australian Businesses</h2>
+
+<p>Whichever pattern you choose, data sovereignty is a critical concern for Australian enterprises. Under the Privacy Act and sector-specific regulations, you need to know where your data is stored, processed, and transmitted.</p>
+
+<p>All three major cloud providers now offer Australian regions — AWS Sydney and Melbourne, Azure Australia East and Southeast, and Google Cloud Sydney and Melbourne. For RAG systems, this means your vector databases, knowledge graphs, and document stores can remain entirely within Australian borders.</p>
+
+<p>For foundation model access, AWS Bedrock (Sydney region), Azure OpenAI Service (Australia East), and Google Vertex AI (Sydney) all support Australian data residency. If your compliance requirements are stricter — particularly in government or defence — on-premise deployment using open-source models like Llama or Mistral running on your own infrastructure is a viable option.</p>
+
+<p>The key is to map the full data flow: where documents are ingested, where embeddings are stored, where LLM inference occurs, and where responses are logged. Every step needs to comply with your data residency requirements.</p>
+
+<h2>Choosing the Right Pattern</h2>
+
+<p>Start with the simplest pattern that meets your requirements. Basic RAG is the right choice for well-scoped, single-source use cases. Move to Agentic RAG when you need to query multiple sources or when different queries require different retrieval strategies. Add corrective evaluation when accuracy is critical and the cost of wrong answers is high. Invest in Graph RAG when your data has complex relationships that vector similarity alone cannot capture.</p>
+
+<p>In practice, many enterprise systems combine these patterns. You might use basic RAG for straightforward lookups, agentic routing for complex queries, and corrective evaluation for high-stakes decisions — all within the same application.</p>
+
+<h2>How OzAI Approaches RAG</h2>
+
+<p>At OzAI, we help Australian businesses design and implement RAG architectures that match their actual needs — not the most impressive demo. We assess your data landscape, compliance requirements, and use cases before recommending an architecture. Every implementation prioritises Australian data residency, and we build with capability transfer in mind so your team can maintain and evolve the system independently.</p>
+
+<p>If you are evaluating RAG for your organisation, <a href="/#contact">get in touch</a> for a no-obligation conversation about which pattern fits your situation.</p>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="logo" aria-label="OzAI home">
+          <svg class="logo-mark" width="28" height="28" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogoF" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogoF)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
+          <span class="logo-text">OzAI</span>
+        </a>
+        <p class="footer-tagline">Pragmatic AI consulting for Australian businesses.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="/consulting.html">AI Strategy &amp; Consulting</a>
+          <a href="/integration.html">Systems Integration</a>
+          <a href="/agents.html">AI Agents &amp; Automation</a>
+          <a href="/enablement.html">AI Enablement &amp; Training</a>
+          <a href="/managed.html">Managed AI Services</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="/#about">About</a>
+          <a href="/#team">Team</a>
+          <a href="/#industries">Industries</a>
+          <a href="/#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="/privacy.html">Privacy Policy</a>
+          <a href="/terms.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 OzAI Pty Ltd. All rights reserved. Melbourne &middot; Sydney, Australia.</p>
+    </div>
+  </footer>
+
+</div>
+<!-- Cookie Banner -->
+<div class="cookie-banner" id="cookieBanner">
+  <span>We use cookies to improve your experience and analyse site traffic. See our <a href="/privacy.html">Privacy Policy</a>.</span>
+  <button class="cookie-banner-btn cookie-accept" onclick="acceptCookies()">Accept</button>
+  <button class="cookie-banner-btn cookie-decline" onclick="declineCookies()">Decline</button>
+</div>
+<script>
+function acceptCookies(){document.getElementById("cookieBanner").classList.remove("visible");localStorage.setItem("ozai_cookies","accepted")}
+function declineCookies(){document.getElementById("cookieBanner").classList.remove("visible");localStorage.setItem("ozai_cookies","declined")}
+if(!localStorage.getItem("ozai_cookies")){setTimeout(function(){document.getElementById("cookieBanner").classList.add("visible")},1500)}
+</script>
+</body>
+</html>
