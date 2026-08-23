@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Voice Receptionist Deck - OzAI</title>
+  <meta name="description" content="Presentation deck for an AI voice receptionist use case: web, phone, SMS, email, appointment booking, and English-Chinese patient support.">
+  <meta property="og:title" content="AI Voice Receptionist for Local Surgery - OzAI">
+  <meta property="og:description" content="A practical AI workflow for medical reception: bilingual voice and text support, Twilio verification, appointment booking, and safe handoff.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ozai.digital/surgery-voice-receptionist-deck.html">
+  <meta property="og:image" content="https://ozai.digital/logo-linkedin.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://ozai.digital/surgery-voice-receptionist-deck.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icon-180.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page deck-page">
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="/" class="logo" aria-label="OzAI home">
+        <svg class="logo-mark" width="36" height="36" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogo" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogo)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
+        <span class="logo-text">OzAI</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#journey">Journey</a>
+        <a href="#safety">Safety</a>
+        <a href="#stack">Stack</a>
+        <a href="#next">Next</a>
+      </nav>
+      <button class="btn btn-sm deck-present-btn" type="button" data-start-presentation>Present</button>
+    </div>
+  </header>
+
+  <div class="deck-controls" aria-label="Presentation controls">
+    <button class="deck-control-btn" type="button" data-prev-slide aria-label="Previous slide">Back</button>
+    <span class="deck-progress" aria-live="polite"><span data-current-slide>1</span> / <span data-total-slides>8</span></span>
+    <button class="deck-control-btn" type="button" data-next-slide aria-label="Next slide">Next</button>
+    <button class="deck-control-btn" type="button" data-toggle-fullscreen aria-label="Toggle fullscreen">Full</button>
+    <button class="deck-control-btn" type="button" data-exit-presentation aria-label="Exit presentation mode">Exit</button>
+  </div>
+
+  <main class="deck-main">
+    <section class="deck-slide deck-cover" id="cover">
+      <div class="deck-slide-inner">
+        <div class="deck-kicker">Use case deck</div>
+        <h1>AI voice receptionist for a local surgery.</h1>
+        <p>Patients can start on the web, continue by phone or email, verify by SMS, book appointments, and get help in English or Chinese.</p>
+        <div class="deck-actions">
+          <button class="btn btn-lg deck-present-inline" type="button" data-start-presentation>Start presentation</button>
+          <a href="ai-workflow-builds.html" class="btn btn-ghost btn-lg">View AI Workflow Builds</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="deck-slide" id="problem">
+      <div class="deck-slide-inner deck-two-col">
+        <div>
+          <div class="deck-kicker">The front-desk pressure</div>
+          <h2>Reception teams lose time to repeat calls, missed calls, and channel switching.</h2>
+        </div>
+        <div class="deck-points">
+          <p>Patients call for opening hours, fees, appointment availability, preparation instructions, and follow-up questions.</p>
+          <p>Context is often lost when a patient starts in web chat, later calls the surgery, then asks for confirmation by email.</p>
+          <p>Language barriers make simple admin work harder for both patients and reception staff.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="deck-slide" id="solution">
+      <div class="deck-slide-inner">
+        <div class="deck-kicker">The build</div>
+        <h2>One receptionist agent across web, phone, SMS, and email.</h2>
+        <div class="outcome-grid">
+          <div><strong>Voice and text</strong><span>Latest voice and text models handle spoken and written patient conversations.</span></div>
+          <div><strong>Appointment booking</strong><span>The agent checks availability, collects required details, and books or changes appointments.</span></div>
+          <div><strong>Bilingual support</strong><span>Patients can speak or type naturally in English or Chinese.</span></div>
+          <div><strong>Twilio verification</strong><span>SMS verification confirms the patient before sensitive admin actions.</span></div>
+          <div><strong>Conversation continuity</strong><span>Web, phone, and email share the same case context where consent and identity checks allow.</span></div>
+          <div><strong>Human handoff</strong><span>The workflow routes urgent, clinical, or uncertain cases to staff.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="deck-slide" id="journey">
+      <div class="deck-slide-inner deck-two-col">
+        <div>
+          <div class="deck-kicker">Patient journey</div>
+          <h2>The patient should not have to restart the conversation.</h2>
+        </div>
+        <ol class="deck-sequence">
+          <li><strong>Starts on web</strong><span>The patient asks about booking, fees, or preparation instructions.</span></li>
+          <li><strong>Verifies by SMS</strong><span>Twilio sends a code before appointment changes or account-specific details.</span></li>
+          <li><strong>Books a time</strong><span>The agent checks available slots and confirms the booking rules.</span></li>
+          <li><strong>Continues by phone</strong><span>If the patient calls later, the agent can recover the recent context.</span></li>
+          <li><strong>Confirms by email</strong><span>The final summary, instructions, or booking confirmation is sent through the right channel.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="deck-slide" id="capabilities">
+      <div class="deck-slide-inner">
+        <div class="deck-kicker">Reception capabilities</div>
+        <h2>Start with high-volume admin work, not clinical judgement.</h2>
+        <div class="track-grid">
+          <div class="track-item">
+            <h3>Book</h3>
+            <p>Find suitable appointment times and collect required booking information.</p>
+          </div>
+          <div class="track-item">
+            <h3>Change</h3>
+            <p>Reschedule or cancel appointments after verification and policy checks.</p>
+          </div>
+          <div class="track-item">
+            <h3>Explain</h3>
+            <p>Opening hours, fees, location, parking, forms, and preparation instructions.</p>
+          </div>
+          <div class="track-item">
+            <h3>Collect</h3>
+            <p>Reason for visit, preferred practitioner, language needs, and contact details.</p>
+          </div>
+          <div class="track-item">
+            <h3>Escalate</h3>
+            <p>Urgent symptoms, clinical questions, complaints, and low-confidence answers go to humans.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="deck-slide" id="safety">
+      <div class="deck-slide-inner">
+        <div class="deck-kicker">Safety and privacy</div>
+        <h2>The agent is a receptionist, not a doctor.</h2>
+        <div class="training-map">
+          <div class="training-row">
+            <strong>No diagnosis</strong>
+            <span>The agent does not provide medical advice, diagnosis, or treatment recommendations.</span>
+          </div>
+          <div class="training-row">
+            <strong>Urgent escalation</strong>
+            <span>Emergency language and risky symptoms trigger clear escalation to emergency care or staff.</span>
+          </div>
+          <div class="training-row">
+            <strong>Identity checks</strong>
+            <span>SMS verification and matching rules are required before account-specific actions.</span>
+          </div>
+          <div class="training-row">
+            <strong>Minimum data</strong>
+            <span>The workflow collects only what is needed for the admin task and records the handoff trail.</span>
+          </div>
+          <div class="training-row">
+            <strong>Human control</strong>
+            <span>Staff can review conversations, tune approved answers, and override automation rules.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="deck-slide" id="stack">
+      <div class="deck-slide-inner">
+        <div class="deck-kicker">Lean delivery stack</div>
+        <h2>Cloudflare and GCP orchestration with Twilio at the channel layer.</h2>
+        <div class="outcome-grid">
+          <div><strong>Voice and SMS</strong><span>Twilio Voice and SMS for calls, verification, and phone routing.</span></div>
+          <div><strong>Web chat</strong><span>Cloudflare Pages or existing website embed for the start of the conversation.</span></div>
+          <div><strong>Orchestration</strong><span>Cloudflare Workers coordinate identity, state, tools, and model calls.</span></div>
+          <div><strong>Models</strong><span>Latest voice and text models selected for latency, quality, and cost.</span></div>
+          <div><strong>Scheduling</strong><span>Integration with the surgery appointment system or a controlled booking queue.</span></div>
+          <div><strong>Email</strong><span>Confirmation, summaries, and staff handoff through the practice's email workflow.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="deck-slide" id="next">
+      <div class="deck-slide-inner deck-close">
+        <div class="deck-kicker">Business outcome</div>
+        <h2>Better access for patients and less repeat admin for staff.</h2>
+        <p>The first release should reduce missed calls, cover after-hours admin questions, support Chinese-speaking patients, and keep reception focused on in-clinic work and sensitive cases.</p>
+        <div class="deck-actions">
+          <a href="ai-workflow-builds.html#contact" class="btn btn-lg">Scope a Receptionist Build</a>
+          <a href="surgery-voice-receptionist-deck.html?present=1" class="btn btn-ghost btn-lg">Open presentation mode</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="logo" aria-label="OzAI home">
+          <svg class="logo-mark" width="28" height="28" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogoF" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogoF)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
+          <span class="logo-text">OzAI</span>
+        </a>
+        <p class="footer-tagline">Pragmatic AI consulting for Australian businesses.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="ai-workflow-builds.html">AI Workflow Builds</a>
+          <a href="agents.html">AI Agents &amp; Automation</a>
+          <a href="enablement.html">AI Enablement &amp; Training</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="/#about">About</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="/privacy.html">Privacy Policy</a>
+          <a href="/terms.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 OzAI Pty Ltd. All rights reserved. Melbourne &middot; Sydney, Australia.</p>
+    </div>
+  </footer>
+</div>
+<script src="deck.js"></script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fridge Catalogue AI Chat Deck - OzAI</title>
+  <meta name="description" content="Presentation deck for an AI catalogue chat use case: fridge specifications indexed into vector storage and answered from current approved data.">
+  <meta property="og:title" content="Fridge Catalogue AI Chat - OzAI">
+  <meta property="og:description" content="A practical AI workflow for product teams: index a fridge catalogue and let staff or customers ask questions over current specifications.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ozai.digital/fridge-catalogue-ai-deck.html">
+  <meta property="og:image" content="https://ozai.digital/logo-linkedin.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://ozai.digital/fridge-catalogue-ai-deck.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icon-180.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page deck-page">
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="/" class="logo" aria-label="OzAI home">
+        <svg class="logo-mark" width="36" height="36" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogo" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogo)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
+        <span class="logo-text">OzAI</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#workflow">Workflow</a>
+        <a href="#freshness">Freshness</a>
+        <a href="#stack">Stack</a>
+        <a href="#next">Next</a>
+      </nav>
+      <button class="btn btn-sm deck-present-btn" type="button" data-start-presentation>Present</button>
+    </div>
+  </header>
+
+  <div class="deck-controls" aria-label="Presentation controls">
+    <button class="deck-control-btn" type="button" data-prev-slide aria-label="Previous slide">Back</button>
+    <span class="deck-progress" aria-live="polite"><span data-current-slide>1</span> / <span data-total-slides>8</span></span>
+    <button class="deck-control-btn" type="button" data-next-slide aria-label="Next slide">Next</button>
+    <button class="deck-control-btn" type="button" data-toggle-fullscreen aria-label="Toggle fullscreen">Full</button>
+    <button class="deck-control-btn" type="button" data-exit-presentation aria-label="Exit presentation mode">Exit</button>
+  </div>
+
+  <main class="deck-main">
+    <section class="deck-slide deck-cover" id="cover">
+      <div class="deck-slide-inner">
+        <div class="deck-kicker">Use case deck</div>
+        <h1>AI catalogue chat for fridge specifications.</h1>
+        <p>A fridge company needed fast, accurate lookup across changing product data. We indexed the catalogue and built a chatbot that answers from current approved specifications.</p>
+        <div class="deck-actions">
+          <button class="btn btn-lg deck-present-inline" type="button" data-start-presentation>Start presentation</button>
+          <a href="ai-workflow-builds.html" class="btn btn-ghost btn-lg">View AI Workflow Builds</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="deck-slide" id="problem">
+      <div class="deck-slide-inner deck-two-col">
+        <div>
+          <div class="deck-kicker">The operational problem</div>
+          <h2>Product knowledge was scattered, slow to search, and easy to age.</h2>
+        </div>
+        <div class="deck-points">
+          <p>Sales and support teams had to search through PDFs, spreadsheets, web pages, and supplier files to answer simple specification questions.</p>
+          <p>Old catalogue copies created risk: the model number could be right, but the dimensions, energy rating, or available finish could be wrong.</p>
+          <p>Customers wanted quick comparisons and compatibility checks, not a link to another document.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="deck-slide" id="solution">
+      <div class="deck-slide-inner">
+        <div class="deck-kicker">The build</div>
+        <h2>Vector indexing plus a chatbot grounded in the live catalogue.</h2>
+        <div class="outcome-grid">
+          <div><strong>Catalogue ingestion</strong><span>Product PDFs, spreadsheets, and structured feeds are parsed into searchable records.</span></div>
+          <div><strong>Vector storage</strong><span>Specifications, model names, aliases, and feature text are embedded with product metadata.</span></div>
+          <div><strong>Grounded chat</strong><span>The assistant retrieves current records first, then answers with the relevant product context.</span></div>
+          <div><strong>Source awareness</strong><span>Answers can include model references, source files, catalogue version, and update date.</span></div>
+          <div><strong>Admin updates</strong><span>New catalogue data can be re-indexed without rebuilding the customer experience.</span></div>
+          <div><strong>Fallback behavior</strong><span>When current data is missing, the chatbot says so instead of guessing from old knowledge.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="deck-slide" id="workflow">
+      <div class="deck-slide-inner deck-two-col">
+        <div>
+          <div class="deck-kicker">How it works</div>
+          <h2>The answer path is designed around current product data.</h2>
+        </div>
+        <ol class="deck-sequence">
+          <li><strong>Update catalogue</strong><span>Upload or sync approved product files and structured data.</span></li>
+          <li><strong>Extract specifications</strong><span>Parse dimensions, capacity, energy rating, finish, warranty, and install notes.</span></li>
+          <li><strong>Index with metadata</strong><span>Embed product content with model, category, source, version, and active status.</span></li>
+          <li><strong>Retrieve current matches</strong><span>Chat questions search the index and filter out retired or superseded records.</span></li>
+          <li><strong>Answer with controls</strong><span>The model responds only when the retrieved catalogue context supports the answer.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="deck-slide" id="questions">
+      <div class="deck-slide-inner">
+        <div class="deck-kicker">What users can ask</div>
+        <h2>The useful questions are concrete and product-specific.</h2>
+        <div class="track-grid">
+          <div class="track-item">
+            <h3>Find a model</h3>
+            <p>"Which integrated fridge fits a 900 mm cavity with left hinge?"</p>
+          </div>
+          <div class="track-item">
+            <h3>Compare products</h3>
+            <p>"Compare these three models by capacity, energy rating, and finish."</p>
+          </div>
+          <div class="track-item">
+            <h3>Check install details</h3>
+            <p>"What clearance is needed behind this model?"</p>
+          </div>
+          <div class="track-item">
+            <h3>Find replacement</h3>
+            <p>"What is the closest current replacement for this discontinued fridge?"</p>
+          </div>
+          <div class="track-item">
+            <h3>Confirm accessories</h3>
+            <p>"Which trim kit or warranty option applies to this product?"</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="deck-slide" id="freshness">
+      <div class="deck-slide-inner">
+        <div class="deck-kicker">Freshness and accuracy</div>
+        <h2>The control is simple: no current source, no confident answer.</h2>
+        <div class="training-map">
+          <div class="training-row">
+            <strong>Versioned catalogue</strong>
+            <span>Each record knows which source file, feed, and publication date it came from.</span>
+          </div>
+          <div class="training-row">
+            <strong>Active product filter</strong>
+            <span>Retired and superseded products are excluded from normal answers unless specifically requested.</span>
+          </div>
+          <div class="training-row">
+            <strong>Scheduled re-indexing</strong>
+            <span>Updates refresh the searchable catalogue so answers track approved product data.</span>
+          </div>
+          <div class="training-row">
+            <strong>Answer constraints</strong>
+            <span>The chatbot refuses or asks for clarification when retrieved context is insufficient.</span>
+          </div>
+          <div class="training-row">
+            <strong>Review loop</strong>
+            <span>Unanswered or low-confidence questions become a queue for catalogue cleanup.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="deck-slide" id="stack">
+      <div class="deck-slide-inner">
+        <div class="deck-kicker">Lean delivery stack</div>
+        <h2>Cloudflare and Google Cloud first, with vendor choice by workload.</h2>
+        <div class="outcome-grid">
+          <div><strong>Frontend</strong><span>Cloudflare Pages for the catalogue chat experience.</span></div>
+          <div><strong>API runtime</strong><span>Cloudflare Workers for retrieval, auth checks, and model orchestration.</span></div>
+          <div><strong>Storage</strong><span>R2 or Google Cloud Storage for approved source files and parsed artefacts.</span></div>
+          <div><strong>Index</strong><span>Cloudflare Vectorize, Vertex AI Vector Search, or pgvector depending on scale.</span></div>
+          <div><strong>Models</strong><span>Gemini, OpenAI, or Claude selected for cost, latency, and answer quality.</span></div>
+          <div><strong>Integrations</strong><span>Optional ecommerce, CRM, PIM, support desk, or website handoff.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="deck-slide" id="next">
+      <div class="deck-slide-inner deck-close">
+        <div class="deck-kicker">Business outcome</div>
+        <h2>A product assistant that keeps up with the catalogue.</h2>
+        <p>The result is faster lookup for staff, fewer stale answers, cleaner catalogue operations, and a path to customer-facing product chat once the internal workflow is trusted.</p>
+        <div class="deck-actions">
+          <a href="ai-workflow-builds.html#contact" class="btn btn-lg">Scope a Catalogue Chat Build</a>
+          <a href="fridge-catalogue-ai-deck.html?present=1" class="btn btn-ghost btn-lg">Open presentation mode</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="logo" aria-label="OzAI home">
+          <svg class="logo-mark" width="28" height="28" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogoF" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogoF)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
+          <span class="logo-text">OzAI</span>
+        </a>
+        <p class="footer-tagline">Pragmatic AI consulting for Australian businesses.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="ai-workflow-builds.html">AI Workflow Builds</a>
+          <a href="agents.html">AI Agents &amp; Automation</a>
+          <a href="enablement.html">AI Enablement &amp; Training</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="/#about">About</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="/privacy.html">Privacy Policy</a>
+          <a href="/terms.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 OzAI Pty Ltd. All rights reserved. Melbourne &middot; Sydney, Australia.</p>
+    </div>
+  </footer>
+</div>
+<script src="deck.js"></script>
+</body>
+</html>
