@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Transformation for Dev Teams Deck - OzAI</title>
+  <meta name="description" content="Presentation deck for AI transformation for development teams: Cursor-style tools, coding agents, agent supervision, engineering practices, and delivery governance.">
+  <meta property="og:title" content="AI Transformation for Dev Teams - OzAI">
+  <meta property="og:description" content="A coaching journey for software teams moving from writing code manually to supervising AI coding agents safely and effectively.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ozai.digital/ai-dev-team-transformation-deck.html">
+  <meta property="og:image" content="https://ozai.digital/logo-linkedin.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://ozai.digital/ai-dev-team-transformation-deck.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="page deck-page">
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="/" class="logo" aria-label="OzAI home"><svg class="logo-mark" width="36" height="36" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogo" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogo)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg><span class="logo-text">OzAI</span></a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <div class="nav-item">
+          <a href="/solutions.html">Solutions</a>
+          <div class="nav-menu">
+            <a href="/ai-workflow-builds.html">Fixed-scope AI builds</a>
+            <a href="/consulting.html">AI strategy and roadmap</a>
+            <a href="/integration.html">Systems integration</a>
+            <a href="/agents.html">Agents and automation</a>
+            <a href="/managed.html">Managed AI operations</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/use-cases.html">Use Cases</a>
+          <div class="nav-menu">
+            <a href="/fridge-catalogue-ai-deck.html">Catalogue chat deck</a>
+            <a href="/surgery-voice-receptionist-deck.html">Voice receptionist deck</a>
+            <a href="/ai-workflow-builds.html#catalogue">Build catalogue</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/ai-coaching.html">Coaching</a>
+          <div class="nav-menu">
+            <a href="/ai-coaching.html">AI coaching overview</a>
+            <a href="/ai-training-deck.html">Company AI training deck</a>
+            <a href="/ai-dev-team-transformation-deck.html">Dev team transformation deck</a>
+            <a href="/enablement.html">Training services</a>
+          </div>
+        </div>
+        <a href="/industries.html">Industries</a>
+        <a href="/delivery-model.html">Delivery</a>
+        <div class="nav-item">
+          <a href="/resources.html">Resources</a>
+          <div class="nav-menu">
+            <a href="/case-studies.html">Case studies</a>
+            <a href="/blog.html">Insights</a>
+          </div>
+        </div>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <button class="btn btn-sm deck-present-btn" type="button" data-start-presentation>Present</button>
+    </div>
+  </header>
+
+  <div class="deck-controls" aria-label="Presentation controls">
+    <button class="deck-control-btn" type="button" data-prev-slide aria-label="Previous slide">Back</button>
+    <span class="deck-progress" aria-live="polite"><span data-current-slide>1</span> / <span data-total-slides>8</span></span>
+    <button class="deck-control-btn" type="button" data-next-slide aria-label="Next slide">Next</button>
+    <button class="deck-control-btn" type="button" data-toggle-fullscreen aria-label="Toggle fullscreen">Full</button>
+    <button class="deck-control-btn" type="button" data-exit-presentation aria-label="Exit presentation mode">Exit</button>
+  </div>
+
+  <main class="deck-main">
+    <section class="deck-slide deck-cover" id="cover">
+      <div class="deck-slide-inner">
+        <div class="deck-kicker">AI coaching for engineering</div>
+        <h1>AI transformation for dev teams.</h1>
+        <p>A separate coaching journey for software teams moving from writing code manually to using AI tools, coding agents, and agent supervision as part of disciplined delivery.</p>
+        <div class="deck-actions"><button class="btn btn-lg deck-present-inline" type="button" data-start-presentation>Start presentation</button><a href="/ai-coaching.html" class="btn btn-ghost btn-lg">AI Coaching overview</a></div>
+      </div>
+    </section>
+
+    <section class="deck-slide" id="why-separate">
+      <div class="deck-slide-inner deck-two-col">
+        <div><div class="deck-kicker">Why this is separate</div><h2>Developer AI changes the delivery model, not just personal productivity.</h2></div>
+        <div class="deck-points">
+          <p>Developers are not only drafting text. They are changing code, tests, dependencies, architecture, and production systems.</p>
+          <p>The goal shifts from writing every line to specifying, steering, reviewing, and supervising AI agents.</p>
+          <p>Engineering teams need new practices for context, test design, code review, security, ownership, and traceability.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="deck-slide" id="maturity">
+      <div class="deck-slide-inner">
+        <div class="deck-kicker">Dev team maturity</div>
+        <h2>The journey is from autocomplete to agent supervision.</h2>
+        <div class="maturity-ladder">
+          <div class="maturity-step"><span>0</span><h3>Manual delivery</h3><p>AI is not in the workflow, or usage is ad hoc and untrusted.</p></div>
+          <div class="maturity-step"><span>1</span><h3>Assisted coding</h3><p>Developers use AI for snippets, explanations, tests, and refactors.</p></div>
+          <div class="maturity-step"><span>2</span><h3>Tool fluency</h3><p>Teams use Cursor-style IDE workflows, repo context, prompts, and review loops.</p></div>
+          <div class="maturity-step"><span>3</span><h3>Agentic delivery</h3><p>Agents implement bounded tasks with tests, diffs, and human approval.</p></div>
+          <div class="maturity-step"><span>4</span><h3>Supervision</h3><p>Engineers orchestrate multiple agents, manage quality gates, and own outcomes.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="deck-slide" id="curriculum">
+      <div class="deck-slide-inner">
+        <div class="deck-kicker">What we teach</div>
+        <h2>Teams need practices for tools, agents, and engineering judgement.</h2>
+        <div class="track-grid">
+          <div class="track-item"><h3>Developers</h3><p>Prompting with repo context, Cursor-style workflows, tests-first tasks, refactoring, and review.</p></div>
+          <div class="track-item"><h3>Tech leads</h3><p>Task decomposition, architecture constraints, agent briefs, PR quality, and delivery risk.</p></div>
+          <div class="track-item"><h3>EMs and PMs</h3><p>AI-assisted planning, estimation changes, acceptance criteria, and delivery governance.</p></div>
+          <div class="track-item"><h3>QA and security</h3><p>Test strategy, dependency review, secrets handling, vulnerability checks, and regression control.</p></div>
+          <div class="track-item"><h3>Platform teams</h3><p>Approved tools, environment setup, logging, policy, model access, and internal enablement.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="deck-slide" id="practices">
+      <div class="deck-slide-inner">
+        <div class="deck-kicker">Core practices</div>
+        <h2>The skill is supervising work, not blindly accepting generated code.</h2>
+        <div class="training-map">
+          <div class="training-row"><strong>Context</strong><span>Give agents the right files, constraints, architecture notes, acceptance tests, and non-goals.</span></div>
+          <div class="training-row"><strong>Task shape</strong><span>Split work into bounded changes with expected diffs, test commands, and rollback paths.</span></div>
+          <div class="training-row"><strong>Review</strong><span>Read diffs, inspect assumptions, challenge generated tests, and verify behavior locally.</span></div>
+          <div class="training-row"><strong>Quality gates</strong><span>Use tests, linting, type checks, security scans, and human approval before merge.</span></div>
+          <div class="training-row"><strong>Traceability</strong><span>Capture prompts, agent decisions, commits, known risks, and handover notes.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="deck-slide" id="rollout">
+      <div class="deck-slide-inner deck-two-col">
+        <div><div class="deck-kicker">Rollout model</div><h2>A dev team rollout should start with low-risk work and build trust.</h2></div>
+        <ol class="deck-sequence">
+          <li><strong>Baseline</strong><span>Current SDLC, tools, repo shape, test health, security rules, and AI access.</span></li>
+          <li><strong>Tool setup</strong><span>Approved IDE agents, terminal agents, repo context, policies, and team templates.</span></li>
+          <li><strong>Workflow labs</strong><span>Bug fixes, test generation, refactors, docs, code review, and migration tasks.</span></li>
+          <li><strong>Agentic pilots</strong><span>Bounded tasks implemented by agents with tests, diffs, and human supervision.</span></li>
+          <li><strong>Operating model</strong><span>Team playbooks, review gates, lead routines, metrics, and continuous improvement.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="deck-slide" id="outputs">
+      <div class="deck-slide-inner">
+        <div class="deck-kicker">What the dev team gets</div>
+        <h2>Transformation needs team artefacts, not just tool licenses.</h2>
+        <div class="outcome-grid">
+          <div><strong>Tooling policy</strong><span>Approved AI tools, model access, data boundaries, and usage rules.</span></div>
+          <div><strong>Agent brief templates</strong><span>Reusable task specs for bugs, refactors, tests, docs, and migrations.</span></div>
+          <div><strong>Review checklist</strong><span>How engineers evaluate generated code, tests, dependencies, and risk.</span></div>
+          <div><strong>Workflow playbook</strong><span>Patterns for Cursor-style IDE use, terminal agents, PRs, and handoff.</span></div>
+          <div><strong>Quality gates</strong><span>Test, lint, type, security, and approval expectations before merge.</span></div>
+          <div><strong>Adoption rhythm</strong><span>Office hours, lead reviews, metrics, and backlog of better agent tasks.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="deck-slide" id="next">
+      <div class="deck-slide-inner deck-close">
+        <div class="deck-kicker">Recommended first conversation</div>
+        <h2>Start with the SDLC, not the tool demo.</h2>
+        <p>A 60-minute discovery session should identify the team's current delivery flow, repo quality, test maturity, security constraints, approved tools, and the first low-risk agentic pilot.</p>
+        <div class="deck-actions"><a href="/ai-coaching.html" class="btn btn-lg">View AI coaching</a><a href="/enablement.html" class="btn btn-ghost btn-lg">Training services</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><a href="/" class="logo" aria-label="OzAI home"><svg class="logo-mark" width="28" height="28" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogoF" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogoF)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg><span class="logo-text">OzAI</span></a><p class="footer-tagline">Pragmatic AI consulting for Australian businesses.</p></div>
+      <div class="footer-links">
+        <div class="footer-col"><h4>Coaching</h4><a href="/ai-coaching.html">AI Coaching</a><a href="/ai-training-deck.html">Company AI Training Deck</a><a href="/ai-dev-team-transformation-deck.html">Dev Team Transformation Deck</a></div>
+        <div class="footer-col"><h4>Solutions</h4><a href="/ai-workflow-builds.html">AI Workflow Builds</a><a href="/solutions.html">Solutions</a><a href="/agents.html">AI Agents</a><a href="/managed.html">Managed AI Services</a></div>
+        <div class="footer-col"><h4>Company</h4>
+          <a href="/ai-coaching.html">AI Coaching</a><a href="/resources.html">Resources</a><a href="/blog.html">Insights</a><a href="/#contact">Contact</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 OzAI Pty Ltd. All rights reserved. Melbourne &middot; Sydney, Australia.</p></div>
+  </footer>
+</div>
+<script src="deck.js"></script>
+</body>
+</html>
