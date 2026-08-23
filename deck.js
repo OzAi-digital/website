@@ -46,12 +46,14 @@
     }
   }
 
-  function enterPresentation(startIndex){
+  function enterPresentation(startIndex, requestFullScreenOnStart){
     presenting = true;
     index = typeof startIndex === "number" ? startIndex : nearestSlideIndex();
     document.body.classList.add("deck-is-presenting");
     updateSlide();
-    requestFullScreen();
+    if (requestFullScreenOnStart !== false) {
+      requestFullScreen();
+    }
   }
 
   function exitPresentation(){
@@ -131,6 +133,6 @@
   if (new URLSearchParams(window.location.search).get("present") === "1") {
     var hashId = window.location.hash ? window.location.hash.slice(1) : "";
     var hashIndex = slides.findIndex(function(slide){ return slide.id === hashId; });
-    enterPresentation(hashIndex >= 0 ? hashIndex : 0);
+    enterPresentation(hashIndex >= 0 ? hashIndex : 0, false);
   }
 })();
