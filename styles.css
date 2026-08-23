@@ -356,6 +356,29 @@ ul{list-style:none}
 /* ===== HOSTED DECK ===== */
 .deck-page{background:#f7f5f1}
 .deck-main{display:flex;flex-direction:column}
+.deck-present-btn{font-family:var(--font-body)}
+.deck-present-inline{font-family:var(--font-body)}
+.deck-controls{
+  position:fixed;left:50%;bottom:18px;z-index:300;
+  transform:translateX(-50%);
+  display:none;align-items:center;gap:8px;
+  padding:8px;border-radius:10px;
+  background:rgba(26,18,7,.88);color:#fff;
+  box-shadow:0 16px 40px rgba(0,0,0,.18);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+}
+.deck-control-btn{
+  height:34px;padding:0 12px;border-radius:7px;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.08);color:#fff;
+  font:700 12px var(--font-body);cursor:pointer;
+}
+.deck-control-btn:hover{background:rgba(255,255,255,.16)}
+.deck-control-btn:disabled{opacity:.35;cursor:not-allowed}
+.deck-progress{
+  min-width:54px;text-align:center;
+  font-size:12px;font-weight:800;color:rgba(255,255,255,.82);
+}
 .deck-slide{
   min-height:calc(100vh - 64px);
   display:flex;align-items:center;
@@ -377,13 +400,13 @@ ul{list-style:none}
 .deck-slide h2{
   font-family:var(--font-heading);
   font-weight:700;letter-spacing:-.03em;line-height:1.06;
-  max-width:880px;
+  max-width:880px;overflow-wrap:anywhere;
 }
 .deck-slide h1{font-size:clamp(42px,6vw,82px)}
 .deck-slide h2{font-size:clamp(34px,4.8vw,64px)}
 .deck-slide p{
   max-width:720px;font-size:clamp(18px,2vw,24px);
-  line-height:1.5;color:var(--muted);margin-top:24px;
+  line-height:1.5;color:var(--muted);margin-top:24px;overflow-wrap:anywhere;
 }
 .deck-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
 .deck-two-col{
@@ -402,7 +425,7 @@ ul{list-style:none}
 }
 .maturity-step{
   background:var(--bg-1);border:1px solid var(--border);
-  border-radius:8px;padding:22px;min-height:224px;
+  border-radius:8px;padding:22px;min-height:224px;min-width:0;
 }
 .maturity-step span{
   width:36px;height:36px;border-radius:50%;
@@ -419,7 +442,7 @@ ul{list-style:none}
 }
 .track-item{
   background:var(--bg-dark);color:#fff;border-radius:8px;
-  padding:24px;min-height:210px;
+  padding:24px;min-height:210px;min-width:0;
 }
 .track-item h3{font-size:18px;margin-bottom:12px}
 .track-item p{font-size:14px;line-height:1.55;margin:0;color:rgba(255,255,255,.66)}
@@ -457,13 +480,48 @@ ul{list-style:none}
 }
 .outcome-grid div{
   background:var(--bg-1);border:1px solid var(--border);
-  border-radius:8px;padding:24px;min-height:150px;
+  border-radius:8px;padding:24px;min-height:150px;min-width:0;
 }
 .outcome-grid strong{display:block;font-size:18px;margin-bottom:10px}
 .outcome-grid span{display:block;color:var(--muted);font-size:15px;line-height:1.55}
 .deck-close{text-align:center}
 .deck-close h2,.deck-close p{margin-left:auto;margin-right:auto}
 .deck-close .deck-actions{justify-content:center}
+body.deck-is-presenting{overflow:hidden;background:var(--bg-0)}
+body.deck-is-presenting .nav,
+body.deck-is-presenting .footer{display:none}
+body.deck-is-presenting .deck-controls{display:flex}
+body.deck-is-presenting .deck-main{
+  height:100vh;display:block;overflow:hidden;background:var(--bg-0);
+}
+body.deck-is-presenting .deck-slide{
+  display:none;min-height:100vh;height:100vh;
+  padding:clamp(28px,5vh,56px) clamp(28px,6vw,72px) 78px;
+  border-bottom:0;overflow:hidden;
+}
+body.deck-is-presenting .deck-slide.is-active{
+  display:flex;animation:deckFade .18s ease-out both;
+}
+body.deck-is-presenting .deck-slide-inner{max-width:1180px}
+body.deck-is-presenting .deck-slide h1{font-size:clamp(48px,7vw,92px)}
+body.deck-is-presenting .deck-slide h2{font-size:clamp(38px,5.4vw,70px)}
+body.deck-is-presenting .deck-slide p{font-size:clamp(20px,2.2vw,27px)}
+body.deck-is-presenting .maturity-step p,
+body.deck-is-presenting .track-item p{font-size:16px;line-height:1.48}
+body.deck-is-presenting .outcome-grid span{font-size:16px;line-height:1.48}
+body.deck-is-presenting .maturity-step p,
+body.deck-is-presenting .track-item p,
+body.deck-is-presenting .outcome-grid span,
+body.deck-is-presenting .training-row span{overflow-wrap:anywhere}
+body.deck-is-presenting .maturity-ladder,
+body.deck-is-presenting .track-grid{margin-top:32px}
+body.deck-is-presenting .maturity-step{min-height:200px;padding:20px}
+body.deck-is-presenting .track-item{min-height:190px;padding:22px}
+body.deck-is-presenting .outcome-grid div{min-height:132px}
+@keyframes deckFade{
+  from{opacity:0;transform:translateY(10px)}
+  to{opacity:1;transform:translateY(0)}
+}
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:960px){
@@ -493,4 +551,23 @@ ul{list-style:none}
   .deck-actions{flex-direction:column}
   .maturity-ladder,.track-grid,.outcome-grid{grid-template-columns:1fr}
   .training-row{grid-template-columns:1fr;gap:8px}
+  .deck-controls{
+    left:10px;right:10px;bottom:10px;transform:none;
+    justify-content:center;flex-wrap:wrap;gap:6px;
+  }
+  .deck-control-btn{padding:0 10px}
+  body.deck-is-presenting .deck-main{overflow-y:auto}
+  body.deck-is-presenting .deck-slide{
+    height:auto;min-height:100vh;overflow:visible;
+    padding:32px 20px 116px;
+  }
+  body.deck-is-presenting .deck-slide-inner{width:100%;max-width:100%}
+  body.deck-is-presenting .deck-slide h1{font-size:34px}
+  body.deck-is-presenting .deck-slide h2{font-size:30px}
+  body.deck-is-presenting .deck-slide p{font-size:16px}
+  body.deck-is-presenting .maturity-step p,
+  body.deck-is-presenting .track-item p,
+  body.deck-is-presenting .outcome-grid span{font-size:15px}
+  body.deck-is-presenting .maturity-step,
+  body.deck-is-presenting .track-item{min-height:auto}
 }
