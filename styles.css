@@ -252,6 +252,86 @@ ul{list-style:none}
 }
 .step .service-list{text-align:left}
 
+/* ===== PRODUCTISED OFFERS ===== */
+.offer-hero .hero-inner{max-width:780px}
+.proof-strip{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  overflow:hidden;border-radius:8px;border:1px solid rgba(255,255,255,.1);
+  background:rgba(255,255,255,.1);
+}
+.proof-strip div{
+  padding:28px;background:var(--bg-dark-2);
+}
+.proof-strip span,
+.build-spec span,
+.offer-label,
+.price-panel span{
+  display:block;font-size:12px;font-weight:800;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--accent-1);margin-bottom:8px;
+}
+.proof-strip strong{
+  display:block;color:#fff;font-size:18px;line-height:1.35;
+}
+.example-build{
+  display:grid;grid-template-columns:minmax(0,1fr) 420px;
+  gap:56px;align-items:center;
+}
+.example-build h2,
+.pricing-summary h2{
+  font-family:var(--font-heading);font-size:clamp(30px,4vw,48px);
+  line-height:1.12;letter-spacing:-.02em;margin:16px 0;
+}
+.example-build p,
+.pricing-summary p{
+  color:var(--muted);font-size:17px;line-height:1.7;margin-bottom:28px;
+}
+.build-spec{
+  background:var(--bg-1);border:1px solid var(--border);
+  border-radius:8px;overflow:hidden;
+}
+.build-spec div{
+  padding:22px 24px;border-bottom:1px solid var(--border);
+}
+.build-spec div:last-child{border-bottom:0}
+.build-spec strong{display:block;font-size:16px;line-height:1.45}
+.offer-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.offer-card{
+  padding:28px;border-radius:8px;background:var(--bg-1);
+  border:1px solid var(--border);display:flex;flex-direction:column;
+  min-height:420px;
+}
+.offer-card h3{font-size:20px;line-height:1.25;margin-bottom:10px}
+.offer-card p{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:8px}
+.offer-price{
+  margin-top:auto;padding-top:20px;font-size:18px;font-weight:800;
+  color:var(--ink);
+}
+.offer-price span{
+  display:block;margin-top:4px;font-size:13px;font-weight:700;color:var(--soft);
+}
+.operate-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.operate-grid>div{
+  padding:32px;background:var(--bg-1);border:1px solid var(--border);
+  border-radius:8px;
+}
+.operate-grid h3{font-size:19px;margin-bottom:12px}
+.pricing-summary{
+  display:grid;grid-template-columns:minmax(0,1fr) 260px 260px;
+  gap:24px;align-items:stretch;
+}
+.price-panel{
+  padding:28px;background:var(--bg-dark);color:#fff;border-radius:8px;
+}
+.price-panel strong{
+  display:block;font-family:var(--font-heading);font-size:36px;
+  line-height:1;margin-bottom:14px;
+}
+.price-panel p{color:rgba(255,255,255,.62);font-size:14px;margin:0}
+
 /* ===== TEAM ===== */
 .team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
 .team-card{
@@ -528,6 +608,11 @@ body.deck-is-presenting .outcome-grid div{min-height:132px}
   .nav-links{display:none}
   .hero{padding:64px 24px 48px}
   .hero-inner{max-width:100%}
+  .proof-strip,
+  .example-build,
+  .offer-grid,
+  .operate-grid,
+  .pricing-summary{grid-template-columns:1fr}
   .deck-two-col{grid-template-columns:1fr;gap:36px}
   .maturity-ladder,.track-grid{grid-template-columns:1fr 1fr}
   .outcome-grid{grid-template-columns:1fr 1fr}
