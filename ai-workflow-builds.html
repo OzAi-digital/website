@@ -31,11 +31,37 @@
         <svg class="logo-mark" width="36" height="36" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogo" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogo)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
         <span class="logo-text">OzAI</span>
       </a>
-      <nav class="nav-links">
-        <a href="/#services">Services</a>
-        <a href="#catalogue">Builds</a>
-        <a href="#process">Process</a>
-        <a href="#pricing">Pricing</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <div class="nav-item">
+          <a href="/solutions.html">Solutions</a>
+          <div class="nav-menu">
+            <a href="/ai-workflow-builds.html">Fixed-scope AI builds</a>
+            <a href="/consulting.html">AI strategy and roadmap</a>
+            <a href="/integration.html">Systems integration</a>
+            <a href="/agents.html">Agents and automation</a>
+            <a href="/enablement.html">Training and coaching</a>
+            <a href="/managed.html">Managed AI operations</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/use-cases.html">Use Cases</a>
+          <div class="nav-menu">
+            <a href="/fridge-catalogue-ai-deck.html">Catalogue chat deck</a>
+            <a href="/surgery-voice-receptionist-deck.html">Voice receptionist deck</a>
+            <a href="/ai-workflow-builds.html#catalogue">Build catalogue</a>
+          </div>
+        </div>
+        <a href="/industries.html">Industries</a>
+        <a href="/delivery-model.html">Delivery</a>
+        <div class="nav-item">
+          <a href="/resources.html">Resources</a>
+          <div class="nav-menu">
+            <a href="/ai-training-deck.html">AI coaching deck</a>
+            <a href="/case-studies.html">Case studies</a>
+            <a href="/blog.html">Insights</a>
+          </div>
+        </div>
+        <a href="/#contact">Contact</a>
       </nav>
       <a href="/#contact" class="btn btn-sm">Book a Scoping Call</a>
     </div>
@@ -260,7 +286,42 @@
       </div>
     </section>
 
-    <section class="section section-alt" id="operate">
+    <section class="section section-alt" id="acceptance-tests">
+      <div class="container">
+        <div class="section-header">
+          <h2>Acceptance tests are written before build.</h2>
+          <p>We agree how the workflow will be tested using sample inputs, expected outputs, edge cases, and human review rules.</p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature fade-up">
+            <h3>Input Coverage</h3>
+            <p>Approved sample files, emails, forms, tickets, records, or prompts that represent normal and messy real-world cases.</p>
+          </div>
+          <div class="feature fade-up" style="animation-delay:.06s">
+            <h3>Output Format</h3>
+            <p>Exact fields, sections, labels, confidence markers, source links, file formats, or handoff destinations the workflow must produce.</p>
+          </div>
+          <div class="feature fade-up" style="animation-delay:.12s">
+            <h3>Exception Rules</h3>
+            <p>What happens when source data is missing, confidence is low, the request is out of scope, or a policy-sensitive case appears.</p>
+          </div>
+          <div class="feature fade-up">
+            <h3>Human Approval</h3>
+            <p>Where staff must review, edit, approve, reject, or escalate before AI-assisted work reaches a customer or system of record.</p>
+          </div>
+          <div class="feature fade-up" style="animation-delay:.06s">
+            <h3>Cost &amp; Latency</h3>
+            <p>Reasonable operating thresholds for model usage, runtime, queueing, retries, and background processing.</p>
+          </div>
+          <div class="feature fade-up" style="animation-delay:.12s">
+            <h3>Audit Trail</h3>
+            <p>Logs, source references, prompt versions, workflow versions, and handover notes sufficient to investigate issues after launch.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="operate">
       <div class="container">
         <div class="section-header">
           <h2>Operate is lightweight, but not optional thinking.</h2>
@@ -294,6 +355,101 @@
               <li>Cloudflare/GCP first, alternatives documented</li>
             </ul>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="deliverables">
+      <div class="container">
+        <div class="section-header">
+          <h2>What Gets Handed Over</h2>
+          <p>The build is delivered with the practical artefacts needed to use it, support it, and decide what to improve next.</p>
+        </div>
+        <div class="why-grid">
+          <div class="why-card fade-up">
+            <h3>Working Workflow</h3>
+            <p>Deployed automation, assistant, extraction flow, drafting tool, or integration in the agreed environment.</p>
+          </div>
+          <div class="why-card fade-up" style="animation-delay:.06s">
+            <h3>Source &amp; Config Notes</h3>
+            <p>Repository, prompts, environment variables, provider choices, connected systems, and deployment instructions where applicable.</p>
+          </div>
+          <div class="why-card fade-up" style="animation-delay:.12s">
+            <h3>User Guide</h3>
+            <p>How staff should use the workflow, what it is not designed to do, and when to escalate or review output manually.</p>
+          </div>
+          <div class="why-card fade-up" style="animation-delay:.18s">
+            <h3>Acceptance Record</h3>
+            <p>The agreed tests, sample cases, known limitations, accepted tradeoffs, and any follow-up backlog.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="stack-detail">
+      <div class="container">
+        <div class="section-header">
+          <h2>Typical Build Stack</h2>
+          <p>We keep the stack small unless the workflow needs heavier infrastructure, enterprise identity, or complex data processing.</p>
+        </div>
+        <div class="stack-wrapper">
+          <div class="stack-group">
+            <h3 class="stack-label">Frontends &amp; APIs</h3>
+            <div class="stack-tags">
+              <div class="tag tag-lg">Cloudflare Pages</div>
+              <div class="tag tag-lg">Cloudflare Workers</div>
+              <div class="tag tag-lg">Google Cloud Run</div>
+              <div class="tag tag-lg">Firebase</div>
+            </div>
+          </div>
+          <div class="stack-group">
+            <h3 class="stack-label">AI &amp; Retrieval</h3>
+            <div class="stack-tags">
+              <div class="tag tag-lg">Gemini</div>
+              <div class="tag tag-lg">Vertex AI</div>
+              <div class="tag tag-lg">OpenAI</div>
+              <div class="tag tag-lg">Claude</div>
+              <div class="tag tag-lg">pgvector</div>
+              <div class="tag tag-lg">Vectorize</div>
+            </div>
+          </div>
+          <div class="stack-group">
+            <h3 class="stack-label">Workflow Glue</h3>
+            <div class="stack-tags">
+              <div class="tag tag-lg">n8n</div>
+              <div class="tag tag-lg">Make</div>
+              <div class="tag tag-lg">Queues</div>
+              <div class="tag tag-lg">R2</div>
+              <div class="tag tag-lg">BigQuery</div>
+              <div class="tag tag-lg">Google Workspace</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="related">
+      <div class="container">
+        <div class="section-header">
+          <h2>Find the Right First Workflow</h2>
+          <p>If you do not already have one workflow in mind, these pages help narrow the field.</p>
+        </div>
+        <div class="why-grid">
+          <a href="solutions.html" class="why-card feature-link fade-up">
+            <h3>Solution Patterns</h3>
+            <p>Knowledge assistants, document extraction, drafting workflows, customer triage, and internal automation.</p>
+            <span class="learn-more">Solutions &rarr;</span>
+          </a>
+          <a href="use-cases.html" class="why-card feature-link fade-up" style="animation-delay:.06s">
+            <h3>Use Case Library</h3>
+            <p>Compare concrete workflows by function, source data, user group, and likely delivery complexity.</p>
+            <span class="learn-more">Use Cases &rarr;</span>
+          </a>
+          <a href="industries.html" class="why-card feature-link fade-up" style="animation-delay:.12s">
+            <h3>Industry Examples</h3>
+            <p>Review how similar workflows show up in healthcare, professional services, operations, finance, and retail.</p>
+            <span class="learn-more">Industries &rarr;</span>
+          </a>
         </div>
       </div>
     </section>

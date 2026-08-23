@@ -31,10 +31,36 @@
         <svg class="logo-mark" width="36" height="36" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogo" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogo)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
         <span class="logo-text">OzAI</span>
       </a>
-      <nav class="nav-links">
-        <a href="/#services">Services</a>
-        <a href="/#about">About</a>
-        <a href="/#team">Team</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <div class="nav-item">
+          <a href="/solutions.html">Solutions</a>
+          <div class="nav-menu">
+            <a href="/ai-workflow-builds.html">Fixed-scope AI builds</a>
+            <a href="/consulting.html">AI strategy and roadmap</a>
+            <a href="/integration.html">Systems integration</a>
+            <a href="/agents.html">Agents and automation</a>
+            <a href="/enablement.html">Training and coaching</a>
+            <a href="/managed.html">Managed AI operations</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/use-cases.html">Use Cases</a>
+          <div class="nav-menu">
+            <a href="/fridge-catalogue-ai-deck.html">Catalogue chat deck</a>
+            <a href="/surgery-voice-receptionist-deck.html">Voice receptionist deck</a>
+            <a href="/ai-workflow-builds.html#catalogue">Build catalogue</a>
+          </div>
+        </div>
+        <a href="/industries.html">Industries</a>
+        <a href="/delivery-model.html">Delivery</a>
+        <div class="nav-item">
+          <a href="/resources.html">Resources</a>
+          <div class="nav-menu">
+            <a href="/ai-training-deck.html">AI coaching deck</a>
+            <a href="/case-studies.html">Case studies</a>
+            <a href="/blog.html">Insights</a>
+          </div>
+        </div>
         <a href="/#contact">Contact</a>
       </nav>
       <a href="/#contact" class="btn btn-sm">Get in Touch</a>
@@ -166,7 +192,7 @@
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
             </div>
             <h3>Customer Service Agents</h3>
-            <p>Handle enquiries, resolve common issues, and escalate intelligently to human staff when needed. Available 24/7 with consistent quality.</p>
+            <p>Handle enquiries, resolve common issues, and escalate intelligently to human staff when needed. Useful for consistent routing, drafting, and after-hours intake where appropriate.</p>
           </div>
           <div class="industry-card fade-up" style="animation-delay:.04s">
             <div class="industry-icon">
@@ -485,6 +511,134 @@
             <h3>Document Ingestion</h3>
             <p>We build pipelines that ingest PDFs, Word documents, web pages, Confluence, SharePoint, Notion, and more. Chunking strategies, metadata extraction, and refresh schedules are all handled.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT WE BUILD -->
+    <section class="section section-alt" id="agent-builds">
+      <div class="container">
+        <div class="section-header">
+          <h2>What We Build</h2>
+          <p>Useful agents are bounded by workflow, tools, permissions, and review points. We design the agent around the job it must perform, not the novelty of the technology.</p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature fade-up">
+            <h3>Knowledge Agents</h3>
+            <p>Internal assistants grounded in approved documents, policies, case notes, product data, or project records, with source-linked answers.</p>
+          </div>
+          <div class="feature fade-up" style="animation-delay:.06s">
+            <h3>Operations Agents</h3>
+            <p>Agents that triage requests, prepare summaries, update task queues, draft responses, and route exceptions to the right owner.</p>
+          </div>
+          <div class="feature fade-up" style="animation-delay:.12s">
+            <h3>Document Agents</h3>
+            <p>Extraction, classification, comparison, review checklists, and structured handoff for contracts, invoices, reports, forms, and correspondence.</p>
+          </div>
+          <div class="feature fade-up">
+            <h3>Research Agents</h3>
+            <p>Repeatable research workflows that gather source material, compare evidence, create summaries, and identify gaps for human review.</p>
+          </div>
+          <div class="feature fade-up" style="animation-delay:.06s">
+            <h3>Tool-Using Agents</h3>
+            <p>Agents connected to CRMs, ticketing systems, spreadsheets, databases, calendars, email, or custom APIs under explicit permission controls.</p>
+          </div>
+          <div class="feature fade-up" style="animation-delay:.12s">
+            <h3>Human-in-the-Loop Agents</h3>
+            <p>Workflows where AI prepares the work and humans approve decisions, edit outputs, or handle sensitive exceptions before action is taken.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCEPTANCE AND GUARDRAILS -->
+    <section class="section" id="acceptance">
+      <div class="container">
+        <div class="section-header">
+          <h2>Acceptance Tests &amp; Guardrails</h2>
+          <p>We define testable behaviour before an agent is considered production-ready.</p>
+        </div>
+        <div class="steps-grid">
+          <div class="step fade-up">
+            <div class="step-num">1</div>
+            <h3>Grounding</h3>
+            <p>Answers must cite approved sources or say when the answer is not available from the connected knowledge base.</p>
+          </div>
+          <div class="step fade-up" style="animation-delay:.06s">
+            <div class="step-num">2</div>
+            <h3>Tool Safety</h3>
+            <p>Read, draft, and write actions are separated so high-impact actions require explicit user or staff approval.</p>
+          </div>
+          <div class="step fade-up" style="animation-delay:.12s">
+            <div class="step-num">3</div>
+            <h3>Escalation</h3>
+            <p>Low confidence, missing data, policy-sensitive content, and out-of-scope requests are routed to a human or safe fallback.</p>
+          </div>
+          <div class="step fade-up" style="animation-delay:.18s">
+            <div class="step-num">4</div>
+            <h3>Regression Set</h3>
+            <p>A curated set of sample prompts, documents, and edge cases is retained for future prompt, model, or retrieval changes.</p>
+          </div>
+          <div class="step fade-up" style="animation-delay:.24s">
+            <div class="step-num">5</div>
+            <h3>Cost Limits</h3>
+            <p>Usage caps, model routing, token monitoring, and alert thresholds prevent unexpected model spend.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HANDOVER -->
+    <section class="section section-alt" id="handover">
+      <div class="container">
+        <div class="section-header">
+          <h2>Agent Deliverables</h2>
+          <p>Every agent handover includes the assets your team needs to operate, audit, and improve it.</p>
+        </div>
+        <div class="why-grid">
+          <div class="why-card fade-up">
+            <h3>Agent Brief</h3>
+            <p>Role, boundaries, tools, source systems, permissions, user groups, and known limitations.</p>
+          </div>
+          <div class="why-card fade-up" style="animation-delay:.06s">
+            <h3>Prompt &amp; Tool Documentation</h3>
+            <p>System prompts, retrieval settings, tool schemas, routing logic, and update notes.</p>
+          </div>
+          <div class="why-card fade-up" style="animation-delay:.12s">
+            <h3>Evaluation Pack</h3>
+            <p>Acceptance tests, sample tasks, regression cases, expected behaviour, and review checklist.</p>
+          </div>
+          <div class="why-card fade-up" style="animation-delay:.18s">
+            <h3>Operate Runbook</h3>
+            <p>How to monitor quality, investigate failures, rotate keys, refresh knowledge sources, and escalate incidents.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RELATED PATHS -->
+    <section class="section" id="related">
+      <div class="container">
+        <div class="section-header">
+          <h2>Plan the Right Agent Path</h2>
+          <p>Some agent ideas should start as a simple workflow. Others need integration, governance, or ongoing operations from day one.</p>
+        </div>
+        <div class="why-grid">
+          <a href="use-cases.html" class="why-card feature-link fade-up">
+            <h3>Explore Use Cases</h3>
+            <p>Compare common customer, document, sales, knowledge, and operations agent patterns.</p>
+            <span class="learn-more">Use Cases &rarr;</span>
+          </a>
+          <a href="ai-workflow-builds.html" class="why-card feature-link fade-up" style="animation-delay:.06s">
+            <h3>Start With a Build</h3>
+            <p>Turn one agent workflow into a fixed-scope delivery with written acceptance criteria.</p>
+            <span class="learn-more">AI Workflow Builds &rarr;</span>
+          </a>
+          <a href="managed.html" class="why-card feature-link fade-up" style="animation-delay:.12s">
+            <h3>Keep Agents Working</h3>
+            <p>Add monitoring, prompt updates, source freshness checks, and model cost reviews after launch.</p>
+            <span class="learn-more">Managed AI Services &rarr;</span>
+          </a>
         </div>
       </div>
     </section>

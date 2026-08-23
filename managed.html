@@ -31,10 +31,36 @@
         <svg class="logo-mark" width="36" height="36" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogo" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogo)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
         <span class="logo-text">OzAI</span>
       </a>
-      <nav class="nav-links">
-        <a href="/#services">Services</a>
-        <a href="/#about">About</a>
-        <a href="/#team">Team</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <div class="nav-item">
+          <a href="/solutions.html">Solutions</a>
+          <div class="nav-menu">
+            <a href="/ai-workflow-builds.html">Fixed-scope AI builds</a>
+            <a href="/consulting.html">AI strategy and roadmap</a>
+            <a href="/integration.html">Systems integration</a>
+            <a href="/agents.html">Agents and automation</a>
+            <a href="/enablement.html">Training and coaching</a>
+            <a href="/managed.html">Managed AI operations</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/use-cases.html">Use Cases</a>
+          <div class="nav-menu">
+            <a href="/fridge-catalogue-ai-deck.html">Catalogue chat deck</a>
+            <a href="/surgery-voice-receptionist-deck.html">Voice receptionist deck</a>
+            <a href="/ai-workflow-builds.html#catalogue">Build catalogue</a>
+          </div>
+        </div>
+        <a href="/industries.html">Industries</a>
+        <a href="/delivery-model.html">Delivery</a>
+        <div class="nav-item">
+          <a href="/resources.html">Resources</a>
+          <div class="nav-menu">
+            <a href="/ai-training-deck.html">AI coaching deck</a>
+            <a href="/case-studies.html">Case studies</a>
+            <a href="/blog.html">Insights</a>
+          </div>
+        </div>
         <a href="/#contact">Contact</a>
       </nav>
       <a href="/#contact" class="btn btn-sm">Get in Touch</a>
@@ -158,43 +184,44 @@
       </div>
     </section>
 
-    <!-- SERVICE TIERS -->
+    <!-- STARTING PACKAGES -->
     <section class="section section-alt" id="tiers">
       <div class="container">
         <div class="section-header">
-          <h2>Service Tiers</h2>
-          <p>Flexible plans that scale with your AI maturity and business needs.</p>
+          <h2>Starting Packages</h2>
+          <p>Managed support is sized to the workflow, the risk level, and how much your team wants to own internally.</p>
         </div>
         <div class="steps-grid">
           <div class="step fade-up">
-            <div class="step-num">E</div>
-            <h3>Essential</h3>
+            <div class="step-num">1</div>
+            <h3>Operate Lite</h3>
             <ul class="service-list">
-              <li>Monitoring</li>
-              <li>Alerting</li>
-              <li>Monthly reports</li>
-              <li>Email support</li>
+              <li>Monthly usage and cost review</li>
+              <li>Error log check</li>
+              <li>Small prompt and routing fixes</li>
+              <li>Runbook maintenance</li>
             </ul>
           </div>
           <div class="step fade-up" style="animation-delay:.06s">
-            <div class="step-num">P</div>
-            <h3>Professional</h3>
+            <div class="step-num">2</div>
+            <h3>Operate Plus</h3>
             <ul class="service-list">
-              <li>All Essential features</li>
-              <li>Optimisation</li>
+              <li>All Operate Lite activities</li>
+              <li>Retrieval and quality review</li>
+              <li>Model or provider tuning</li>
               <li>Quarterly reviews</li>
-              <li>Priority support</li>
+              <li>Improvement backlog management</li>
             </ul>
           </div>
           <div class="step fade-up" style="animation-delay:.12s">
-            <div class="step-num">X</div>
-            <h3>Enterprise</h3>
+            <div class="step-num">3</div>
+            <h3>Embedded Support</h3>
             <ul class="service-list">
-              <li>All Professional features</li>
-              <li>Dedicated AI engineer</li>
-              <li>SLA</li>
-              <li>24/7 support</li>
-              <li>Custom development hours</li>
+              <li>Named support cadence</li>
+              <li>Planned improvement sprints</li>
+              <li>Incident process aligned to your team</li>
+              <li>Governance and adoption reviews</li>
+              <li>Custom support terms by agreement</li>
             </ul>
           </div>
         </div>
@@ -233,6 +260,93 @@
             <h3>Observability</h3>
             <p>LangSmith, Langfuse, Helicone, Datadog</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPERATING RHYTHM -->
+    <section class="section section-alt" id="operating-rhythm">
+      <div class="container">
+        <div class="section-header">
+          <h2>Operating Rhythm</h2>
+          <p>AI systems need regular attention because source data, model behaviour, usage patterns, and business rules change.</p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature fade-up">
+            <h3>Weekly Checks</h3>
+            <p>For active workflows: error patterns, failed runs, queue build-up, provider outages, access issues, and unusual cost spikes.</p>
+          </div>
+          <div class="feature fade-up" style="animation-delay:.06s">
+            <h3>Monthly Report</h3>
+            <p>Plain-English summary of usage, costs, notable failures, prompt changes, retrieval issues, user feedback, and recommended fixes.</p>
+          </div>
+          <div class="feature fade-up" style="animation-delay:.12s">
+            <h3>Quarterly Review</h3>
+            <p>Review whether the workflow still matches the business process, whether the stack is still fit for purpose, and what should be improved next.</p>
+          </div>
+          <div class="feature fade-up">
+            <h3>Change Control</h3>
+            <p>Prompts, models, retrieval settings, connected tools, and security settings are changed with notes and rollback awareness.</p>
+          </div>
+          <div class="feature fade-up" style="animation-delay:.06s">
+            <h3>Source Freshness</h3>
+            <p>Knowledge assistants and RAG workflows are checked for stale documents, broken ingestion, missing metadata, and outdated source sets.</p>
+          </div>
+          <div class="feature fade-up" style="animation-delay:.12s">
+            <h3>Adoption Feedback</h3>
+            <p>User issues, confusing outputs, repeated edits, and new workflow ideas are collected so support improves actual use, not just infrastructure.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUPPORT BOUNDARIES -->
+    <section class="section" id="support-boundaries">
+      <div class="container">
+        <div class="section-header">
+          <h2>What Is Included</h2>
+          <p>Managed AI support is practical maintenance and improvement, with larger changes scoped separately.</p>
+        </div>
+        <div class="why-grid">
+          <div class="why-card fade-up">
+            <h3>Included</h3>
+            <p>Monitoring reviews, small prompt edits, broken integration checks, model routing adjustments, documentation updates, and support for agreed workflows.</p>
+          </div>
+          <div class="why-card fade-up" style="animation-delay:.06s">
+            <h3>Scoped Separately</h3>
+            <p>New workflows, major integrations, new user portals, large data migrations, governance redesign, or significant rebuilds.</p>
+          </div>
+          <div class="why-card fade-up" style="animation-delay:.12s">
+            <h3>Client-Owned</h3>
+            <p>Cloud accounts, source data, user approvals, business decisions, and final sign-off on any AI-assisted output.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RELATED PATHS -->
+    <section class="section section-alt" id="related">
+      <div class="container">
+        <div class="section-header">
+          <h2>Managed Services Usually Follow Delivery</h2>
+          <p>Support is most useful when the workflow has clear ownership, acceptance tests, and known failure modes.</p>
+        </div>
+        <div class="why-grid">
+          <a href="ai-workflow-builds.html" class="why-card feature-link fade-up">
+            <h3>Build First</h3>
+            <p>Fixed-scope workflow builds include handover assets that make support simpler.</p>
+            <span class="learn-more">AI Workflow Builds &rarr;</span>
+          </a>
+          <a href="agents.html" class="why-card feature-link fade-up" style="animation-delay:.06s">
+            <h3>Operate Agents</h3>
+            <p>Agentic workflows need monitoring for tool errors, grounding, escalation, and cost drift.</p>
+            <span class="learn-more">AI Agents &rarr;</span>
+          </a>
+          <a href="delivery-model.html" class="why-card feature-link fade-up" style="animation-delay:.12s">
+            <h3>See the Handover Model</h3>
+            <p>Review how acceptance, runbooks, documentation, and operate support fit together.</p>
+            <span class="learn-more">Delivery Model &rarr;</span>
+          </a>
         </div>
       </div>
     </section>

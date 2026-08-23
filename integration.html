@@ -31,10 +31,36 @@
         <svg class="logo-mark" width="36" height="36" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogo" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogo)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
         <span class="logo-text">OzAI</span>
       </a>
-      <nav class="nav-links">
-        <a href="/#services">Services</a>
-        <a href="/#about">About</a>
-        <a href="/#team">Team</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <div class="nav-item">
+          <a href="/solutions.html">Solutions</a>
+          <div class="nav-menu">
+            <a href="/ai-workflow-builds.html">Fixed-scope AI builds</a>
+            <a href="/consulting.html">AI strategy and roadmap</a>
+            <a href="/integration.html">Systems integration</a>
+            <a href="/agents.html">Agents and automation</a>
+            <a href="/enablement.html">Training and coaching</a>
+            <a href="/managed.html">Managed AI operations</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/use-cases.html">Use Cases</a>
+          <div class="nav-menu">
+            <a href="/fridge-catalogue-ai-deck.html">Catalogue chat deck</a>
+            <a href="/surgery-voice-receptionist-deck.html">Voice receptionist deck</a>
+            <a href="/ai-workflow-builds.html#catalogue">Build catalogue</a>
+          </div>
+        </div>
+        <a href="/industries.html">Industries</a>
+        <a href="/delivery-model.html">Delivery</a>
+        <div class="nav-item">
+          <a href="/resources.html">Resources</a>
+          <div class="nav-menu">
+            <a href="/ai-training-deck.html">AI coaching deck</a>
+            <a href="/case-studies.html">Case studies</a>
+            <a href="/blog.html">Insights</a>
+          </div>
+        </div>
         <a href="/#contact">Contact</a>
       </nav>
       <a href="/#contact" class="btn btn-sm">Get in Touch</a>
@@ -246,12 +272,12 @@
       <div class="container">
         <div class="section-header">
           <h2>Security &amp; Data Sovereignty</h2>
-          <p>Your data stays protected, compliant, and in Australia.</p>
+          <p>Your data flows are designed deliberately, with residency, access, and retention requirements agreed before build.</p>
         </div>
         <div class="stats-grid" style="grid-template-columns:repeat(3,1fr)">
           <div class="stat-card fade-up">
             <span class="stat-num" style="font-size:clamp(20px,2.5vw,28px)">AU</span>
-            <span class="stat-label">Australian data residency — your data stays on Australian soil</span>
+            <span class="stat-label">Australian data residency patterns where your use case or policy requires them</span>
           </div>
           <div class="stat-card fade-up" style="animation-delay:.06s">
             <span class="stat-num" style="font-size:clamp(20px,2.5vw,28px)">E2E</span>
@@ -293,6 +319,101 @@
             <h3>Infrastructure as Code</h3>
             <p>Terraform, Pulumi — repeatable, version-controlled infrastructure that eliminates manual configuration drift.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTEGRATION DELIVERABLES -->
+    <section class="section" id="deliverables">
+      <div class="container">
+        <div class="section-header">
+          <h2>What We Build Into the Integration</h2>
+          <p>Production AI integrations need more than an API call. We include the operational pieces that make the workflow supportable after launch.</p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature fade-up">
+            <h3>Data Contracts</h3>
+            <p>Input and output schemas, field mappings, validation rules, and failure handling for each connected system.</p>
+          </div>
+          <div class="feature fade-up" style="animation-delay:.06s">
+            <h3>Identity &amp; Access</h3>
+            <p>Role-aware access, service accounts, least-privilege permissions, audit trails, and handover notes for administrators.</p>
+          </div>
+          <div class="feature fade-up" style="animation-delay:.12s">
+            <h3>Human Review Points</h3>
+            <p>Approval queues, confidence thresholds, exception routing, and escalation paths where AI output should not move straight to production records.</p>
+          </div>
+          <div class="feature fade-up">
+            <h3>Monitoring Hooks</h3>
+            <p>Logging for requests, model calls, costs, latency, errors, retries, and integration health so problems are visible early.</p>
+          </div>
+          <div class="feature fade-up" style="animation-delay:.06s">
+            <h3>Environment Separation</h3>
+            <p>Development, test, and production setup where appropriate, with secrets managed outside source code and documented deployment steps.</p>
+          </div>
+          <div class="feature fade-up" style="animation-delay:.12s">
+            <h3>Rollback Path</h3>
+            <p>A practical fallback plan for failed releases, provider outages, malformed payloads, or business rule changes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCEPTANCE TESTS -->
+    <section class="section section-alt" id="acceptance">
+      <div class="container">
+        <div class="section-header">
+          <h2>Acceptance Tests We Define Upfront</h2>
+          <p>Every integration should be accepted against real workflow behaviour, not just a successful demo.</p>
+        </div>
+        <div class="steps-grid">
+          <div class="step fade-up">
+            <div class="step-num">1</div>
+            <h3>Happy Path</h3>
+            <p>Approved sample inputs move through the workflow and update the target system exactly as agreed.</p>
+          </div>
+          <div class="step fade-up" style="animation-delay:.06s">
+            <div class="step-num">2</div>
+            <h3>Exception Path</h3>
+            <p>Missing fields, low-confidence outputs, duplicates, and policy-sensitive records are held for review.</p>
+          </div>
+          <div class="step fade-up" style="animation-delay:.12s">
+            <div class="step-num">3</div>
+            <h3>Security Check</h3>
+            <p>Credentials, logs, files, and user access are reviewed against the agreed data handling rules.</p>
+          </div>
+          <div class="step fade-up" style="animation-delay:.18s">
+            <div class="step-num">4</div>
+            <h3>Operate Check</h3>
+            <p>Runbooks, alerts, support owners, cost visibility, and recovery steps are ready before handover.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RELATED PATHS -->
+    <section class="section" id="related">
+      <div class="container">
+        <div class="section-header">
+          <h2>Related Integration Paths</h2>
+          <p>Choose the delivery route that matches your current maturity and risk level.</p>
+        </div>
+        <div class="why-grid">
+          <a href="ai-workflow-builds.html" class="why-card feature-link fade-up">
+            <h3>Start With a Fixed-Scope Build</h3>
+            <p>For one workflow, one source system, and a clear acceptance test.</p>
+            <span class="learn-more">AI Workflow Builds &rarr;</span>
+          </a>
+          <a href="agents.html" class="why-card feature-link fade-up" style="animation-delay:.06s">
+            <h3>Add Agentic Automation</h3>
+            <p>For workflows that need tool use, retrieval, reasoning, and human-in-the-loop decisions.</p>
+            <span class="learn-more">AI Agents &rarr;</span>
+          </a>
+          <a href="delivery-model.html" class="why-card feature-link fade-up" style="animation-delay:.12s">
+            <h3>Review Delivery Gates</h3>
+            <p>See how scoping, build, acceptance, and operate phases fit together.</p>
+            <span class="learn-more">Delivery Model &rarr;</span>
+          </a>
         </div>
       </div>
     </section>
