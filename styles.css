@@ -394,6 +394,30 @@ ul{list-style:none}
 .cta-form{
   display:flex;gap:12px;max-width:480px;margin:0 auto 20px;justify-content:center;
 }
+.contact-form{
+  max-width:640px;flex-direction:column;align-items:stretch;text-align:left;
+}
+.contact-fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.contact-full{grid-column:1/-1}
+.contact-form label{display:flex;flex-direction:column;gap:7px}
+.contact-form label span{font-size:13px;font-weight:700;color:rgba(255,255,255,.72)}
+.contact-form input,
+.contact-form textarea{
+  width:100%;border:1px solid rgba(255,255,255,.14);border-radius:8px;
+  background:rgba(255,255,255,.06);color:#fff;padding:12px 14px;
+  font:inherit;font-size:15px;outline:none;
+}
+.contact-form textarea{resize:vertical;min-height:128px}
+.contact-form input:focus,
+.contact-form textarea:focus{border-color:var(--accent-1);box-shadow:0 0 0 3px rgba(245,158,11,.18)}
+.contact-turnstile{min-height:65px}
+.contact-form .btn{align-self:center}
+.contact-form .btn:disabled{opacity:.6;cursor:not-allowed;transform:none;box-shadow:none}
+.contact-status{
+  min-height:20px;margin:0;text-align:center;font-size:14px;color:rgba(255,255,255,.6);
+}
+.contact-status.success{color:#86efac}
+.contact-status.error{color:#fecaca}
 .cta-note{font-size:14px;color:rgba(255,255,255,.4)}
 .cta-note strong{color:rgba(255,255,255,.7)}
 
@@ -676,6 +700,7 @@ body.deck-is-presenting .deck-sequence span{font-size:15px;line-height:1.42;over
   .footer-inner{flex-direction:column;gap:32px}
   .footer-links{flex-direction:column;gap:24px}
   .cta-form{flex-direction:column}
+  .contact-fields{grid-template-columns:1fr}
   .section-cta{padding:56px 24px}
   .deck-slide{min-height:auto;padding:56px 24px}
   .deck-actions{flex-direction:column}
