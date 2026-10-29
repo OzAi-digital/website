@@ -11,6 +11,8 @@
   <meta property="og:url" content="https://ozai.digital/">
   <meta property="og:image" content="https://ozai.digital/logo-linkedin.png">
   <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0a09" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://ozai.digital/">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -19,20 +21,24 @@
   <link rel="manifest" href="site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js')</script>
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <script src="/site.js" defer></script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <div class="page">
 
+  <!-- ============ HEADER (canonical) ============ -->
   <header class="nav">
     <div class="nav-inner">
       <a href="/" class="logo" aria-label="OzAI Digital home">
-        <svg class="logo-mark" width="36" height="36" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogo" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogo)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
+        <svg class="logo-mark" width="30" height="30" viewBox="0 0 600 600" fill="none" aria-hidden="true"><defs><linearGradient id="gLogo" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogo)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
         <span class="logo-text">OzAI Digital</span>
       </a>
-      <nav class="nav-links" aria-label="Primary navigation">
+      <nav class="nav-links" id="primary-nav" aria-label="Primary navigation">
         <div class="nav-item">
           <a href="/solutions.html">Solutions</a>
           <div class="nav-menu">
@@ -71,195 +77,319 @@
         </div>
         <a href="/#contact">Contact</a>
       </nav>
-      <a href="#contact" class="btn btn-sm">Get in Touch</a>
+      <div class="nav-actions">
+        <a href="/#contact" class="btn btn-sm nav-cta">Get in Touch</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu"><span></span><span></span></button>
+      </div>
     </div>
   </header>
 
-  <main>
+  <main id="main">
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-copy fade-up">
-          <div class="pill">Fixed-scope AI builds &middot; Australia</div>
-          <h1>Specific AI workflows.<br>Built and kept working.</h1>
-          <p class="hero-sub">Pick one workflow. We scope it, price it, build it on a lean Cloudflare and Google Cloud stack, train your team, and support it while adoption settles.</p>
-          <div class="hero-actions">
-            <a href="ai-workflow-builds.html" class="btn btn-lg">See Fixed-Scope Builds</a>
-            <a href="#contact" class="btn btn-ghost btn-lg">Book a Scoping Call</a>
-            <a href="/ai-coaching.html" class="btn btn-ghost btn-lg">AI Coaching</a>
+    <!-- ============ HERO ============ -->
+    <section class="hero-home">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero-head">
+          <div class="pill pill-live fade-up">Fixed-scope AI builds &middot; Australia</div>
+          <h1 class="display fade-up" style="animation-delay:.06s">Specific AI workflows. <span class="accent-serif text-gradient">Built and kept working.</span></h1>
+        </div>
+        <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="hero-sub fade-up" style="animation-delay:.12s">Pick one workflow. We scope it, price it, build it on a lean Cloudflare and Google Cloud stack, train your team, and support it while adoption settles.</p>
+          <div class="hero-actions fade-up" style="animation-delay:.18s">
+            <a href="/ai-workflow-builds.html" class="btn btn-lg">See Fixed-Scope Builds <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            <a href="/#contact" class="btn btn-ghost btn-lg">Book a Scoping Call</a>
+            <a href="/ai-coaching.html" class="link-arrow" style="padding:0 8px">AI Coaching <svg class="arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
           </div>
-          <div class="hero-meta">
-            <div class="tag">Builds from $2,500 + GST</div>
-            <div class="tag">Cloudflare + GCP first</div>
-            <div class="tag">Written acceptance tests</div>
+          <ul class="hero-facts fade-up" style="animation-delay:.24s">
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg>Builds from $2,500 + GST</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg>Cloudflare + GCP first</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg>Written acceptance tests</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual fade-up" style="animation-delay:.3s">
+          <div class="float-chip float-chip--b" aria-hidden="true">
+            <span class="icon-tile icon-tile--brand"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5l3 3 6-7"/></svg></span>
+            <span>Written acceptance tests<small>signed off before launch</small></span>
           </div>
+          <figure class="spec-card">
+            <div class="spec-card-head">
+              <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="mono">example-build.md</span>
+              <a class="link-arrow" href="/ai-workflow-builds.html#example">View <svg class="arrow" width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            </div>
+            <div class="spec-card-body">
+              <span class="eyebrow">Example build</span>
+              <h3>Weekly report digest for operations leaders</h3>
+              <dl class="spec-list">
+                <div><dt>Toolchain</dt><dd>Cloudflare Workers, R2, Gemini, BigQuery</dd></div>
+                <div><dt>Timeline</dt><dd>3&ndash;4 weeks</dd></div>
+                <div><dt>Acceptance test</dt><dd>Digest covers 90% of recurring sections from approved inputs</dd></div>
+                <div><dt>Operate</dt><dd>Usage, cost, errors, prompt drift, monthly review</dd></div>
+              </dl>
+            </div>
+            <ol class="gates" aria-label="Delivery gates">
+              <li>Scope</li><li>Design</li><li>Build</li><li>Accept</li><li>Operate</li>
+            </ol>
+          </figure>
+          <div class="float-chip float-chip--a" aria-hidden="true">
+            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span>
+            <span>Priced before you commit<small>from $2,500 + GST</small></span>
+          </div>
+        </div>
         </div>
       </div>
     </section>
 
-    <!-- SITE DIRECTORY -->
-    <section class="section section-alt" id="explore">
-      <div class="container">
-        <div class="section-header">
-          <h2>Explore OzAI Digital</h2>
-          <p>Find the right path by problem, use case, sector, delivery model, or sales material.</p>
-        </div>
-        <div class="feature-grid">
-          <a href="/solutions.html" class="feature feature-link fade-up">
-            <h3>Solutions</h3>
-            <p>Catalogue chat, voice agents, document workflows, reporting digests, support triage, and managed AI operations.</p>
-            <span class="learn-more">Browse solutions &rarr;</span>
-          </a>
-          <a href="/use-cases.html" class="feature feature-link fade-up" style="animation-delay:.06s">
-            <h3>Use Cases</h3>
-            <p>Concrete examples with acceptance-test thinking, including the fridge catalogue and surgery receptionist decks.</p>
-            <span class="learn-more">Browse use cases &rarr;</span>
-          </a>
-          <a href="/industries.html" class="feature feature-link fade-up" style="animation-delay:.12s">
-            <h3>Industries</h3>
-            <p>Sector-specific AI patterns for healthcare, retail, professional services, finance, operations, and government.</p>
-            <span class="learn-more">View industries &rarr;</span>
-          </a>
-          <a href="/delivery-model.html" class="feature feature-link fade-up">
-            <h3>Delivery Model</h3>
-            <p>How we scope, build, accept, launch, and operate fixed-scope AI workflows without vague transformation language.</p>
-            <span class="learn-more">See delivery model &rarr;</span>
-          </a>
-          <a href="/ai-coaching.html" class="feature feature-link fade-up" style="animation-delay:.06s">
-            <h3>AI Coaching</h3>
-            <p>Separate coaching paths for company AI adoption and AI transformation for development teams.</p>
-            <span class="learn-more">Open coaching &rarr;</span>
-          </a>
-          <a href="/ai-workflow-builds.html" class="feature feature-link fade-up" style="animation-delay:.12s">
-            <h3>Fixed-Scope Builds</h3>
-            <p>Packaged AI workflow builds with clear timelines, pricing direction, acceptance tests, and operate options.</p>
-            <span class="learn-more">See builds &rarr;</span>
-          </a>
-        </div>
+    <!-- ============ CREDIBILITY ============ -->
+    <section class="creds" aria-label="Team experience">
+      <div class="container creds-inner">
+        <p class="creds-label">Senior technologists with hands-on experience at</p>
+        <ul class="creds-list">
+          <li>NAB</li>
+          <li>Telstra</li>
+          <li>Feedzai</li>
+          <li>Rocket Lab</li>
+          <li>AML Cloud</li>
+          <li>Cadbury</li>
+        </ul>
       </div>
     </section>
 
-    <!-- WHAT WE BELIEVE -->
-    <section class="section section-dark">
+    <!-- ============ PROBLEM ============ -->
+    <section class="section" id="problem">
       <div class="container">
-        <div class="section-header">
-          <h2>Our Approach</h2>
-          <p>Pragmatic, evidence-based, and built for Australian businesses.</p>
-        </div>
-        <div class="why-grid">
-          <div class="why-card why-card-dark fade-up">
-            <h3>AI Empowers, It Doesn't Replace</h3>
-            <p>The most effective AI implementations amplify human judgement, creativity, and decision-making. We build solutions that make your team more capable — not redundant.</p>
-          </div>
-          <div class="why-card why-card-dark fade-up" style="animation-delay:.06s">
-            <h3>From Experiment to Scale</h3>
-            <p>Most Australian businesses have started their AI journey. The challenge now is getting past pilots to production. We help you cross that gap — systematically, with clear metrics and proven methodology.</p>
-          </div>
-          <div class="why-card why-card-dark fade-up" style="animation-delay:.12s">
-            <h3>Pragmatism Over Hype</h3>
-            <p>We don't chase trends or oversell capabilities. We identify where AI creates genuine value for your business and build from there. No science projects, no vapourware.</p>
-          </div>
-          <div class="why-card why-card-dark fade-up" style="animation-delay:.18s">
-            <h3>Capability Transfer, Not Dependency</h3>
-            <p>Our job isn't to make you reliant on us. We build your internal AI muscle so your team can own, maintain, and evolve your AI systems long after we've finished.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROBLEM -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2>AI Is Everywhere. Adoption Is Not.</h2>
+        <div class="section-head section-head--split reveal">
+          <span class="eyebrow">The gap</span>
+          <h2>AI is everywhere. Adoption is not.</h2>
           <p>Most businesses know they need AI. Few know where to start or who to trust.</p>
         </div>
-        <div class="stats-grid">
-          <div class="stat-card stat-card-light fade-up">
+        <div class="stat-band">
+          <div class="reveal">
             <span class="stat-num">37%</span>
-            <span class="stat-label">Of Australian SMEs have adopted AI, but only 5% are fully enabled to realise its potential (Source: Dept of Industry, 2025)</span>
+            <p>Of Australian SMEs have adopted AI, but only 5% are fully enabled to realise its potential</p>
+            <cite>Source: Dept of Industry, 2025</cite>
           </div>
-          <div class="stat-card stat-card-light fade-up" style="animation-delay:.06s">
+          <div class="reveal" style="--d:80ms">
             <span class="stat-num">#1</span>
-            <span class="stat-label">AI is now the top concern for Australian business leaders, ahead of cybersecurity and talent (Source: KPMG, 2026)</span>
+            <p>AI is now the top concern for Australian business leaders, ahead of cybersecurity and talent</p>
+            <cite>Source: KPMG, 2026</cite>
           </div>
-          <div class="stat-card stat-card-light fade-up" style="animation-delay:.12s">
+          <div class="reveal" style="--d:160ms">
             <span class="stat-num">$44B</span>
-            <span class="stat-label">Could be added to Australian GDP annually if just 1 in 10 SMBs advanced their AI maturity (Source: Deloitte, 2025)</span>
+            <p>Could be added to Australian GDP annually if just 1 in 10 SMBs advanced their AI maturity</p>
+            <cite>Source: Deloitte, 2025</cite>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
+    <!-- ============ SERVICES ============ -->
     <section class="section section-alt" id="services">
       <div class="container">
-        <div class="section-header">
+        <div class="section-head section-head--split reveal">
+          <span class="eyebrow">Services</span>
           <h2>Concrete AI offers</h2>
           <p>Start with a bounded outcome, not an open-ended transformation programme.</p>
         </div>
-        <div class="feature-grid">
-          <a href="ai-workflow-builds.html" class="feature feature-link fade-up">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><path d="M14 4l-4 16"/></svg>
-            </div>
+        <div class="bento">
+          <a href="/ai-workflow-builds.html" class="card card-feature span-2 reveal">
+            <span class="icon-tile icon-tile--brand"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><path d="M14 4l-4 16"/></svg></span>
             <h3>AI Workflow Builds</h3>
             <p>Fixed-scope automations, knowledge assistants, document workflows, and drafting tools. Priced before you commit.</p>
-            <span class="learn-more">From $2,500 + GST &rarr;</span>
-          </a>
-          <a href="consulting.html" class="feature feature-link fade-up">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            <div class="chip-row" aria-hidden="true">
+              <span class="tag">Automations</span><span class="tag">Knowledge assistants</span><span class="tag">Document workflows</span><span class="tag">Drafting tools</span>
             </div>
+            <div class="card-foot">
+              <span class="price-tag">$2,500<small>from, + GST</small></span>
+              <span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </div>
+          </a>
+          <a href="/consulting.html" class="card reveal" style="--d:60ms">
+            <span class="icon-tile"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></span>
             <h3>AI Strategy &amp; Consulting</h3>
             <p>We assess your operations, identify high-impact AI opportunities, and build a prioritised roadmap with clear ROI projections.</p>
-            <span class="learn-more">Learn more &rarr;</span>
+            <div class="card-foot"><span class="mono">Learn more</span><span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
           </a>
-          <a href="integration.html" class="feature feature-link fade-up" style="animation-delay:.06s">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </div>
+          <a href="/integration.html" class="card reveal" style="--d:120ms">
+            <span class="icon-tile"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
             <h3>Systems Integration</h3>
             <p>Connect AI into your existing stack — CRMs, ERPs, comms platforms, databases. We make AI work with what you already have.</p>
-            <span class="learn-more">Learn more &rarr;</span>
+            <div class="card-foot"><span class="mono">Learn more</span><span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
           </a>
-          <a href="agents.html" class="feature feature-link fade-up" style="animation-delay:.12s">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-            </div>
+          <a href="/agents.html" class="card reveal">
+            <span class="icon-tile"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
             <h3>AI Agents &amp; Automation</h3>
             <p>Custom AI agents that handle real work — customer service, document processing, data analysis, internal operations, and more.</p>
-            <span class="learn-more">Learn more &rarr;</span>
+            <div class="card-foot"><span class="mono">Learn more</span><span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
           </a>
-          <a href="/ai-coaching.html" class="feature feature-link fade-up" style="animation-delay:.18s">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-            </div>
+          <a href="/ai-coaching.html" class="card reveal" style="--d:60ms">
+            <span class="icon-tile"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></span>
             <h3>AI Coaching</h3>
             <p>Separate coaching paths for company-wide AI adoption and AI transformation for development teams.</p>
-            <span class="learn-more">View coaching &rarr;</span>
+            <div class="card-foot"><span class="mono">View coaching</span><span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
           </a>
-          <a href="managed.html" class="feature feature-link fade-up" style="animation-delay:.24s">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
+          <a href="/managed.html" class="card surface-inverse span-2 reveal" style="--d:120ms">
+            <span class="icon-tile"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
             <h3>Managed AI Services</h3>
             <p>Ongoing monitoring, optimisation, and maintenance of your AI systems. We keep things running so you can focus on your business.</p>
-            <span class="learn-more">Learn more &rarr;</span>
+            <div class="card-foot"><span class="mono">Learn more</span><span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- TECHNOLOGY PARTNERS / OUR STACK -->
+    <!-- ============ HOW WE WORK ============ -->
+    <section class="section" id="approach">
+      <div class="container">
+        <div class="section-head section-head--split reveal">
+          <span class="eyebrow">How we work</span>
+          <h2>Pragmatic, transparent, outcome-driven.</h2>
+          <p>Every engagement follows a proven process. <a class="link-arrow" href="/delivery-model.html" style="display:inline-flex;margin-left:4px">See the delivery model <svg class="arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></p>
+        </div>
+        <ol class="timeline">
+          <li class="reveal">
+            <span class="marker" aria-hidden="true"></span>
+            <span class="num">01</span>
+            <h3>Discover</h3>
+            <p>We learn your business, map your processes, and identify where AI creates the most value. No assumptions — just evidence.</p>
+          </li>
+          <li class="reveal" style="--d:100ms">
+            <span class="marker" aria-hidden="true"></span>
+            <span class="num">02</span>
+            <h3>Design &amp; Build</h3>
+            <p>We architect the solution, build it, and integrate it into your systems. You see working demos early and often.</p>
+          </li>
+          <li class="reveal" style="--d:200ms">
+            <span class="marker" aria-hidden="true"></span>
+            <span class="num">03</span>
+            <h3>Deploy &amp; Empower</h3>
+            <p>We launch, train your team, and provide ongoing support. Your people become AI-confident, not AI-dependent.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ OUR APPROACH (dark) ============ -->
+    <section class="section section-dark" id="principles">
+      <div class="container">
+        <div class="section-head section-head--split reveal">
+          <span class="eyebrow">Our approach</span>
+          <h2>Pragmatic, evidence-based, and built for Australian businesses.</h2>
+        </div>
+        <ul class="principles">
+          <li class="reveal">
+            <span class="num">01</span>
+            <h3>AI Empowers, It Doesn't Replace</h3>
+            <p>The most effective AI implementations amplify human judgement, creativity, and decision-making. We build solutions that make your team more capable — not redundant.</p>
+          </li>
+          <li class="reveal" style="--d:80ms">
+            <span class="num">02</span>
+            <h3>From Experiment to Scale</h3>
+            <p>Most Australian businesses have started their AI journey. The challenge now is getting past pilots to production. We help you cross that gap — systematically, with clear metrics and proven methodology.</p>
+          </li>
+          <li class="reveal" style="--d:160ms">
+            <span class="num">03</span>
+            <h3>Pragmatism Over Hype</h3>
+            <p>We don't chase trends or oversell capabilities. We identify where AI creates genuine value for your business and build from there. No science projects, no vapourware.</p>
+          </li>
+          <li class="reveal" style="--d:240ms">
+            <span class="num">04</span>
+            <h3>Capability Transfer, Not Dependency</h3>
+            <p>Our job isn't to make you reliant on us. We build your internal AI muscle so your team can own, maintain, and evolve your AI systems long after we've finished.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ WHY US ============ -->
+    <section class="section" id="about">
+      <div class="container split">
+        <div class="split-aside reveal">
+          <span class="eyebrow">Why OzAI Digital</span>
+          <h2>Builders who get things done.</h2>
+          <p>We're not another global consultancy with a slide deck. We're builders who get things done.</p>
+          <a href="/#contact" class="btn btn-ghost">Talk to the team</a>
+        </div>
+        <div class="list-grid">
+          <div class="reveal">
+            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-7-6.2-7-12a7 7 0 0114 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+            <h3>Australian-First</h3>
+            <p>We understand Australian business culture, compliance requirements, and data sovereignty needs. We prioritise Australian data residency and help you navigate data sovereignty requirements.</p>
+          </div>
+          <div class="reveal" style="--d:80ms">
+            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
+            <h3>Vendor-Agnostic</h3>
+            <p>We're not locked to one AI provider. We recommend and build with whatever technology best fits your problem — OpenAI, Anthropic, open-source, or hybrid.</p>
+          </div>
+          <div class="reveal">
+            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 6-6"/></svg></span>
+            <h3>Outcomes Over Output</h3>
+            <p>We measure success by business results, not billable hours. Every engagement has clear KPIs tied to real value.</p>
+          </div>
+          <div class="reveal" style="--d:80ms">
+            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg></span>
+            <h3>Built to Transfer</h3>
+            <p>We don't create dependency. We build your team's AI capability so you can run, maintain, and evolve your AI systems independently.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INDUSTRIES ============ -->
+    <section class="section section-alt" id="industries">
+      <div class="container">
+        <div class="section-head section-head--split reveal">
+          <span class="eyebrow">Industries</span>
+          <h2>Industries we serve</h2>
+          <p>AI works differently in every sector. We bring domain understanding, not just technical skills. <a class="link-arrow" href="/industries.html" style="display:inline-flex;margin-left:4px">View industries <svg class="arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></p>
+        </div>
+        <div class="industry-grid">
+          <div class="card reveal">
+            <span class="icon-tile"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+            <h3>Professional Services</h3>
+            <p>Legal, accounting, and consulting firms automating document review, client comms, and knowledge management.</p>
+          </div>
+          <div class="card reveal" style="--d:60ms">
+            <span class="icon-tile"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+            <h3>Healthcare</h3>
+            <p>Clinics and health providers streamlining admin, patient communication, and clinical decision support.</p>
+          </div>
+          <div class="card reveal" style="--d:120ms">
+            <span class="icon-tile"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span>
+            <h3>Financial Services</h3>
+            <p>Banks, insurers, and fintechs deploying AI for AML compliance, fraud detection, claims processing, and customer service. Our team brings direct experience leading AI-powered AML monitoring and ML-driven fraud detection at major financial institutions.</p>
+          </div>
+          <div class="card reveal">
+            <span class="icon-tile"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></span>
+            <h3>Retail &amp; E-Commerce</h3>
+            <p>AI-powered customer experiences, inventory forecasting, and personalised marketing at scale.</p>
+          </div>
+          <div class="card reveal" style="--d:60ms">
+            <span class="icon-tile"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></span>
+            <h3>Manufacturing &amp; Resources</h3>
+            <p>Predictive maintenance, supply chain optimisation, and operational intelligence for heavy industry.</p>
+          </div>
+          <div class="card reveal" style="--d:120ms">
+            <span class="icon-tile"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></span>
+            <h3>Education &amp; Government</h3>
+            <p>AI-enabled citizen services, policy analysis, and administrative automation — aligned with the National AI Plan, government Responsible AI policy, and mandatory requirements commencing 2026.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STACK ============ -->
     <section class="section" id="stack">
       <div class="container">
-        <div class="section-header">
-          <h2>Technology Partners &amp; Our Stack</h2>
+        <div class="section-head section-head--split reveal">
+          <span class="eyebrow">Technology</span>
+          <h2>Technology partners &amp; our stack</h2>
           <p>We are vendor-agnostic on AI models, but infrastructure-light by default: Cloudflare and Google Cloud before heavyweight enterprise stacks.</p>
         </div>
-        <div class="stack-wrapper">
+        <div class="stack-rows reveal">
           <div class="stack-group">
             <h3 class="stack-label">Foundation Models</h3>
             <div class="stack-tags">
@@ -304,184 +434,134 @@
       </div>
     </section>
 
-    <!-- APPROACH -->
-    <section class="section section-alt" id="approach">
+    <!-- ============ TEAM ============ -->
+    <section class="section section-alt" id="team">
       <div class="container">
-        <div class="section-header">
-          <h2>How We Work</h2>
-          <p>Pragmatic, transparent, and outcome-driven. Every engagement follows a proven process.</p>
-        </div>
-        <div class="steps-grid">
-          <div class="step fade-up">
-            <div class="step-num">1</div>
-            <h3>Discover</h3>
-            <p>We learn your business, map your processes, and identify where AI creates the most value. No assumptions — just evidence.</p>
-          </div>
-          <div class="step fade-up" style="animation-delay:.06s">
-            <div class="step-num">2</div>
-            <h3>Design &amp; Build</h3>
-            <p>We architect the solution, build it, and integrate it into your systems. You see working demos early and often.</p>
-          </div>
-          <div class="step fade-up" style="animation-delay:.12s">
-            <div class="step-num">3</div>
-            <h3>Deploy &amp; Empower</h3>
-            <p>We launch, train your team, and provide ongoing support. Your people become AI-confident, not AI-dependent.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- INDUSTRIES -->
-    <section class="section" id="industries">
-      <div class="container">
-        <div class="section-header">
-          <h2>Industries We Serve</h2>
-          <p>AI works differently in every sector. We bring domain understanding, not just technical skills.</p>
-        </div>
-        <div class="industry-grid">
-          <div class="industry-card fade-up">
-            <div class="industry-icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            </div>
-            <h3>Professional Services</h3>
-            <p>Legal, accounting, and consulting firms automating document review, client comms, and knowledge management.</p>
-          </div>
-          <div class="industry-card fade-up" style="animation-delay:.04s">
-            <div class="industry-icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-            </div>
-            <h3>Healthcare</h3>
-            <p>Clinics and health providers streamlining admin, patient communication, and clinical decision support.</p>
-          </div>
-          <div class="industry-card fade-up" style="animation-delay:.08s">
-            <div class="industry-icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-            </div>
-            <h3>Financial Services</h3>
-            <p>Banks, insurers, and fintechs deploying AI for AML compliance, fraud detection, claims processing, and customer service. Our team brings direct experience leading AI-powered AML monitoring and ML-driven fraud detection at major financial institutions.</p>
-          </div>
-          <div class="industry-card fade-up" style="animation-delay:.12s">
-            <div class="industry-icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
-            </div>
-            <h3>Retail &amp; E-Commerce</h3>
-            <p>AI-powered customer experiences, inventory forecasting, and personalised marketing at scale.</p>
-          </div>
-          <div class="industry-card fade-up" style="animation-delay:.16s">
-            <div class="industry-icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
-            </div>
-            <h3>Manufacturing &amp; Resources</h3>
-            <p>Predictive maintenance, supply chain optimisation, and operational intelligence for heavy industry.</p>
-          </div>
-          <div class="industry-card fade-up" style="animation-delay:.2s">
-            <div class="industry-icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
-            </div>
-            <h3>Education &amp; Government</h3>
-            <p>AI-enabled citizen services, policy analysis, and administrative automation — aligned with the National AI Plan, government Responsible AI policy, and mandatory requirements commencing 2026.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHY US -->
-    <section class="section section-alt" id="about">
-      <div class="container">
-        <div class="section-header">
-          <h2>Why OzAI Digital</h2>
-          <p>We're not another global consultancy with a slide deck. We're builders who get things done.</p>
-        </div>
-        <div class="why-grid">
-          <div class="why-card fade-up">
-            <h3>Australian-First</h3>
-            <p>We understand Australian business culture, compliance requirements, and data sovereignty needs. We prioritise Australian data residency and help you navigate data sovereignty requirements.</p>
-          </div>
-          <div class="why-card fade-up" style="animation-delay:.06s">
-            <h3>Vendor-Agnostic</h3>
-            <p>We're not locked to one AI provider. We recommend and build with whatever technology best fits your problem — OpenAI, Anthropic, open-source, or hybrid.</p>
-          </div>
-          <div class="why-card fade-up" style="animation-delay:.12s">
-            <h3>Outcomes Over Output</h3>
-            <p>We measure success by business results, not billable hours. Every engagement has clear KPIs tied to real value.</p>
-          </div>
-          <div class="why-card fade-up" style="animation-delay:.18s">
-            <h3>Built to Transfer</h3>
-            <p>We don't create dependency. We build your team's AI capability so you can run, maintain, and evolve your AI systems independently.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TEAM -->
-    <section class="section" id="team">
-      <div class="container">
-        <div class="section-header">
-          <h2>Meet the Team</h2>
+        <div class="section-head section-head--split reveal">
+          <span class="eyebrow">Team</span>
+          <h2>Meet the team</h2>
           <p>Senior technologists with hands-on experience at NAB, Telstra, Feedzai, and leading Australian enterprises.</p>
         </div>
         <div class="team-grid">
-          <article class="team-card fade-up">
+          <article class="team-card reveal">
             <div class="team-avatar">SI</div>
             <div class="team-details">
               <div class="team-name">Serge I.</div>
               <div class="team-role">Founder &amp; AI Strategy Lead</div>
               <p class="team-bio">Former CTO (AML Cloud) and Head of Engineering (Rocket Lab) with 10+ years leading AI and software delivery at scale. Built AI-powered transaction monitoring systems, delivered ML-driven fraud detection solutions at Feedzai for major commercial banks, and led engineering teams at NAB and Telstra. Bridges strategy and hands-on implementation.</p>
-              <a href="https://www.linkedin.com/in/sergeivo/" class="team-link" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/sergeivo/" class="team-link" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
             </div>
           </article>
-          <article class="team-card fade-up" style="animation-delay:.06s">
+          <article class="team-card reveal" style="--d:80ms">
             <div class="team-avatar">MB</div>
             <div class="team-details">
               <div class="team-name">Mitchell Brouwer</div>
               <div class="team-role">Engineering &amp; Strategy Lead</div>
               <p class="team-bio">Full-stack developer and former brand manager at Moccona (D.E Master Blenders) and Cadbury (Kraft Foods). Combines deep technical capability across React Native, Node.js, and modern web architecture with commercial strategy and go-to-market experience.</p>
-              <a href="https://www.linkedin.com/in/mitchellbrouwer/" class="team-link" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/mitchellbrouwer/" class="team-link" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="section-cta" id="contact">
+    <!-- ============ EXPLORE ============ -->
+    <section class="section" id="explore">
       <div class="container">
-        <h2>Ready to Put AI to Work?</h2>
-        <p>Book a free 30-minute discovery call. We'll discuss your challenges, identify quick wins, and outline a clear path forward — no obligation, no sales pitch.</p>
-        <form class="cta-form contact-form" id="contactForm">
-          <div class="contact-fields">
-            <label>
-              <span>Name</span>
-              <input name="name" autocomplete="name" required>
-            </label>
-            <label>
-              <span>Email</span>
-              <input name="email" type="email" autocomplete="email" required>
-            </label>
-            <label class="contact-full">
-              <span>Company</span>
-              <input name="company" autocomplete="organization">
-            </label>
-            <label class="contact-full">
-              <span>Message</span>
-              <textarea name="message" rows="5" required></textarea>
-            </label>
+        <div class="section-head section-head--split reveal">
+          <span class="eyebrow">Explore</span>
+          <h2>Explore OzAI Digital</h2>
+          <p>Find the right path by problem, use case, sector, delivery model, or sales material.</p>
+        </div>
+        <div class="directory reveal">
+          <a href="/solutions.html">
+            <h3>Solutions</h3>
+            <p>Catalogue chat, voice agents, document workflows, reporting digests, support triage, and managed AI operations.</p>
+            <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </a>
+          <a href="/use-cases.html">
+            <h3>Use Cases</h3>
+            <p>Concrete examples with acceptance-test thinking, including the fridge catalogue and surgery receptionist decks.</p>
+            <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </a>
+          <a href="/industries.html">
+            <h3>Industries</h3>
+            <p>Sector-specific AI patterns for healthcare, retail, professional services, finance, operations, and government.</p>
+            <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </a>
+          <a href="/delivery-model.html">
+            <h3>Delivery Model</h3>
+            <p>How we scope, build, accept, launch, and operate fixed-scope AI workflows without vague transformation language.</p>
+            <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </a>
+          <a href="/ai-coaching.html">
+            <h3>AI Coaching</h3>
+            <p>Separate coaching paths for company AI adoption and AI transformation for development teams.</p>
+            <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </a>
+          <a href="/ai-workflow-builds.html">
+            <h3>Fixed-Scope Builds</h3>
+            <p>Packaged AI workflow builds with clear timelines, pricing direction, acceptance tests, and operate options.</p>
+            <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <span class="eyebrow">Contact</span>
+          <h2>Ready to put AI to work?</h2>
+          <p>Book a free 30-minute discovery call. We'll discuss your challenges, identify quick wins, and outline a clear path forward — no obligation, no sales pitch.</p>
+          <ul class="contact-points">
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg>Free 30-minute discovery call</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg>Quick wins and a clear path forward</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg>No obligation, no sales pitch</li>
+          </ul>
+          <div class="cta-note">Melbourne &middot; Sydney, Australia</div>
+        </div>
+        <div class="form-card reveal" style="--d:100ms">
+          <div class="form-card-head">
+            <h3>Send an enquiry</h3>
+            <span class="mono">Reply by email</span>
           </div>
-          <div class="cf-turnstile contact-turnstile" data-sitekey="0x4AAAAAAElfd6lo_CGdjvrU" data-theme="auto" data-size="flexible"></div>
-          <button class="btn btn-lg" type="submit">Send Enquiry</button>
-          <p class="contact-status" id="contactStatus" role="status" aria-live="polite"></p>
-        </form>
-        <div class="cta-note">Melbourne &middot; Sydney, Australia</div>
+          <form class="contact-form" id="contactForm">
+            <div class="contact-fields">
+              <label>
+                <span>Name</span>
+                <input name="name" autocomplete="name" required>
+              </label>
+              <label>
+                <span>Email</span>
+                <input name="email" type="email" autocomplete="email" required>
+              </label>
+              <label class="contact-full">
+                <span>Company</span>
+                <input name="company" autocomplete="organization">
+              </label>
+              <label class="contact-full">
+                <span>Message</span>
+                <textarea name="message" rows="5" required></textarea>
+              </label>
+            </div>
+            <div class="cf-turnstile contact-turnstile" data-sitekey="0x4AAAAAAElfd6lo_CGdjvrU" data-theme="auto" data-size="flexible"></div>
+            <button class="btn btn-lg" type="submit">Send Enquiry</button>
+            <p class="contact-status" id="contactStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
       </div>
     </section>
 
   </main>
 
+  <!-- ============ FOOTER (canonical) ============ -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
         <a href="/" class="logo" aria-label="OzAI Digital home">
-          <svg class="logo-mark" width="28" height="28" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogoF" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogoF)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
+          <svg class="logo-mark" width="28" height="28" viewBox="0 0 600 600" fill="none" aria-hidden="true"><defs><linearGradient id="gLogoF" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogoF)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
           <span class="logo-text">OzAI Digital</span>
         </a>
         <p class="footer-tagline">Pragmatic AI consulting for Australian businesses.</p>
@@ -489,21 +569,21 @@
       <div class="footer-links">
         <div class="footer-col">
           <h4>Solutions</h4>
-          <a href="ai-workflow-builds.html">AI Workflow Builds</a>
-          <a href="consulting.html">AI Strategy &amp; Consulting</a>
-          <a href="integration.html">Systems Integration</a>
-          <a href="agents.html">AI Agents &amp; Automation</a>
-          <a href="managed.html">Managed AI Services</a>
+          <a href="/ai-workflow-builds.html">AI Workflow Builds</a>
+          <a href="/consulting.html">AI Strategy &amp; Consulting</a>
+          <a href="/integration.html">Systems Integration</a>
+          <a href="/agents.html">AI Agents &amp; Automation</a>
+          <a href="/managed.html">Managed AI Services</a>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
           <a href="/ai-coaching.html">AI Coaching</a>
-          <a href="#about">About</a>
-          <a href="#team">Team</a>
-          <a href="#industries">Industries</a>
-          <a href="case-studies.html">Case Studies</a>
-          <a href="blog.html">Insights</a>
-          <a href="#contact">Contact</a>
+          <a href="/#about">About</a>
+          <a href="/#team">Team</a>
+          <a href="/#industries">Industries</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/blog.html">Insights</a>
+          <a href="/#contact">Contact</a>
         </div>
         <div class="footer-col">
           <h4>Legal</h4>
@@ -513,8 +593,10 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 OzAI Digital Pty Ltd. All rights reserved. Melbourne &middot; Sydney, Australia.</p>
+      <p>&copy; 2026 OzAI Digital Pty Ltd. All rights reserved.</p>
+      <p>Melbourne &middot; Sydney, Australia</p>
     </div>
+    <div class="footer-wordmark" aria-hidden="true">OzAI Digital</div>
   </footer>
 
 </div>
