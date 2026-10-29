@@ -3,179 +3,245 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How to Choose the Right LLM for Your Business — OzAI Digital</title>
-  <meta name="description" content="A practical guide to choosing the right large language model for your business — comparing GPT-4.5, Claude Opus, Gemini 2.5 Pro, Llama 4, and Mistral by use case, cost, and Australian data sovereignty.">
-  <meta property="og:title" content="How to Choose the Right LLM for Your Business — OzAI Digital">
-  <meta property="og:description" content="A practical guide to choosing the right large language model for your business — comparing models by use case, cost, and Australian data sovereignty.">
+  <title>Choosing a model: test it on your work — OzAI Digital</title>
+  <meta name="description" content="How we choose a language model for a workflow: test candidates against your acceptance tests, compare cost per accepted output, and check in-region processing per model.">
+  <meta property="og:title" content="Choosing a model: test it on your work — OzAI Digital">
+  <meta property="og:description" content="How we choose a language model for a workflow: test candidates against your acceptance tests, compare cost per accepted output, and check in-region processing per model.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://ozai.digital/blog/choosing-llm-for-business.html">
   <meta property="og:image" content="https://ozai.digital/logo-linkedin.png">
+  <meta property="article:published_time" content="2026-03-15">
+  <meta property="article:modified_time" content="2026-10-29">
   <meta name="twitter:card" content="summary">
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../icon-180.png">
-  <link rel="manifest" href="../site.webmanifest">
+  <meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0a09" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://ozai.digital/blog/choosing-llm-for-business.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="/site.js" defer></script>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/css/article.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Choosing a model: test it on your work, not a leaderboard", "description": "How we choose a language model for a workflow: test candidates against your acceptance tests, compare cost per accepted output, and check in-region processing per model.", "datePublished": "2026-03-15", "dateModified": "2026-10-29", "author": {"@type": "Organization", "name": "OzAI Digital", "url": "https://ozai.digital/"}, "publisher": {"@type": "Organization", "name": "OzAI Digital", "logo": {"@type": "ImageObject", "url": "https://ozai.digital/logo-linkedin.png"}}, "mainEntityOfPage": "https://ozai.digital/blog/choosing-llm-for-business.html", "image": "https://ozai.digital/logo-linkedin.png"}</script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <div class="page">
 
+  <!-- ============ HEADER (canonical) ============ -->
   <header class="nav">
     <div class="nav-inner">
       <a href="/" class="logo" aria-label="OzAI Digital home">
-        <svg class="logo-mark" width="36" height="36" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogo" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogo)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
+        <svg class="logo-mark" width="30" height="30" viewBox="0 0 600 600" fill="none" aria-hidden="true"><defs><linearGradient id="gLogo" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogo)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
         <span class="logo-text">OzAI Digital</span>
       </a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <div class="nav-item">
-          <a href="/solutions.html">Solutions</a>
-          <div class="nav-menu">
-            <a href="/ai-workflow-builds.html">Fixed-scope AI builds</a>
-            <a href="/consulting.html">AI strategy and roadmap</a>
-            <a href="/integration.html">Systems integration</a>
-            <a href="/agents.html">Agents and automation</a>
-            <a href="/managed.html">Managed AI operations</a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <a href="/use-cases.html">Use Cases</a>
-          <div class="nav-menu">
-            <a href="/fridge-catalogue-ai-deck.html">Catalogue chat deck</a>
-            <a href="/surgery-voice-receptionist-deck.html">Voice receptionist deck</a>
-            <a href="/ai-workflow-builds.html#catalogue">Build catalogue</a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <a href="/ai-coaching.html">Coaching</a>
-          <div class="nav-menu">
-            <a href="/ai-coaching.html">AI coaching overview</a>
-            <a href="/ai-training-deck.html">Company AI training deck</a>
-            <a href="/ai-dev-team-transformation-deck.html">Dev team transformation deck</a>
-            <a href="/enablement.html">Training services</a>
-          </div>
-        </div>
-        <a href="/industries.html">Industries</a>
-        <a href="/delivery-model.html">Delivery</a>
-        <div class="nav-item">
-          <a href="/resources.html">Resources</a>
-          <div class="nav-menu">
-            <a href="/case-studies.html">Case studies</a>
-            <a href="/blog.html">Insights</a>
-          </div>
-        </div>
-        <a href="/#contact">Contact</a>
+      <nav class="nav-links" id="primary-nav" aria-label="Primary navigation">
+        <a href="/agentic-software-delivery.html">Agentic delivery</a>
+        <a href="/ai-workflow-builds.html">Workflow builds</a>
+        <a href="/delivery-model.html">How we deliver</a>
+        <a href="/ai-coaching.html">Team enablement</a>
+        <a href="/about.html">About</a>
+        <a href="/blog.html" aria-current="page">Insights</a>
+        <a href="/#contact" class="nav-drawer-cta">Book a scoping call</a>
       </nav>
-      <a href="/#contact" class="btn btn-sm">Get in Touch</a>
+      <div class="nav-actions">
+        <a href="/#contact" class="btn btn-sm nav-cta">Book a scoping call</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu"><span></span><span></span></button>
+      </div>
     </div>
   </header>
 
-  <main>
+  <main id="main">
+    <article class="article">
+      <header class="article-header">
+        <div class="container">
+          <div class="article-col">
+            <a class="back-link" href="/blog.html"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4"/></svg> All insights</a>
+            <div class="article-kicker">
+              <span class="eyebrow">Models</span>
+              <span class="updated-badge">Updated 29 October 2026</span>
+            </div>
+            <h1>Choosing a model: test it on your work, not a leaderboard</h1>
+            <p class="article-dek">Model rankings change every few months. A method that lasts: test candidates on your own work, compare cost per accepted output, and check where each model processes data.</p>
+            <div class="article-meta">
+              <span class="article-author"><svg viewBox="0 0 600 600" fill="none" aria-hidden="true"><defs><linearGradient id="gAuthor" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="140" fill="url(#gAuthor)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>OzAI Digital</span>
+              <span class="sep" aria-hidden="true"></span>
+              <span>Published <time datetime="2026-03-15">15 March 2026</time></span>
+              <span class="sep" aria-hidden="true"></span>
+              <span>Updated <time datetime="2026-10-29">29 October 2026</time></span>
+              <span class="sep" aria-hidden="true"></span>
+              <span>4 min read</span>
+            </div>
+          </div>
+        </div>
+      </header>
 
-    <section class="section">
-      <div class="container" style="max-width:780px">
-        <p style="margin-bottom:.5rem"><a href="/blog.html" style="color:var(--accent);text-decoration:none">&larr; Back to Insights</a></p>
-        <div class="pill" style="margin-bottom:1rem">15 March 2026</div>
-        <h1 style="margin-bottom:1.5rem">How to Choose the Right LLM for Your Business</h1>
+      <div class="article-main">
+        <div class="container">
+        <div class="article-body prose">
+          <aside class="callout callout--update" aria-label="Update note">
+            <span class="callout-label">Updated 29 October 2026</span>
+            <p><strong>Rewritten.</strong> The earlier version compared named models, context windows and price tiers that are now out of date. This version is model-agnostic and describes how we evaluate candidates for a specific workflow.</p>
+          </aside>
 
-        <div class="legal-content">
+          <p>An earlier version of this post compared specific models by name, with their context windows and price positions. Within months most of those figures were out of date. That is the point worth making: model rankings change every few months, so any choice built on a league table has a short shelf life. What lasts is the method.</p>
 
-<p>The large language model market has matured rapidly, and Australian businesses now face a genuine paradox of choice. A year ago, GPT-4 was the default answer. Today, there are half a dozen frontier models with meaningfully different strengths, pricing structures, and data residency options. Choosing the right one — or the right combination — is a strategic decision that affects cost, performance, compliance, and your ability to scale.</p>
+          <p>This is how we choose a model for a workflow.</p>
 
-<p>Here is how we think about LLM selection for enterprise use cases.</p>
+          <h2>Start from the job, not the model</h2>
 
-<h2>Not All Models Are Created Equal</h2>
+          <p>Every model has strengths. Some are better at careful reasoning over long documents, some at following a strict output format, some at speed and low cost. Some are available as open-weight models you can host yourself. None is best at everything, and the differences that matter for your workflow rarely show up in headline benchmarks.</p>
 
-<p>Every model has a personality. GPT-4.5 from OpenAI is exceptionally strong at creative writing, nuanced instruction-following, and general-purpose reasoning. Anthropic's Claude Opus excels at long-document analysis, careful reasoning, and tasks where safety and accuracy matter — it is notably good at saying "I don't know" rather than fabricating an answer. Google's Gemini 2.5 Pro offers an enormous context window and tight integration with the Google Cloud ecosystem. Meta's Llama 4 is the leading open-source option, offering strong performance with full control over deployment. Mistral continues to punch above its weight, particularly for European language tasks and scenarios where a smaller, efficient model is preferable.</p>
+          <p>So the choice should start from the work: what goes in, what must come out, how fast, how often, and what happens when the answer is wrong.</p>
 
-<p>The point is not that one model is universally better. The point is that your choice should be driven by your specific use case, not by headlines.</p>
+          <h2>Test candidates against your acceptance tests</h2>
 
-<h2>Key Evaluation Criteria</h2>
+          <p>Before we build, we agree acceptance tests: approved sample inputs, including the messy cases, and the exact outputs the workflow must produce. Those same tests are the best model evaluation you can run.</p>
 
-<p><strong>Accuracy and reasoning.</strong> For high-stakes tasks — legal analysis, financial reporting, medical summaries — you need a model that reasons carefully and cites sources. Benchmark scores matter less than performance on <em>your</em> data. Always run evaluations against a representative sample of your actual workload.</p>
+          <p>Pick two or three candidates that are plausible on capability, cost and data location. Run each against the full set of samples. Score the outputs the same way you will at acceptance. The model that passes on your documents, your formats and your edge cases is the right one, whatever a leaderboard says.</p>
 
-<p><strong>Latency.</strong> Interactive applications like customer-facing chatbots need fast responses. Batch processing tasks like document classification can tolerate longer inference times. Some models offer tiered latency — faster responses at higher cost.</p>
+          <h2>What to compare</h2>
 
-<p><strong>Cost.</strong> Token pricing varies dramatically. GPT-4.5 and Claude Opus sit at the premium end. Gemini 2.5 Pro offers competitive pricing, particularly for long-context tasks. Open-source models like Llama 4 eliminate per-token fees entirely, though you bear the infrastructure cost of hosting them.</p>
+          <p><strong>Accuracy on your data.</strong> For high-stakes work such as legal analysis, financial reporting or anything a customer will see, you need outputs that are correct and traceable to their source. Measure it on a representative sample of your real workload.</p>
 
-<p><strong>Context window.</strong> If your use case involves analysing long documents — contracts, reports, codebases — context window size matters. Gemini 2.5 Pro supports up to one million tokens. Claude Opus handles 200,000 tokens reliably. GPT-4.5 supports 128,000 tokens. For many business tasks, 32,000 tokens is more than sufficient, but document-heavy workflows benefit from larger windows.</p>
+          <p><strong>Cost per accepted output.</strong> Token prices are only part of the cost. A cheaper model that fails one case in five, and sends those cases to a person, can cost more than a dearer one that passes. Divide the total running cost by the number of outputs that pass your tests.</p>
 
-<p><strong>Data privacy and compliance.</strong> This is non-negotiable for Australian enterprises. You need to know where your data is processed, whether it is used for model training, and what contractual guarantees the provider offers under Australian law.</p>
+          <p><strong>Latency.</strong> Interactive uses such as reception or enquiry chat need quick responses. Overnight batch work such as document classification can tolerate slower, cheaper processing.</p>
 
-<h2>Proprietary vs Open-Source Models</h2>
+          <p><strong>Context needs.</strong> If the workflow reads long contracts, reports or codebases, check how each candidate handles your longest real inputs, not the advertised maximum. For many business tasks, a modest context is enough once retrieval is designed well.</p>
 
-<p>Proprietary models — GPT-4.5, Claude Opus, Gemini 2.5 Pro — offer the highest raw capability and require no infrastructure management. You pay per token and get a managed API. The trade-off is vendor dependency and less control over data handling, though all major providers now offer enterprise agreements with strong data protection commitments.</p>
+          <p><strong>Where data is processed.</strong> Know where prompts and outputs are processed and stored, whether they are used for training, and what the provider commits to contractually. This is often the deciding factor for Australian organisations.</p>
 
-<p>Open-source models — Llama 4, Mistral, and others — give you complete control. You host them on your own infrastructure, your data never leaves your environment, and there are no per-token fees. The trade-off is that you need the engineering capability to deploy, optimise, and maintain them. For organisations with strict data sovereignty requirements or high-volume workloads where API costs become prohibitive, open-source models are increasingly compelling.</p>
+          <h2>Hosted or self-hosted</h2>
 
-<p>The honest answer for most mid-market Australian businesses is that proprietary models via managed cloud services offer the best balance of capability, simplicity, and compliance — today. But the open-source gap is closing rapidly, and organisations processing millions of tokens per day should seriously evaluate self-hosted options.</p>
+          <p>Hosted models through a managed API need no infrastructure work. You pay per use and get the provider's latest models. The trade-off is dependence on the provider and less control over data handling, though enterprise agreements usually include firm commitments on training and retention.</p>
 
-<h2>The Multi-Model Strategy</h2>
+          <p>Open-weight models you host yourself give you full control: data stays in your environment and there are no per-token fees. The trade-off is that you need the engineering capacity to deploy, tune and maintain them, and the hardware cost is yours. For strict data-control requirements or very high volumes, they are worth evaluating.</p>
 
-<p>The most sophisticated organisations are not choosing a single model. They are building multi-model architectures that route different tasks to different models based on complexity, cost, and requirements.</p>
+          <p>For most mid-sized Australian businesses, hosted models through a major cloud platform offer the best balance of capability, simplicity and data control. The gap to open-weight models has been narrowing, so it is worth re-checking periodically.</p>
 
-<p>A practical example: a professional services firm might use Claude Opus for complex legal document analysis where accuracy is paramount, GPT-4.5 for drafting client-facing communications where tone and creativity matter, and a smaller model like Llama 4 or Mistral for high-volume tasks like email categorisation and data extraction where cost efficiency is the priority.</p>
+          <h2>Use more than one model where it pays</h2>
 
-<p>This approach requires a routing layer — logic that determines which model handles which request. It adds architectural complexity, but the cost savings and performance optimisation can be substantial. We have seen organisations reduce their LLM spend by 40 to 60 per cent by routing simple tasks to smaller, cheaper models while reserving frontier models for tasks that genuinely require them.</p>
+          <p>You do not have to pick a single model. Many workflows route different steps to different models: a small, fast model to classify incoming items, a stronger one for the few cases that need careful reasoning or drafting.</p>
 
-<h2>Australian Data Sovereignty</h2>
+          <p>That adds a routing step and more to test, so do it only when the cost or speed difference is real for your volumes. Your acceptance tests tell you whether the cheaper route still passes.</p>
 
-<p>For Australian businesses subject to the Privacy Act, sector-specific regulations, or government procurement rules, data residency is a critical factor in model selection.</p>
+          <h2>Data residency: check per model, per region</h2>
 
-<p>The good news is that all three major cloud providers now offer Australian-region LLM hosting. Azure OpenAI Service is available in Australia East (Sydney), giving you access to GPT models with data that stays within Australian borders. AWS Bedrock in the Sydney region provides access to Claude, Llama, and other models with Australian data residency. Google Cloud's Vertex AI in Sydney offers Gemini models with local processing.</p>
+          <p>For organisations subject to the Privacy Act, sector rules or government procurement requirements, where processing happens is critical.</p>
 
-<p>For the most sensitive workloads — defence, critical infrastructure, certain government applications — on-premise deployment of open-source models eliminates cloud dependency entirely. This is a viable option now that Llama 4 and Mistral offer near-frontier performance.</p>
+          <p>The major cloud platforms run Australian regions, but a region being available does not mean every model processes data there. Availability and in-region processing vary by model and change over time. Check the provider's current list for the specific model you plan to use. Google Cloud, for example, publishes a <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/learn/data-residency">per-model data residency list for Vertex AI</a>, including which models offer in-region processing in Sydney (australia-southeast1).</p>
 
-<h2>How OzAI Digital Can Help</h2>
+          <p>For the most sensitive workloads, self-hosting an open-weight model inside your own environment removes the dependency on a provider's regional coverage.</p>
 
-<p>At OzAI Digital, we are vendor-agnostic by design. We do not resell any model provider's services, which means our recommendations are based solely on what works best for your use case, budget, and compliance requirements. We help Australian businesses evaluate models against their actual workloads, design multi-model architectures where they make sense, and ensure every implementation meets Australian data sovereignty requirements.</p>
+          <h2>Re-run the evaluation when models change</h2>
 
-<p>If you are navigating model selection and want a clear-eyed assessment of your options, <a href="/#contact">get in touch</a> for a no-obligation conversation.</p>
+          <p>Providers release new models and retire old ones on their own schedules. Keep your acceptance tests as a regression suite. When a new model appears, or your current one is due to be retired, re-run the suite and compare. Switching then becomes a measured change rather than a leap of faith.</p>
 
+          <h2>Where we fit</h2>
+
+          <p>We do not resell any model provider, so our recommendation is whatever passes your tests at the lowest running cost in an acceptable location. Each workflow build includes the acceptance tests, so the evaluation is part of the work rather than an extra. If you are weighing options for a specific workflow, <a href="/#contact">book a scoping call</a>.</p>
+        </div>
+
+        <section class="article-sources" aria-labelledby="sources-h">
+          <h2 id="sources-h">Sources</h2>
+          <ol>
+            <li><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/learn/data-residency" rel="noopener">Google Cloud — Vertex AI generative AI data residency</a></li>
+          </ol>
+        </section>
+        </div>
+      </div>
+    </article>
+
+    <section class="section section-alt related" aria-labelledby="related-h">
+      <div class="container">
+        <div class="related-head">
+          <h2 id="related-h">Keep reading</h2>
+          <a class="link-arrow" href="/blog.html">All insights <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </div>
+        <div class="related-grid">
+          <a class="card related-card reveal" href="/blog/rag-architecture-patterns.html" style="--d:0ms">
+            <span class="related-cat">Retrieval</span>
+            <h3>Retrieval patterns for knowledge assistants</h3>
+            <p>Four ways to ground a language model in your own documents, from simple to involved, and how to choose between them without losing track of where your data goes.</p>
+            <div class="card-foot"><span class="mono">Updated 29 October 2026</span><span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+          </a>
+          <a class="card related-card reveal" href="/blog/mcp-model-context-protocol.html" style="--d:80ms">
+            <span class="related-cat">Connections</span>
+            <h3>MCP explained: connecting assistants to your systems safely</h3>
+            <p>Model Context Protocol is an open standard for connecting assistants to tools and data. Here is how it works, how it differs from function calling, and what it does and does not do for governance.</p>
+            <div class="card-foot"><span class="mono">Updated 29 October 2026</span><span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+          </a>
+          <a class="card related-card reveal" href="/blog/pilot-to-production-ai.html" style="--d:160ms">
+            <span class="related-cat">Delivery</span>
+            <h3>Why pilots stall, and what gets them to production</h3>
+            <p>Five reasons promising pilots never reach production, what “production-ready” actually means, and ten questions to answer before you fund the next one.</p>
+            <div class="card-foot"><span class="mono">Updated 29 October 2026</span><span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-cta article-cta">
+      <div class="container reveal">
+        <span class="eyebrow">Next step</span>
+        <h2>Have a workflow or system in mind?</h2>
+        <p>30 minutes. Free. You leave with a view on scope, price and how we'd test it.</p>
+        <div class="cta-actions">
+          <a href="/#contact" class="btn btn-lg">Book a scoping call <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         </div>
       </div>
     </section>
 
   </main>
 
+  <!-- ============ FOOTER (canonical) ============ -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
         <a href="/" class="logo" aria-label="OzAI Digital home">
-          <svg class="logo-mark" width="28" height="28" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogoF" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogoF)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
+          <svg class="logo-mark" width="28" height="28" viewBox="0 0 600 600" fill="none" aria-hidden="true"><defs><linearGradient id="gLogoF" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogoF)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
           <span class="logo-text">OzAI Digital</span>
         </a>
-        <p class="footer-tagline">Pragmatic AI consulting for Australian businesses.</p>
+        <p class="footer-tagline">Working systems, built with AI. Priced up front, tested before acceptance, kept running.</p>
+        <p class="footer-tagline">Melbourne &middot; Sydney, Australia</p>
+        <a href="https://www.linkedin.com/company/ozai-digital" class="team-link footer-social" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
       </div>
       <div class="footer-links">
         <div class="footer-col">
-          <h4>Solutions</h4>
-          <a href="/consulting.html">AI Strategy &amp; Consulting</a>
-          <a href="/integration.html">Systems Integration</a>
-          <a href="/agents.html">AI Agents &amp; Automation</a>
-          <a href="/managed.html">Managed AI Services</a>
+          <h4>What we do</h4>
+          <a href="/agentic-software-delivery.html">Agentic software delivery</a>
+          <a href="/ai-workflow-builds.html">Workflow builds</a>
+          <a href="/delivery-model.html#run">Run (ongoing operation)</a>
+          <a href="/ai-coaching.html">Team enablement</a>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
-          <a href="/ai-coaching.html">AI Coaching</a>
-          <a href="/#about">About</a>
-          <a href="/#team">Team</a>
-          <a href="/#industries">Industries</a>
-          <a href="/#contact">Contact</a>
+          <a href="/delivery-model.html">How we deliver</a>
+          <a href="/about.html">About</a>
+          <a href="/blog.html">Insights</a>
+          <a href="/#contact">Book a scoping call</a>
         </div>
         <div class="footer-col">
-          <h4>Legal</h4>
-          <a href="/privacy.html">Privacy Policy</a>
-          <a href="/terms.html">Terms of Service</a>
+          <h4>Materials</h4>
+          <a href="/ai-training-deck.html">Company AI training deck</a>
+          <a href="/ai-dev-team-transformation-deck.html">Engineering team deck</a>
+          <a href="/fridge-catalogue-ai-deck.html">Catalogue assistant deck</a>
+          <a href="/surgery-voice-receptionist-deck.html">Voice receptionist deck</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 OzAI Digital Pty Ltd. All rights reserved. Melbourne &middot; Sydney, Australia.</p>
+      <p>&copy; 2026 OzAI Digital Pty Ltd</p>
+      <p class="footer-legal"><a href="/privacy.html">Privacy Policy</a> <span aria-hidden="true">&middot;</span> <a href="/terms.html">Terms of Service</a></p>
     </div>
+    <div class="footer-wordmark" aria-hidden="true">OzAI Digital</div>
   </footer>
 
 </div>

@@ -1,0 +1,86 @@
+/* About (/about.html) — page-level additions to styles.css.
+   Token-based only; inverse/dark handled by the shared token re-scoping. */
+
+/* ---- Inner-page hero ---- */
+.page-hero{padding-bottom:clamp(48px,6vw,80px)}
+.page-hero-copy{max-width:880px}
+.page-hero h1{
+  font-size:var(--fs-h1);line-height:1.04;letter-spacing:var(--tracking-display);
+  margin:22px 0 24px;
+}
+.page-hero h1 .accent-serif{font-size:1.06em}
+.page-hero .hero-sub{max-width:40rem}
+.page-hero .hero-actions{margin-bottom:0}
+
+/* At-a-glance strip */
+.about-traits{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  margin-top:clamp(48px,6vw,80px);
+  border:1px solid var(--line);border-radius:var(--r-lg);
+  background:color-mix(in srgb,var(--bg-elev) 80%,transparent);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  overflow:hidden;box-shadow:var(--shadow-xs);
+}
+.about-traits li{
+  display:flex;flex-direction:column;gap:6px;
+  padding:18px 20px;font-size:var(--fs-sm);font-weight:500;color:var(--ink);
+}
+.about-traits li+li{border-left:1px solid var(--line)}
+.about-traits .mono{font-size:.6875rem;font-weight:400;color:var(--ink-3);text-transform:uppercase;letter-spacing:var(--tracking-caps)}
+
+/* ---- Team ---- */
+.team-card h3.team-name{margin:0}
+
+/* ---- How we work rows ---- */
+.work-rows{
+  border:1px solid var(--line);border-radius:var(--r-xl);
+  background:var(--bg-elev);box-shadow:var(--shadow-xs);overflow:hidden;
+}
+.work-rows article{
+  display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:start;
+  padding:26px 28px;
+}
+.work-rows article+article{border-top:1px solid var(--line)}
+.work-rows .icon-tile{margin:0}
+.work-rows h3{font-size:1.125rem;margin:6px 0 6px}
+.work-rows p{font-size:.9375rem;color:var(--ink-2);line-height:1.6;max-width:52ch}
+
+/* ---- What we don't do ---- */
+.dont-grid{
+  display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.4fr);
+  gap:clamp(32px,6vw,96px);align-items:start;
+}
+.dont-grid .section-head{margin-bottom:0}
+.dont-list{border-top:1px solid var(--line)}
+.dont-list li{
+  display:flex;align-items:center;gap:16px;
+  padding:22px 0;border-bottom:1px solid var(--line);
+  font-family:var(--font-display);font-size:clamp(1.0625rem,1rem + .4vw,1.3125rem);
+  font-weight:500;letter-spacing:var(--tracking-snug);color:var(--ink);
+}
+.dont-mark{
+  position:relative;flex-shrink:0;width:28px;height:28px;border-radius:var(--r-full);
+  border:1px solid var(--line-strong);background:var(--bg-subtle);
+}
+.dont-mark::before,.dont-mark::after{
+  content:"";position:absolute;left:50%;top:50%;width:11px;height:1.5px;
+  background:var(--accent-ink);border-radius:2px;
+}
+.dont-mark::before{transform:translate(-50%,-50%) rotate(45deg)}
+.dont-mark::after{transform:translate(-50%,-50%) rotate(-45deg)}
+
+/* ---- CTA ---- */
+
+/* ---- Responsive ---- */
+@media (max-width:960px){
+  .about-traits{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .about-traits li:nth-child(3){border-left:0}
+  .about-traits li:nth-child(n+3){border-top:1px solid var(--line)}
+  .dont-grid{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  .work-rows article{padding:22px 20px;gap:16px}
+}
+@media (max-width:400px){
+  .about-traits li{padding:14px 14px}
+}

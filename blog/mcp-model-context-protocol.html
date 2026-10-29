@@ -3,198 +3,253 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MCP Explained: Why Model Context Protocol Changes Everything for AI Agents — OzAI Digital</title>
-  <meta name="description" content="Model Context Protocol (MCP) is Anthropic's open standard for connecting AI models to external tools and data. Here is why it matters for Australian businesses building AI agents.">
-  <meta property="og:title" content="MCP Explained: Why Model Context Protocol Changes Everything for AI Agents — OzAI Digital">
-  <meta property="og:description" content="Model Context Protocol (MCP) is the open standard that makes AI agent integrations portable, secure, and composable. Here is what it means for enterprise AI.">
+  <title>MCP explained: connecting assistants safely — OzAI Digital</title>
+  <meta name="description" content="Model Context Protocol gives assistants one standard, logged way to reach your tools and data. How it works, how it differs from function calling, and where it helps.">
+  <meta property="og:title" content="MCP explained: connecting assistants safely — OzAI Digital">
+  <meta property="og:description" content="Model Context Protocol gives assistants one standard, logged way to reach your tools and data. How it works, how it differs from function calling, and where it helps.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://ozai.digital/blog/mcp-model-context-protocol.html">
   <meta property="og:image" content="https://ozai.digital/logo-linkedin.png">
+  <meta property="article:published_time" content="2026-03-30">
+  <meta property="article:modified_time" content="2026-10-29">
   <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0a09" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://ozai.digital/blog/mcp-model-context-protocol.html">
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../icon-180.png">
-  <link rel="manifest" href="../site.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="/site.js" defer></script>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/css/article.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "MCP explained: connecting assistants to your systems safely", "description": "Model Context Protocol gives assistants one standard, logged way to reach your tools and data. How it works, how it differs from function calling, and where it helps.", "datePublished": "2026-03-30", "dateModified": "2026-10-29", "author": {"@type": "Organization", "name": "OzAI Digital", "url": "https://ozai.digital/"}, "publisher": {"@type": "Organization", "name": "OzAI Digital", "logo": {"@type": "ImageObject", "url": "https://ozai.digital/logo-linkedin.png"}}, "mainEntityOfPage": "https://ozai.digital/blog/mcp-model-context-protocol.html", "image": "https://ozai.digital/logo-linkedin.png"}</script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <div class="page">
 
+  <!-- ============ HEADER (canonical) ============ -->
   <header class="nav">
     <div class="nav-inner">
       <a href="/" class="logo" aria-label="OzAI Digital home">
-        <svg class="logo-mark" width="36" height="36" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogo" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogo)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
+        <svg class="logo-mark" width="30" height="30" viewBox="0 0 600 600" fill="none" aria-hidden="true"><defs><linearGradient id="gLogo" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogo)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
         <span class="logo-text">OzAI Digital</span>
       </a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <div class="nav-item">
-          <a href="/solutions.html">Solutions</a>
-          <div class="nav-menu">
-            <a href="/ai-workflow-builds.html">Fixed-scope AI builds</a>
-            <a href="/consulting.html">AI strategy and roadmap</a>
-            <a href="/integration.html">Systems integration</a>
-            <a href="/agents.html">Agents and automation</a>
-            <a href="/managed.html">Managed AI operations</a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <a href="/use-cases.html">Use Cases</a>
-          <div class="nav-menu">
-            <a href="/fridge-catalogue-ai-deck.html">Catalogue chat deck</a>
-            <a href="/surgery-voice-receptionist-deck.html">Voice receptionist deck</a>
-            <a href="/ai-workflow-builds.html#catalogue">Build catalogue</a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <a href="/ai-coaching.html">Coaching</a>
-          <div class="nav-menu">
-            <a href="/ai-coaching.html">AI coaching overview</a>
-            <a href="/ai-training-deck.html">Company AI training deck</a>
-            <a href="/ai-dev-team-transformation-deck.html">Dev team transformation deck</a>
-            <a href="/enablement.html">Training services</a>
-          </div>
-        </div>
-        <a href="/industries.html">Industries</a>
-        <a href="/delivery-model.html">Delivery</a>
-        <div class="nav-item">
-          <a href="/resources.html">Resources</a>
-          <div class="nav-menu">
-            <a href="/case-studies.html">Case studies</a>
-            <a href="/blog.html">Insights</a>
-          </div>
-        </div>
-        <a href="/#contact">Contact</a>
+      <nav class="nav-links" id="primary-nav" aria-label="Primary navigation">
+        <a href="/agentic-software-delivery.html">Agentic delivery</a>
+        <a href="/ai-workflow-builds.html">Workflow builds</a>
+        <a href="/delivery-model.html">How we deliver</a>
+        <a href="/ai-coaching.html">Team enablement</a>
+        <a href="/about.html">About</a>
+        <a href="/blog.html" aria-current="page">Insights</a>
+        <a href="/#contact" class="nav-drawer-cta">Book a scoping call</a>
       </nav>
-      <a href="/#contact" class="btn btn-sm">Get in Touch</a>
+      <div class="nav-actions">
+        <a href="/#contact" class="btn btn-sm nav-cta">Book a scoping call</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu"><span></span><span></span></button>
+      </div>
     </div>
   </header>
 
-  <main>
+  <main id="main">
+    <article class="article">
+      <header class="article-header">
+        <div class="container">
+          <div class="article-col">
+            <a class="back-link" href="/blog.html"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4"/></svg> All insights</a>
+            <div class="article-kicker">
+              <span class="eyebrow">Connections</span>
+              <span class="updated-badge">Updated 29 October 2026</span>
+            </div>
+            <h1>MCP explained: connecting assistants to your systems safely</h1>
+            <p class="article-dek">Model Context Protocol is an open standard for connecting assistants to tools and data. Here is how it works, how it differs from function calling, and what it does and does not do for governance.</p>
+            <div class="article-meta">
+              <span class="article-author"><svg viewBox="0 0 600 600" fill="none" aria-hidden="true"><defs><linearGradient id="gAuthor" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="140" fill="url(#gAuthor)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>OzAI Digital</span>
+              <span class="sep" aria-hidden="true"></span>
+              <span>Published <time datetime="2026-03-30">30 March 2026</time></span>
+              <span class="sep" aria-hidden="true"></span>
+              <span>Updated <time datetime="2026-10-29">29 October 2026</time></span>
+              <span class="sep" aria-hidden="true"></span>
+              <span>4 min read</span>
+            </div>
+          </div>
+        </div>
+      </header>
 
-    <section class="section">
-      <div class="container" style="max-width:780px">
-        <p style="margin-bottom:.5rem"><a href="/blog.html" style="color:var(--accent);text-decoration:none">&larr; Back to Insights</a></p>
-        <div class="pill" style="margin-bottom:1rem">30 March 2026</div>
-        <h1 style="margin-bottom:1.5rem">MCP Explained: Why Model Context Protocol Changes Everything for AI Agents</h1>
+      <div class="article-main">
+        <div class="container">
+        <div class="article-body prose">
+          <aside class="callout callout--update" aria-label="Update note">
+            <span class="callout-label">Updated 29 October 2026</span>
+            <p><strong>Updated.</strong> Retitled; model references made vendor-neutral; added that MCP was donated to the Agentic AI Foundation under the Linux Foundation on 9 December 2025; clarified that MCP helps produce an audit trail but does not itself satisfy any legal obligation.</p>
+          </aside>
 
-        <div class="legal-content">
+          <p>Anyone who has built an assistant that does real work has hit the same problem: every time the model needs to reach an external tool or data source, someone writes a custom integration. Post to Slack? Custom code. Query a database? Custom code. Read files from a shared drive? More custom code. Each integration is bespoke, fragile, and tied to the model it was built for.</p>
 
-<p>If you have been building AI agents or following the space closely, you will have noticed a recurring pain point: every time you want an AI model to interact with an external tool or data source, you need to build a custom integration. Connect to Slack? Custom code. Query a database? Custom code. Read files from a shared drive? More custom code. Each integration is bespoke, fragile, and locked to the specific AI model you built it for.</p>
+          <p>Model Context Protocol (MCP) is an open standard for this problem. It defines how assistants connect to external tools and data, and it has become a common way to give an assistant controlled access to business systems.</p>
 
-<p>Model Context Protocol — MCP — is Anthropic's answer to this problem. It is an open standard that defines how AI models connect to external tools and data sources, and it is rapidly becoming the foundation for how production AI agents are built.</p>
+          <h2>The problem MCP solves</h2>
 
-<h2>The Problem MCP Solves</h2>
+          <p>Before MCP, integration looked like the early web before HTTP. Each model provider had its own schema for describing tools, and an integration built for one could not be reused with another.</p>
 
-<p>Before MCP, the AI integration landscape looked like the early days of the internet before HTTP. Every vendor had their own approach. OpenAI had function calling with one schema. Anthropic had tool use with a different schema. Google had yet another approach. If you built an integration for one model, you could not reuse it with another.</p>
+          <p>That created problems. Integration work was duplicated across projects. Switching providers meant rebuilding every connection. There was no standard way to draw a boundary around what an assistant could reach. And every integration was a separate piece of code to maintain.</p>
 
-<p>This created several problems for businesses. Integration work was duplicated across every AI project. Switching AI providers meant rebuilding all your tool connections. There was no standard way to define security boundaries around what an AI agent could access. And every integration was a custom piece of code that needed to be maintained individually.</p>
+          <p>For organisations running several assistants across departments, often on different models, this was becoming unmanageable.</p>
 
-<p>For enterprises running multiple AI systems across different departments — each potentially using different foundation models — this was becoming unmanageable.</p>
+          <h2>How MCP works</h2>
 
-<h2>How MCP Works</h2>
+          <p>MCP uses a client-server design that will be familiar to anyone who has worked with APIs.</p>
 
-<p>MCP follows a client-server architecture that will feel familiar to anyone who has worked with APIs or microservices.</p>
+          <p><strong>MCP servers</strong> expose tools, resources and prompts through a standard interface. A server might provide access to a file system, a database, a Slack workspace or a CRM. It declares what it offers, what parameters each tool accepts and what it returns.</p>
 
-<p><strong>MCP Servers</strong> expose tools, resources, and prompts to AI models through a standardised interface. An MCP server might provide access to a file system, a database, a Slack workspace, a Salesforce instance, or any other system. The server defines what capabilities it offers, what parameters each tool accepts, and what data it returns.</p>
+          <p><strong>MCP clients</strong> are the applications hosting the model. When the model needs to look up a customer record, send a message or run a query, the client calls the relevant server.</p>
 
-<p><strong>MCP Clients</strong> are the AI models (or the applications hosting them) that connect to MCP servers to use those capabilities. When a model needs to look up a customer record, send a message, or query a database, it does so through the MCP client interface.</p>
+          <p>The protocol handles discovery (the client learns which tools exist), invocation (it calls a tool with parameters) and responses (it receives structured results), all through one well-defined protocol rather than dozens of custom integrations.</p>
 
-<p>The protocol itself handles capability discovery (the client learns what tools are available), invocation (the client calls a tool with parameters), and response handling (the client receives structured results). Critically, all of this happens through a single, well-defined protocol rather than dozens of custom integrations.</p>
+          <p>A common analogy is USB. Before USB, every peripheral needed its own connector and driver. MCP aims to give any compatible assistant one way to connect to any compatible tool.</p>
 
-<p>Think of it like USB for AI. Before USB, every peripheral needed its own connector and driver. MCP provides a universal standard that any AI model can use to connect to any tool.</p>
+          <h2>MCP, function calling and custom APIs</h2>
 
-<h2>MCP vs Function Calling vs Custom APIs</h2>
+          <p>How does this differ from function calling, which most current models already support?</p>
 
-<p>A reasonable question is: how does MCP differ from function calling, which models like GPT-4 and Claude already support?</p>
+          <p>Function calling is how a model asks for a function to run: "call this function with these parameters". It does not standardise how the function is implemented, discovered or made available. Each application defines its own functions its own way.</p>
 
-<p>Function calling defines how a model requests that a function be executed — it is the mechanism by which a model says "I want to call this function with these parameters." But function calling does not standardise how the function itself is implemented, discovered, or made available. Each application defines its own functions in its own way.</p>
+          <p>MCP sits one level above. It standardises how tools are described, discovered and reached, so a server written once can be used by any compatible client, whichever model is behind it. Function calling is usually the mechanism underneath; MCP adds portability on top.</p>
 
-<p>MCP operates one level above function calling. It standardises how tools are described, discovered, and accessed. An MCP server can be written once and used by any MCP-compatible client, regardless of which foundation model is behind it. Function calling is typically the underlying mechanism that MCP clients use to interact with servers, but MCP adds the portability and standardisation layer on top.</p>
+          <p>Custom APIs are the traditional route: build an endpoint, write client code, handle authentication, parse responses, manage errors. It works, but each integration stands alone. MCP removes much of that repeated work.</p>
 
-<p>Custom APIs, meanwhile, are the traditional approach — build a REST or GraphQL endpoint, write client code to call it, handle authentication, parse responses, and manage errors. This works, but every integration is a standalone piece of engineering. MCP provides a structured framework that eliminates much of this boilerplate.</p>
+          <p>In practice the three are complementary. MCP servers often wrap existing APIs, and clients use function calling underneath. The value is the shared layer that makes connections reusable.</p>
 
-<p>In practice, the three approaches are complementary. MCP servers often wrap existing APIs, and MCP clients use function calling under the hood. The value of MCP is in the standardisation layer that makes everything interoperable and portable.</p>
+          <h2>Why it matters for a business</h2>
 
-<h2>Why MCP Matters for Enterprise</h2>
+          <p><strong>Portability.</strong> A server built for your CRM works with any MCP-compatible client, whichever model provider is behind it. If you change providers, or use different models for different jobs, the connections carry over. That reduces lock-in and protects the integration work.</p>
 
-<p>For Australian businesses building production AI systems, MCP addresses several enterprise concerns that previous approaches did not.</p>
+          <p><strong>Narrow boundaries.</strong> A server exposes only the operations it defines. An assistant reaching your database through a server that offers "look up order by number" cannot compose arbitrary queries or read tables it has no tool for. The server is a controlled gateway, which suits the principle of least privilege. It is still your job to design those tools narrowly and to keep write actions separate from read.</p>
 
-<p><strong>Portability.</strong> An MCP server built to connect to your Salesforce instance works with Claude, GPT-4, Gemini, or any other MCP-compatible model. If you switch AI providers — or use different models for different tasks — your integrations carry over. This reduces vendor lock-in and protects your investment in integration work.</p>
+          <p><strong>Composable systems.</strong> Because servers are modular and self-describing, you can assemble larger workflows from small, tested pieces: one assistant connected to your CRM, inbox and knowledge base; another to your finance and reporting tools.</p>
 
-<p><strong>Security boundaries.</strong> MCP servers define explicit capability boundaries. An agent connecting to your database through an MCP server can only perform the operations that the server exposes. There is no risk of the model constructing arbitrary SQL queries or accessing tables it should not see. The server acts as a controlled gateway, which aligns well with enterprise security requirements and the principle of least privilege.</p>
+          <p><strong>An audit trail.</strong> When every tool call goes through MCP servers, you have a single logged path for tool access, which makes it much easier to produce an audit trail. MCP does not itself satisfy any legal obligation. It gives you a convenient place to record what was accessed, by which workflow, and when, which helps when you need to answer questions about a system later.</p>
 
-<p><strong>Composable architectures.</strong> Because MCP servers are modular and self-describing, you can compose complex agent systems from simple, well-tested building blocks. One agent might connect to MCP servers for your CRM, email system, and knowledge base simultaneously. Another agent might connect to servers for your financial system and reporting tools. The architecture is flexible without being chaotic.</p>
+          <h2>The ecosystem</h2>
 
-<p><strong>Auditability.</strong> All interactions between agents and tools flow through the MCP protocol, creating a natural audit trail. For organisations operating under the Privacy Act 2024 amendments or industry-specific compliance requirements, this structured approach to tool access makes governance significantly easier.</p>
+          <p>Anthropic released MCP as an open standard in late 2024, and it has since been adopted well beyond Anthropic's own products. On 9 December 2025 it was <a href="https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation">donated to the Agentic AI Foundation</a>, under the Linux Foundation, so its governance no longer sits with a single vendor.</p>
 
-<h2>The Growing Ecosystem</h2>
+          <p>Servers now exist for file systems, Postgres and other databases, Slack, GitHub, Google Drive, Salesforce, Jira, Confluence, cloud services and many other platforms, and a growing number of software vendors ship official servers for their own products.</p>
 
-<p>Since Anthropic open-sourced MCP in late 2024, the ecosystem has grown rapidly. There are now MCP servers available for file systems, PostgreSQL and other databases, Slack, GitHub, Google Drive, Salesforce, Jira, Confluence, AWS services, and dozens of other platforms. The community is actively building new servers, and several enterprise software vendors have begun shipping official MCP servers for their products.</p>
+          <p>That ecosystem is what makes the standard useful rather than merely tidy. The more servers exist, the less integration work each new workflow needs.</p>
 
-<p>This ecosystem effect is what makes MCP transformative rather than merely useful. The more MCP servers that exist, the faster businesses can build capable AI agents — because the integration work is already done.</p>
+          <h2>What this means for Australian businesses</h2>
 
-<h2>What This Means for Australian Businesses</h2>
+          <p>First, connecting an assistant to a common system is cheaper and faster than it was. Where a well-maintained server exists, connecting it can take hours rather than weeks. That makes smaller, single-workflow projects viable for mid-sized businesses.</p>
 
-<p>For Australian organisations building AI agents or planning to, MCP changes the calculus in several ways.</p>
+          <p>Second, the work lasts longer. Connections built on an open, vendor-neutral standard do not depend on one model provider. As models change, the connection layer can stay put.</p>
 
-<p>First, it dramatically reduces the cost and time of building agent integrations. Instead of weeks of custom integration work for each tool, you can connect to existing MCP servers in hours. This makes AI agent projects more commercially viable, particularly for mid-market businesses that cannot afford extensive custom development.</p>
+          <p>Third, it gives you a cleaner control point. A narrow server with logging is easier to reason about, document and review than a model with broad credentials. That helps when you need to describe a system for your privacy policy or your governance register, but it is a design aid, not a compliance answer.</p>
 
-<p>Second, it makes your AI investments more durable. Integrations built on MCP are not tied to a single AI vendor. As the model landscape continues to evolve — and it will — your integration layer remains stable.</p>
+          <h2>How we connect workflows to your systems</h2>
 
-<p>Third, it aligns well with Australian regulatory requirements. The structured, auditable nature of MCP interactions supports the transparency and governance obligations that the Privacy Act 2024 amendments will require for automated decision-making systems commencing December 2026.</p>
+          <p>Most useful workflows need to read from or write to something. We connect them through narrow, permissioned connectors, including MCP servers, with least privilege, approval on writes where it matters, logging of every call, and connectors that run in your accounts. See <a href="/ai-workflow-builds.html#connectors">how we connect workflows to your systems</a>, or <a href="/#contact">book a scoping call</a> to talk through a specific system.</p>
+        </div>
 
-<h2>How OzAI Digital Can Help</h2>
+        <section class="article-sources" aria-labelledby="sources-h">
+          <h2 id="sources-h">Sources</h2>
+          <ol>
+            <li><a href="https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation" rel="noopener">Anthropic — Donating the Model Context Protocol and establishing the Agentic AI Foundation</a></li>
+          </ol>
+        </section>
+        </div>
+      </div>
+    </article>
 
-<p>At OzAI Digital, we build AI agents with MCP at the core of our architecture. Our <a href="/agents.html">agent development services</a> use MCP to create modular, portable, and secure agent systems that integrate with your existing business tools. Whether you need a customer service agent that connects to your CRM and knowledge base, or an operations agent that orchestrates workflows across multiple systems, we build on MCP to ensure your solution is production-ready, maintainable, and future-proof.</p>
+    <section class="section section-alt related" aria-labelledby="related-h">
+      <div class="container">
+        <div class="related-head">
+          <h2 id="related-h">Keep reading</h2>
+          <a class="link-arrow" href="/blog.html">All insights <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </div>
+        <div class="related-grid">
+          <a class="card related-card reveal" href="/blog/ai-agents-beyond-chatbots.html" style="--d:0ms">
+            <span class="related-cat">Agents</span>
+            <h3>AI agents are not chatbots: what Australian businesses need to know</h3>
+            <p>A chatbot answers questions. An agent completes tasks. That difference changes what you can expect, what can go wrong, and which controls matter.</p>
+            <div class="card-foot"><span class="mono">Updated 29 October 2026</span><span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+          </a>
+          <a class="card related-card reveal" href="/blog/rag-architecture-patterns.html" style="--d:80ms">
+            <span class="related-cat">Retrieval</span>
+            <h3>Retrieval patterns for knowledge assistants</h3>
+            <p>Four ways to ground a language model in your own documents, from simple to involved, and how to choose between them without losing track of where your data goes.</p>
+            <div class="card-foot"><span class="mono">Updated 29 October 2026</span><span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+          </a>
+          <a class="card related-card reveal" href="/blog/choosing-llm-for-business.html" style="--d:160ms">
+            <span class="related-cat">Models</span>
+            <h3>Choosing a model: test it on your work, not a leaderboard</h3>
+            <p>Model rankings change every few months. A method that lasts: test candidates on your own work, compare cost per accepted output, and check where each model processes data.</p>
+            <div class="card-foot"><span class="mono">Updated 29 October 2026</span><span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+          </a>
+        </div>
+      </div>
+    </section>
 
-<p>If you are exploring AI agents for your business or want to understand how MCP could simplify your integration challenges, <a href="/#contact">book a discovery call</a> with our team.</p>
-
+    <section class="section-cta article-cta">
+      <div class="container reveal">
+        <span class="eyebrow">Next step</span>
+        <h2>Have a workflow or system in mind?</h2>
+        <p>30 minutes. Free. You leave with a view on scope, price and how we'd test it.</p>
+        <div class="cta-actions">
+          <a href="/#contact" class="btn btn-lg">Book a scoping call <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         </div>
       </div>
     </section>
 
   </main>
 
+  <!-- ============ FOOTER (canonical) ============ -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
         <a href="/" class="logo" aria-label="OzAI Digital home">
-          <svg class="logo-mark" width="28" height="28" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogoF" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogoF)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
+          <svg class="logo-mark" width="28" height="28" viewBox="0 0 600 600" fill="none" aria-hidden="true"><defs><linearGradient id="gLogoF" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogoF)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
           <span class="logo-text">OzAI Digital</span>
         </a>
-        <p class="footer-tagline">Pragmatic AI consulting for Australian businesses.</p>
+        <p class="footer-tagline">Working systems, built with AI. Priced up front, tested before acceptance, kept running.</p>
+        <p class="footer-tagline">Melbourne &middot; Sydney, Australia</p>
+        <a href="https://www.linkedin.com/company/ozai-digital" class="team-link footer-social" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
       </div>
       <div class="footer-links">
         <div class="footer-col">
-          <h4>Solutions</h4>
-          <a href="/consulting.html">AI Strategy &amp; Consulting</a>
-          <a href="/integration.html">Systems Integration</a>
-          <a href="/agents.html">AI Agents &amp; Automation</a>
-          <a href="/managed.html">Managed AI Services</a>
+          <h4>What we do</h4>
+          <a href="/agentic-software-delivery.html">Agentic software delivery</a>
+          <a href="/ai-workflow-builds.html">Workflow builds</a>
+          <a href="/delivery-model.html#run">Run (ongoing operation)</a>
+          <a href="/ai-coaching.html">Team enablement</a>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
-          <a href="/ai-coaching.html">AI Coaching</a>
-          <a href="/#about">About</a>
-          <a href="/#team">Team</a>
-          <a href="/#industries">Industries</a>
-          <a href="/#contact">Contact</a>
+          <a href="/delivery-model.html">How we deliver</a>
+          <a href="/about.html">About</a>
+          <a href="/blog.html">Insights</a>
+          <a href="/#contact">Book a scoping call</a>
         </div>
         <div class="footer-col">
-          <h4>Legal</h4>
-          <a href="/privacy.html">Privacy Policy</a>
-          <a href="/terms.html">Terms of Service</a>
+          <h4>Materials</h4>
+          <a href="/ai-training-deck.html">Company AI training deck</a>
+          <a href="/ai-dev-team-transformation-deck.html">Engineering team deck</a>
+          <a href="/fridge-catalogue-ai-deck.html">Catalogue assistant deck</a>
+          <a href="/surgery-voice-receptionist-deck.html">Voice receptionist deck</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 OzAI Digital Pty Ltd. All rights reserved. Melbourne &middot; Sydney, Australia.</p>
+      <p>&copy; 2026 OzAI Digital Pty Ltd</p>
+      <p class="footer-legal"><a href="/privacy.html">Privacy Policy</a> <span aria-hidden="true">&middot;</span> <a href="/terms.html">Terms of Service</a></p>
     </div>
+    <div class="footer-wordmark" aria-hidden="true">OzAI Digital</div>
   </footer>
 
 </div>

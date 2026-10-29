@@ -3,187 +3,243 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RAG Architecture Patterns for Australian Enterprise — OzAI Digital</title>
-  <meta name="description" content="A practical guide to RAG architecture patterns — basic, agentic, corrective, and graph RAG — for Australian enterprise, with data sovereignty considerations.">
-  <meta property="og:title" content="RAG Architecture Patterns for Australian Enterprise — OzAI Digital">
-  <meta property="og:description" content="A practical guide to RAG architecture patterns for Australian enterprise, with data sovereignty considerations.">
+  <title>Retrieval patterns for knowledge assistants — OzAI Digital</title>
+  <meta name="description" content="Four retrieval patterns for knowledge assistants, from basic search to graph-assisted retrieval, with how to choose between them and check where each model processes data.">
+  <meta property="og:title" content="Retrieval patterns for knowledge assistants — OzAI Digital">
+  <meta property="og:description" content="Four retrieval patterns for knowledge assistants, from basic search to graph-assisted retrieval, with how to choose between them and check where each model processes data.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://ozai.digital/blog/rag-architecture-patterns.html">
   <meta property="og:image" content="https://ozai.digital/logo-linkedin.png">
+  <meta property="article:published_time" content="2026-03-28">
+  <meta property="article:modified_time" content="2026-10-29">
   <meta name="twitter:card" content="summary">
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../icon-180.png">
-  <link rel="manifest" href="../site.webmanifest">
+  <meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0a09" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://ozai.digital/blog/rag-architecture-patterns.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="/site.js" defer></script>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/css/article.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Retrieval patterns for knowledge assistants", "description": "Four retrieval patterns for knowledge assistants, from basic search to graph-assisted retrieval, with how to choose between them and check where each model processes data.", "datePublished": "2026-03-28", "dateModified": "2026-10-29", "author": {"@type": "Organization", "name": "OzAI Digital", "url": "https://ozai.digital/"}, "publisher": {"@type": "Organization", "name": "OzAI Digital", "logo": {"@type": "ImageObject", "url": "https://ozai.digital/logo-linkedin.png"}}, "mainEntityOfPage": "https://ozai.digital/blog/rag-architecture-patterns.html", "image": "https://ozai.digital/logo-linkedin.png"}</script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <div class="page">
 
+  <!-- ============ HEADER (canonical) ============ -->
   <header class="nav">
     <div class="nav-inner">
       <a href="/" class="logo" aria-label="OzAI Digital home">
-        <svg class="logo-mark" width="36" height="36" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogo" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogo)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
+        <svg class="logo-mark" width="30" height="30" viewBox="0 0 600 600" fill="none" aria-hidden="true"><defs><linearGradient id="gLogo" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogo)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
         <span class="logo-text">OzAI Digital</span>
       </a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <div class="nav-item">
-          <a href="/solutions.html">Solutions</a>
-          <div class="nav-menu">
-            <a href="/ai-workflow-builds.html">Fixed-scope AI builds</a>
-            <a href="/consulting.html">AI strategy and roadmap</a>
-            <a href="/integration.html">Systems integration</a>
-            <a href="/agents.html">Agents and automation</a>
-            <a href="/managed.html">Managed AI operations</a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <a href="/use-cases.html">Use Cases</a>
-          <div class="nav-menu">
-            <a href="/fridge-catalogue-ai-deck.html">Catalogue chat deck</a>
-            <a href="/surgery-voice-receptionist-deck.html">Voice receptionist deck</a>
-            <a href="/ai-workflow-builds.html#catalogue">Build catalogue</a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <a href="/ai-coaching.html">Coaching</a>
-          <div class="nav-menu">
-            <a href="/ai-coaching.html">AI coaching overview</a>
-            <a href="/ai-training-deck.html">Company AI training deck</a>
-            <a href="/ai-dev-team-transformation-deck.html">Dev team transformation deck</a>
-            <a href="/enablement.html">Training services</a>
-          </div>
-        </div>
-        <a href="/industries.html">Industries</a>
-        <a href="/delivery-model.html">Delivery</a>
-        <div class="nav-item">
-          <a href="/resources.html">Resources</a>
-          <div class="nav-menu">
-            <a href="/case-studies.html">Case studies</a>
-            <a href="/blog.html">Insights</a>
-          </div>
-        </div>
-        <a href="/#contact">Contact</a>
+      <nav class="nav-links" id="primary-nav" aria-label="Primary navigation">
+        <a href="/agentic-software-delivery.html">Agentic delivery</a>
+        <a href="/ai-workflow-builds.html">Workflow builds</a>
+        <a href="/delivery-model.html">How we deliver</a>
+        <a href="/ai-coaching.html">Team enablement</a>
+        <a href="/about.html">About</a>
+        <a href="/blog.html" aria-current="page">Insights</a>
+        <a href="/#contact" class="nav-drawer-cta">Book a scoping call</a>
       </nav>
-      <a href="/#contact" class="btn btn-sm">Get in Touch</a>
+      <div class="nav-actions">
+        <a href="/#contact" class="btn btn-sm nav-cta">Book a scoping call</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu"><span></span><span></span></button>
+      </div>
     </div>
   </header>
 
-  <main>
+  <main id="main">
+    <article class="article">
+      <header class="article-header">
+        <div class="container">
+          <div class="article-col">
+            <a class="back-link" href="/blog.html"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4"/></svg> All insights</a>
+            <div class="article-kicker">
+              <span class="eyebrow">Retrieval</span>
+              <span class="updated-badge">Updated 29 October 2026</span>
+            </div>
+            <h1>Retrieval patterns for knowledge assistants</h1>
+            <p class="article-dek">Four ways to ground a language model in your own documents, from simple to involved, and how to choose between them without losing track of where your data goes.</p>
+            <div class="article-meta">
+              <span class="article-author"><svg viewBox="0 0 600 600" fill="none" aria-hidden="true"><defs><linearGradient id="gAuthor" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="140" fill="url(#gAuthor)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>OzAI Digital</span>
+              <span class="sep" aria-hidden="true"></span>
+              <span>Published <time datetime="2026-03-28">28 March 2026</time></span>
+              <span class="sep" aria-hidden="true"></span>
+              <span>Updated <time datetime="2026-10-29">29 October 2026</time></span>
+              <span class="sep" aria-hidden="true"></span>
+              <span>4 min read</span>
+            </div>
+          </div>
+        </div>
+      </header>
 
-    <section class="section">
-      <div class="container" style="max-width:780px">
-        <p style="margin-bottom:.5rem"><a href="/blog.html" style="color:var(--accent);text-decoration:none">&larr; Back to Insights</a></p>
-        <div class="pill" style="margin-bottom:1rem">28 March 2026</div>
-        <h1 style="margin-bottom:1.5rem">RAG Architecture Patterns for Australian Enterprise</h1>
+      <div class="article-main">
+        <div class="container">
+        <div class="article-body prose">
+          <aside class="callout callout--update" aria-label="Update note">
+            <span class="callout-label">Updated 29 October 2026</span>
+            <p><strong>Updated.</strong> Retitled; removed framework and vendor recommendations in favour of the patterns themselves; replaced blanket regional-availability claims with advice to check in-region processing for the specific model.</p>
+          </aside>
 
-        <div class="legal-content">
+          <p>Retrieval-augmented generation (RAG) has become the most practical way to ground a language model in an organisation's own information. Rather than fine-tuning a model or relying on what it learned in training, a retrieval system finds relevant documents at question time and passes them to the model as context. Done well, answers are current, specific and traceable to a source.</p>
 
-<p>Retrieval-Augmented Generation — RAG — has quickly become the most practical way for enterprises to ground large language models (LLMs) in their own data. Rather than fine-tuning a model or relying solely on its pre-trained knowledge, RAG retrieves relevant documents at query time and feeds them to the model as context. The result is answers that are accurate, up-to-date, and grounded in your organisation's information.</p>
+          <p>Retrieval is attractive because your documents stay in systems you control while the model does the reading and writing. But implementations differ. The pattern you choose decides how well the system handles complex questions, how reliably it finds the right material, and what it does when the answer is not there.</p>
 
-<p>For Australian businesses, RAG is particularly attractive because it lets you keep sensitive data in your own systems while still leveraging powerful foundation models. But not all RAG implementations are equal. The architecture you choose determines how well the system handles complex queries, how reliably it finds the right information, and how gracefully it deals with gaps in your knowledge base.</p>
+          <p>Here are four patterns, from simple to more involved.</p>
 
-<p>Here are four patterns we see working in enterprise settings, from straightforward to sophisticated.</p>
+          <h2>Pattern 1: Basic retrieval</h2>
 
-<h2>Pattern 1: Basic RAG</h2>
+          <p>The basic pipeline is simple: turn the question into a vector embedding, search an index for the most similar document chunks, and pass those chunks to the model with the question. The model answers from the retrieved context.</p>
 
-<p>Basic RAG follows a simple pipeline: take the user's query, convert it into a vector embedding, search a vector database for the most similar document chunks, then pass those chunks to an LLM along with the original question. The model generates an answer using the retrieved context.</p>
+          <p>This suits FAQ systems, internal knowledge bases and support assistants where questions map fairly directly to existing documents. It needs only a document store, an embedding step and a vector index. A vector extension on a database you already run, such as pgvector on Postgres, or a managed index such as Cloudflare Vectorize, is usually enough.</p>
 
-<p>This pattern is well-suited to FAQ systems, internal knowledge bases, and customer support applications where questions map fairly directly to existing documentation. It is straightforward to implement using tools like LangChain with a vector store such as Pinecone, Weaviate, or pgvector.</p>
+          <p>The limitation is that every question is handled the same way. The system always retrieves, always from the same place, and never checks whether what it found actually answers the question. For simple, well-scoped uses that is fine. For anything more complex, you need more.</p>
 
-<p>The limitation is that basic RAG treats every query the same way. It always retrieves, always from the same source, and has no mechanism to evaluate whether the retrieved context actually answers the question. For simple, well-scoped use cases, that is perfectly fine. For anything more complex, you need a smarter approach.</p>
+          <h2>Pattern 2: Routed (agentic) retrieval</h2>
 
-<h2>Pattern 2: Agentic RAG</h2>
+          <p>Routed retrieval puts a reasoning step in front of the search. Instead of searching every time, the model first decides <em>whether</em> retrieval is needed, <em>what</em> to search for, <em>where</em> to look, and how to combine results from several sources.</p>
 
-<p>Agentic RAG places an AI agent in front of the retrieval step. Instead of blindly searching every time, the agent reasons about the query first. It decides <em>whether</em> retrieval is needed, <em>what</em> to search for, <em>where</em> to search, and how to combine information from multiple sources.</p>
+          <p>Suppose an employee asks, "What is our leave policy for part-time staff in Victoria?" A routed system might search the HR policy set, then the relevant employment-law reference, and combine both in its answer. It can also decide that a general question needs no retrieval at all.</p>
 
-<p>Consider a scenario where an employee asks, "What is our leave policy for part-time staff in Victoria?" An agentic RAG system might first search the HR policy database, then check the Victorian employment law reference, and finally synthesise a response that draws on both sources. The agent can also decide that some queries — like "What is the capital of Australia?" — do not require retrieval at all and can be answered directly.</p>
+          <p>This pattern fits organisations with several knowledge bases, structured databases and APIs. The router chooses the right source for each question. Each source is exposed as a narrow tool, which also gives you a natural place to log what was searched.</p>
 
-<p>This pattern shines when your organisation has multiple knowledge bases, structured databases, and APIs that contain relevant information. The agent acts as a smart router, choosing the right tool for each query. Frameworks such as LangChain's agent module and CrewAI make this pattern increasingly accessible.</p>
+          <h2>Pattern 3: Corrective retrieval</h2>
 
-<h2>Pattern 3: Corrective RAG (CRAG)</h2>
+          <p>Corrective retrieval adds a check after the search. A separate evaluation step, often another model call, judges whether the retrieved material is relevant and sufficient. If not, the system searches again with a reformulated query, tries another source, or declines to answer.</p>
 
-<p>Corrective RAG adds a quality-evaluation step after retrieval. Once documents are retrieved, a separate evaluation — often another LLM call — assesses whether the retrieved context is actually relevant and sufficient to answer the question. If the context scores poorly, the system re-retrieves using a reformulated query or falls back to alternative sources.</p>
+          <p>This markedly reduces confident wrong answers. In legal or compliance settings, a confidently wrong answer is far worse than none. Corrective retrieval lets the system say, "I did not find enough to answer this reliably," or try another strategy first.</p>
 
-<p>This pattern significantly reduces hallucination in production systems. In a legal or compliance context, for example, returning a confidently wrong answer is far worse than returning no answer at all. Corrective RAG gives the system the ability to say, "I did not find enough relevant information to answer this reliably," or to try a different search strategy before responding.</p>
+          <p>The cost is latency, because each check takes time. For interactive uses, balance thoroughness against speed. For back-office or batch work, the delay is usually acceptable.</p>
 
-<p>The trade-off is latency. Each evaluation step adds processing time. For interactive use cases, you need to balance thoroughness against response speed. In batch processing or back-office scenarios, the extra latency is usually acceptable.</p>
+          <h2>Pattern 4: Graph-assisted retrieval</h2>
 
-<h2>Pattern 4: Graph RAG</h2>
+          <p>Graph-assisted retrieval combines vector search with a knowledge graph. Vector search is good at finding similar text but weak at questions about relationships between things: "Which suppliers have contracts expiring this quarter and open compliance issues?"</p>
 
-<p>Graph RAG combines traditional vector retrieval with knowledge graphs. While vector search excels at finding semantically similar text, it struggles with queries that require understanding relationships between entities — "Which suppliers have contracts expiring this quarter that also have outstanding compliance issues?"</p>
+          <p>A knowledge graph stores entities (suppliers, contracts, compliance records) and their relationships explicitly. The system queries both the graph and the vector index and merges the results before answering. This helps in domains with heavily connected data: supply chains, regulatory compliance, financial services, healthcare.</p>
 
-<p>A knowledge graph stores entities (suppliers, contracts, compliance records) and their relationships explicitly. Graph RAG queries both the knowledge graph and the vector store, then merges the results before generation. This is powerful for domains with complex, interconnected data: supply chains, regulatory compliance, financial services, and healthcare.</p>
+          <p>Building and maintaining a graph takes more work up front. Entities and relationships must be extracted, checked and kept current. Where the relationships matter, it answers questions the simpler patterns cannot.</p>
 
-<p>Building and maintaining a knowledge graph requires more upfront investment than a vector-only approach. The entities and relationships need to be extracted, validated, and kept current. But for organisations with complex data relationships, Graph RAG delivers answers that simpler patterns simply cannot.</p>
+          <h2>Data residency</h2>
 
-<h2>Data Sovereignty Considerations for Australian Businesses</h2>
+          <p>Whichever pattern you choose, you need to know where data is stored, processed and sent. Under the Privacy Act and sector rules, that is a design decision, not an afterthought.</p>
 
-<p>Whichever pattern you choose, data sovereignty is a critical concern for Australian enterprises. Under the Privacy Act and sector-specific regulations, you need to know where your data is stored, processed, and transmitted.</p>
+          <p>The major cloud providers all run Australian regions, so document stores, vector indexes and graphs can stay in Australia. Model inference is where care is needed. Whether a given model processes data in an Australian region varies by provider and by model, and changes over time. Check the provider's current in-region processing list for the specific model before you commit; Google, for example, publishes one <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/learn/data-residency">per model for Vertex AI</a>. Where requirements are stricter, an open-weight model hosted in your own environment is an option.</p>
 
-<p>All three major cloud providers now offer Australian regions — AWS Sydney and Melbourne, Azure Australia East and Southeast, and Google Cloud Sydney and Melbourne. For RAG systems, this means your vector databases, knowledge graphs, and document stores can remain entirely within Australian borders.</p>
+          <p>Map the whole flow: where documents are ingested, where embeddings are stored, where inference happens, and where questions and answers are logged. Each step needs to meet your residency requirements.</p>
 
-<p>For foundation model access, AWS Bedrock (Sydney region), Azure OpenAI Service (Australia East), and Google Vertex AI (Sydney) all support Australian data residency. If your compliance requirements are stricter — particularly in government or defence — on-premise deployment using open-source models like Llama or Mistral running on your own infrastructure is a viable option.</p>
+          <h2>Choosing a pattern</h2>
 
-<p>The key is to map the full data flow: where documents are ingested, where embeddings are stored, where LLM inference occurs, and where responses are logged. Every step needs to comply with your data residency requirements.</p>
+          <p>Start with the simplest pattern that meets your needs. Basic retrieval suits well-scoped, single-source uses. Move to routed retrieval when questions span several sources or need different strategies. Add a corrective check when accuracy matters and wrong answers are costly. Consider a graph when your data has relationships that similarity search cannot capture.</p>
 
-<h2>Choosing the Right Pattern</h2>
+          <p>Many real systems combine them: basic retrieval for straightforward lookups, routing for complex questions, and a corrective check on high-stakes answers, all in one application.</p>
 
-<p>Start with the simplest pattern that meets your requirements. Basic RAG is the right choice for well-scoped, single-source use cases. Move to Agentic RAG when you need to query multiple sources or when different queries require different retrieval strategies. Add corrective evaluation when accuracy is critical and the cost of wrong answers is high. Invest in Graph RAG when your data has complex relationships that vector similarity alone cannot capture.</p>
+          <h2>How we build knowledge assistants</h2>
 
-<p>In practice, many enterprise systems combine these patterns. You might use basic RAG for straightforward lookups, agentic routing for complex queries, and corrective evaluation for high-stakes decisions — all within the same application.</p>
+          <p>Our internal knowledge assistant build answers questions over a controlled document set, links every answer to its source, and adds a review step for sensitive answers. We pick the simplest pattern that passes the acceptance tests on your documents, and we say up front where each part of the system stores and processes data. See the <a href="/ai-workflow-builds.html#catalogue">workflow build catalogue</a>, or <a href="/#contact">book a scoping call</a> to talk through your documents.</p>
+        </div>
 
-<h2>How OzAI Digital Approaches RAG</h2>
+        <section class="article-sources" aria-labelledby="sources-h">
+          <h2 id="sources-h">Sources</h2>
+          <ol>
+            <li><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/learn/data-residency" rel="noopener">Google Cloud — Vertex AI generative AI data residency</a></li>
+          </ol>
+        </section>
+        </div>
+      </div>
+    </article>
 
-<p>At OzAI Digital, we help Australian businesses design and implement RAG architectures that match their actual needs — not the most impressive demo. We assess your data landscape, compliance requirements, and use cases before recommending an architecture. Every implementation prioritises Australian data residency, and we build with capability transfer in mind so your team can maintain and evolve the system independently.</p>
+    <section class="section section-alt related" aria-labelledby="related-h">
+      <div class="container">
+        <div class="related-head">
+          <h2 id="related-h">Keep reading</h2>
+          <a class="link-arrow" href="/blog.html">All insights <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </div>
+        <div class="related-grid">
+          <a class="card related-card reveal" href="/blog/choosing-llm-for-business.html" style="--d:0ms">
+            <span class="related-cat">Models</span>
+            <h3>Choosing a model: test it on your work, not a leaderboard</h3>
+            <p>Model rankings change every few months. A method that lasts: test candidates on your own work, compare cost per accepted output, and check where each model processes data.</p>
+            <div class="card-foot"><span class="mono">Updated 29 October 2026</span><span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+          </a>
+          <a class="card related-card reveal" href="/blog/ai-for-professional-services.html" style="--d:80ms">
+            <span class="related-cat">Professional services</span>
+            <h3>AI in professional services: where it helps and where it doesn’t</h3>
+            <p>Document review, drafting, knowledge management and time recording are good fits. Judgement, unsourced answers and client confidentiality need care.</p>
+            <div class="card-foot"><span class="mono">Updated 29 October 2026</span><span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+          </a>
+          <a class="card related-card reveal" href="/blog/data-readiness-ai.html" style="--d:160ms">
+            <span class="related-cat">Data</span>
+            <h3>Your AI strategy will fail without data readiness</h3>
+            <p>Most projects stall on data, not models. Four pillars of data readiness, the problems that stall projects, and a checklist to run before you build.</p>
+            <div class="card-foot"><span class="mono">Updated 29 October 2026</span><span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+          </a>
+        </div>
+      </div>
+    </section>
 
-<p>If you are evaluating RAG for your organisation, <a href="/#contact">get in touch</a> for a no-obligation conversation about which pattern fits your situation.</p>
-
+    <section class="section-cta article-cta">
+      <div class="container reveal">
+        <span class="eyebrow">Next step</span>
+        <h2>Have a workflow or system in mind?</h2>
+        <p>30 minutes. Free. You leave with a view on scope, price and how we'd test it.</p>
+        <div class="cta-actions">
+          <a href="/#contact" class="btn btn-lg">Book a scoping call <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         </div>
       </div>
     </section>
 
   </main>
 
+  <!-- ============ FOOTER (canonical) ============ -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
         <a href="/" class="logo" aria-label="OzAI Digital home">
-          <svg class="logo-mark" width="28" height="28" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogoF" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogoF)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
+          <svg class="logo-mark" width="28" height="28" viewBox="0 0 600 600" fill="none" aria-hidden="true"><defs><linearGradient id="gLogoF" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogoF)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
           <span class="logo-text">OzAI Digital</span>
         </a>
-        <p class="footer-tagline">Pragmatic AI consulting for Australian businesses.</p>
+        <p class="footer-tagline">Working systems, built with AI. Priced up front, tested before acceptance, kept running.</p>
+        <p class="footer-tagline">Melbourne &middot; Sydney, Australia</p>
+        <a href="https://www.linkedin.com/company/ozai-digital" class="team-link footer-social" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
       </div>
       <div class="footer-links">
         <div class="footer-col">
-          <h4>Solutions</h4>
-          <a href="/consulting.html">AI Strategy &amp; Consulting</a>
-          <a href="/integration.html">Systems Integration</a>
-          <a href="/agents.html">AI Agents &amp; Automation</a>
-          <a href="/managed.html">Managed AI Services</a>
+          <h4>What we do</h4>
+          <a href="/agentic-software-delivery.html">Agentic software delivery</a>
+          <a href="/ai-workflow-builds.html">Workflow builds</a>
+          <a href="/delivery-model.html#run">Run (ongoing operation)</a>
+          <a href="/ai-coaching.html">Team enablement</a>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
-          <a href="/ai-coaching.html">AI Coaching</a>
-          <a href="/#about">About</a>
-          <a href="/#team">Team</a>
-          <a href="/#industries">Industries</a>
-          <a href="/#contact">Contact</a>
+          <a href="/delivery-model.html">How we deliver</a>
+          <a href="/about.html">About</a>
+          <a href="/blog.html">Insights</a>
+          <a href="/#contact">Book a scoping call</a>
         </div>
         <div class="footer-col">
-          <h4>Legal</h4>
-          <a href="/privacy.html">Privacy Policy</a>
-          <a href="/terms.html">Terms of Service</a>
+          <h4>Materials</h4>
+          <a href="/ai-training-deck.html">Company AI training deck</a>
+          <a href="/ai-dev-team-transformation-deck.html">Engineering team deck</a>
+          <a href="/fridge-catalogue-ai-deck.html">Catalogue assistant deck</a>
+          <a href="/surgery-voice-receptionist-deck.html">Voice receptionist deck</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 OzAI Digital Pty Ltd. All rights reserved. Melbourne &middot; Sydney, Australia.</p>
+      <p>&copy; 2026 OzAI Digital Pty Ltd</p>
+      <p class="footer-legal"><a href="/privacy.html">Privacy Policy</a> <span aria-hidden="true">&middot;</span> <a href="/terms.html">Terms of Service</a></p>
     </div>
+    <div class="footer-wordmark" aria-hidden="true">OzAI Digital</div>
   </footer>
 
 </div>

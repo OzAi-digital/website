@@ -3,189 +3,248 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI in Professional Services: What Law Firms and Consultancies Are Actually Doing — OzAI Digital</title>
-  <meta name="description" content="How Australian law firms and consultancies are using AI for document review, knowledge management, client communication, and compliance — practical use cases and real productivity gains.">
-  <meta property="og:title" content="AI in Professional Services: What Law Firms and Consultancies Are Actually Doing — OzAI Digital">
-  <meta property="og:description" content="How Australian law firms and consultancies are using AI for document review, knowledge management, client communication, and compliance.">
+  <title>AI in professional services: where it helps — OzAI Digital</title>
+  <meta name="description" content="Where language models help law firms and consultancies (document review, drafting, knowledge, time recording) and where they need care: judgement, sources, privilege.">
+  <meta property="og:title" content="AI in professional services: where it helps — OzAI Digital">
+  <meta property="og:description" content="Where language models help law firms and consultancies (document review, drafting, knowledge, time recording) and where they need care: judgement, sources, privilege.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://ozai.digital/blog/ai-for-professional-services.html">
   <meta property="og:image" content="https://ozai.digital/logo-linkedin.png">
+  <meta property="article:published_time" content="2026-03-10">
+  <meta property="article:modified_time" content="2026-10-29">
   <meta name="twitter:card" content="summary">
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../icon-180.png">
-  <link rel="manifest" href="../site.webmanifest">
+  <meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0a09" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://ozai.digital/blog/ai-for-professional-services.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="/site.js" defer></script>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/css/article.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "AI in professional services: where it helps and where it doesn’t", "description": "Where language models help law firms and consultancies (document review, drafting, knowledge, time recording) and where they need care: judgement, sources, privilege.", "datePublished": "2026-03-10", "dateModified": "2026-10-29", "author": {"@type": "Organization", "name": "OzAI Digital", "url": "https://ozai.digital/"}, "publisher": {"@type": "Organization", "name": "OzAI Digital", "logo": {"@type": "ImageObject", "url": "https://ozai.digital/logo-linkedin.png"}}, "mainEntityOfPage": "https://ozai.digital/blog/ai-for-professional-services.html", "image": "https://ozai.digital/logo-linkedin.png"}</script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <div class="page">
 
+  <!-- ============ HEADER (canonical) ============ -->
   <header class="nav">
     <div class="nav-inner">
       <a href="/" class="logo" aria-label="OzAI Digital home">
-        <svg class="logo-mark" width="36" height="36" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogo" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogo)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
+        <svg class="logo-mark" width="30" height="30" viewBox="0 0 600 600" fill="none" aria-hidden="true"><defs><linearGradient id="gLogo" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogo)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
         <span class="logo-text">OzAI Digital</span>
       </a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <div class="nav-item">
-          <a href="/solutions.html">Solutions</a>
-          <div class="nav-menu">
-            <a href="/ai-workflow-builds.html">Fixed-scope AI builds</a>
-            <a href="/consulting.html">AI strategy and roadmap</a>
-            <a href="/integration.html">Systems integration</a>
-            <a href="/agents.html">Agents and automation</a>
-            <a href="/managed.html">Managed AI operations</a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <a href="/use-cases.html">Use Cases</a>
-          <div class="nav-menu">
-            <a href="/fridge-catalogue-ai-deck.html">Catalogue chat deck</a>
-            <a href="/surgery-voice-receptionist-deck.html">Voice receptionist deck</a>
-            <a href="/ai-workflow-builds.html#catalogue">Build catalogue</a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <a href="/ai-coaching.html">Coaching</a>
-          <div class="nav-menu">
-            <a href="/ai-coaching.html">AI coaching overview</a>
-            <a href="/ai-training-deck.html">Company AI training deck</a>
-            <a href="/ai-dev-team-transformation-deck.html">Dev team transformation deck</a>
-            <a href="/enablement.html">Training services</a>
-          </div>
-        </div>
-        <a href="/industries.html">Industries</a>
-        <a href="/delivery-model.html">Delivery</a>
-        <div class="nav-item">
-          <a href="/resources.html">Resources</a>
-          <div class="nav-menu">
-            <a href="/case-studies.html">Case studies</a>
-            <a href="/blog.html">Insights</a>
-          </div>
-        </div>
-        <a href="/#contact">Contact</a>
+      <nav class="nav-links" id="primary-nav" aria-label="Primary navigation">
+        <a href="/agentic-software-delivery.html">Agentic delivery</a>
+        <a href="/ai-workflow-builds.html">Workflow builds</a>
+        <a href="/delivery-model.html">How we deliver</a>
+        <a href="/ai-coaching.html">Team enablement</a>
+        <a href="/about.html">About</a>
+        <a href="/blog.html" aria-current="page">Insights</a>
+        <a href="/#contact" class="nav-drawer-cta">Book a scoping call</a>
       </nav>
-      <a href="/#contact" class="btn btn-sm">Get in Touch</a>
+      <div class="nav-actions">
+        <a href="/#contact" class="btn btn-sm nav-cta">Book a scoping call</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu"><span></span><span></span></button>
+      </div>
     </div>
   </header>
 
-  <main>
+  <main id="main">
+    <article class="article">
+      <header class="article-header">
+        <div class="container">
+          <div class="article-col">
+            <a class="back-link" href="/blog.html"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4"/></svg> All insights</a>
+            <div class="article-kicker">
+              <span class="eyebrow">Professional services</span>
+              <span class="updated-badge">Updated 29 October 2026</span>
+            </div>
+            <h1>AI in professional services: where it helps and where it doesn’t</h1>
+            <p class="article-dek">Document review, drafting, knowledge management and time recording are good fits. Judgement, unsourced answers and client confidentiality need care.</p>
+            <div class="article-meta">
+              <span class="article-author"><svg viewBox="0 0 600 600" fill="none" aria-hidden="true"><defs><linearGradient id="gAuthor" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="140" fill="url(#gAuthor)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>OzAI Digital</span>
+              <span class="sep" aria-hidden="true"></span>
+              <span>Published <time datetime="2026-03-10">10 March 2026</time></span>
+              <span class="sep" aria-hidden="true"></span>
+              <span>Updated <time datetime="2026-10-29">29 October 2026</time></span>
+              <span class="sep" aria-hidden="true"></span>
+              <span>4 min read</span>
+            </div>
+          </div>
+        </div>
+      </header>
 
-    <section class="section">
-      <div class="container" style="max-width:780px">
-        <p style="margin-bottom:.5rem"><a href="/blog.html" style="color:var(--accent);text-decoration:none">&larr; Back to Insights</a></p>
-        <div class="pill" style="margin-bottom:1rem">10 March 2026</div>
-        <h1 style="margin-bottom:1.5rem">AI in Professional Services: What Law Firms and Consultancies Are Actually Doing</h1>
+      <div class="article-main">
+        <div class="container">
+        <div class="article-body prose">
+          <aside class="callout callout--update" aria-label="Update note">
+            <span class="callout-label">Updated 29 October 2026</span>
+            <p><strong>Updated.</strong> Retitled; removed unsourced productivity percentages and an unverified client example; added a section on where the tools do not help or need care.</p>
+          </aside>
 
-        <div class="legal-content">
+          <p>Professional services firms, including law firms, management consultancies, accounting practices and engineering consultancies, are natural candidates for language models. They sell expertise and time, and much of their work is reading, finding, summarising and drafting text. That makes it easy to overestimate what the tools do well, and easy to miss where they quietly fail.</p>
 
-<p>Professional services firms — law firms, management consultancies, accounting practices, engineering consultancies — are among the fastest AI adopters in Australia. This is not surprising. These businesses sell expertise and time, and AI is exceptionally good at augmenting both. What is surprising is how quickly the technology has moved from experimental pilots to production systems that are genuinely changing how work gets done.</p>
+          <p>Here is where we think the technology helps in professional services today, and where it does not.</p>
 
-<p>Here is what we are seeing on the ground across Australian professional services firms.</p>
+          <h2>Document review and analysis</h2>
 
-<h2>Document Review and Analysis</h2>
+          <p>This is where the value is most immediate. A retrieval-based assistant can search across precedents, contracts, policies and matter files and return the relevant passages, with links to the source, in seconds rather than hours.</p>
 
-<p>This is where AI delivers the most immediate, measurable value. Law firms are deploying RAG systems — retrieval-augmented generation — that can search across thousands of precedents, contracts, policies, and case files to find relevant information in seconds rather than hours.</p>
+          <p>Consider a contract repository. Instead of opening dozens of agreements to find a clause, a lawyer asks, "Which of our client contracts contain change-of-control provisions?" and gets a list of contracts with the relevant clauses quoted and linked. The lawyer still reads the clauses and forms the view; the assistant removes the hunt.</p>
 
-<p>A mid-tier Australian law firm we work with built a system that lets lawyers query their entire contract database in natural language. Instead of manually reviewing dozens of agreements to find specific clauses, a lawyer can ask, "Which of our client contracts contain change-of-control provisions?" and get an accurate, cited answer in under thirty seconds. The same review would previously have taken a junior lawyer half a day.</p>
+          <p>Consultancies can apply the same approach to proposal libraries, project archives and methodology documents. When a partner wants to see how the firm handled a similar engagement three years ago, the assistant finds and summarises the material.</p>
 
-<p>Consultancies are applying the same approach to proposal libraries, project archives, and methodology documents. When a partner needs to reference how the firm handled a similar engagement three years ago, the AI finds and summarises the relevant materials instantly.</p>
+          <h2>Client communication</h2>
 
-<h2>Client Communication</h2>
+          <p>Drafting assistance is becoming normal practice. That does not mean sending generated emails unreviewed. It means producing a solid first draft that the professional then corrects and makes their own.</p>
 
-<p>AI-drafted communications are becoming standard practice in forward-thinking firms. This does not mean sending AI-generated emails without review — it means using AI to produce high-quality first drafts that professionals then refine.</p>
+          <p>Meeting summaries are a strong use. After a client meeting, a structured summary with decisions, action items and follow-ups can be ready within minutes. A follow-up email can be drafted from the same notes, with agreed next steps and the relevant attachments. The professional reviews and personalises it; the assembly work is done.</p>
 
-<p>Meeting summaries are a particularly strong use case. After a client meeting, AI can generate a structured summary with action items, decisions made, and follow-up tasks within minutes. Several firms are using AI to draft follow-up emails after meetings, pulling together discussion points, agreed next steps, and relevant attachments. The professional reviews and personalises the draft, but the heavy lifting is done.</p>
+          <p>For law firms, routine correspondence such as initial advice letters, standard updates and procedural letters is a good candidate, which leaves more of a lawyer's writing time for argument and strategic advice.</p>
 
-<p>For law firms, AI is also helping draft routine correspondence — initial advice letters, standard updates, and procedural communications — freeing lawyers to focus their writing time on complex legal arguments and strategic advice.</p>
+          <h2>Knowledge management</h2>
 
-<h2>Knowledge Management</h2>
+          <p>Every firm has years of institutional knowledge in the heads of senior people, on file servers and in email. When a senior partner retires, much of it leaves too.</p>
 
-<p>Every professional services firm has decades of institutional knowledge locked inside the heads of senior practitioners, buried in file servers, or scattered across email archives. When a senior partner retires, that knowledge often walks out the door.</p>
+          <p>Indexing historical documents, internal wikis and recorded presentations makes that knowledge searchable. A graduate can ask a question and get an answer grounded in the firm's own past work, with links to the documents it came from.</p>
 
-<p>AI-powered knowledge management systems are changing this. By indexing historical documents, internal wikis, email archives, and even recorded presentations, firms can build searchable AI systems that make institutional knowledge accessible to everyone. A graduate lawyer can query the system and get answers informed by twenty years of the firm's expertise.</p>
+          <p>This helps multi-office firms in particular. Knowledge siloed in one office or practice group becomes available across the firm, which improves consistency and reduces duplicated effort.</p>
 
-<p>This is particularly powerful for multi-office firms. Knowledge that was previously siloed in one office or practice group becomes available firm-wide, improving consistency and reducing duplicated effort.</p>
+          <h2>Time recording</h2>
 
-<h2>Billing and Time Tracking</h2>
+          <p>Time recording is unpopular, and missed or rounded-down entries are a familiar source of lost revenue.</p>
 
-<p>Time recording is the bane of every professional's existence, and it is also a significant source of revenue leakage. Studies consistently show that professionals under-record their time by 10 to 30 per cent simply because they forget to log activities or round down.</p>
+          <p>Tools can now suggest time entries from the day's activity (emails sent, documents opened, meetings attended) for the professional to review and approve rather than create from scratch. They can also suggest the matter, phase and task code for each entry, which reduces miscoding and write-offs. How much this recovers varies by firm and practice; measure it on your own data before and after rather than relying on vendor figures.</p>
 
-<p>AI systems can now monitor work patterns — emails sent, documents opened, meetings attended — and suggest time entries at the end of each day. The professional reviews and approves the entries rather than creating them from scratch. Early adopters report recovering 5 to 15 per cent of previously unbilled time, which translates directly to revenue.</p>
+          <h2>Risk and compliance</h2>
 
-<p>AI is also improving time entry categorisation, automatically matching activities to the correct matter, phase, and task code. This reduces write-offs caused by miscoded entries and improves the accuracy of project budgeting and profitability analysis.</p>
+          <p>Contract review against a firm's standard positions is one of the more mature uses. A tool can flag unusual or missing clauses and highlight risks for a reviewer. It does not replace legal judgement, but it gives a junior reviewer a thorough starting point and reduces the chance that something is missed.</p>
 
-<h2>Risk and Compliance</h2>
+          <p>Regulatory change monitoring is another. Firms can track changes in legislation, regulatory guidance and case law and flag which clients or matters may be affected, for a professional to assess. With privacy, financial services and employment law all in active reform in Australia, that is useful.</p>
 
-<p>Automated contract review is one of the most mature AI applications in professional services. AI systems can review a contract against a firm's standard positions, flag unusual or missing clauses, and highlight potential risks — all in minutes rather than hours. This does not replace legal judgement, but it ensures that nothing is missed and that junior reviewers have a comprehensive starting point.</p>
+          <h2>Where it doesn't help, or needs care</h2>
 
-<p>Regulatory change monitoring is another growing application. Firms are using AI to track changes in legislation, regulatory guidance, and case law, automatically identifying which clients or matters are affected. In a regulatory environment as active as Australia's — with ongoing reforms to privacy law, financial services regulation, and employment law — this kind of automated vigilance is invaluable.</p>
+          <p><strong>Judgement.</strong> The tools are good at finding and drafting and poor at deciding what matters. Advice, strategy and risk calls stay with the professional.</p>
 
-<h2>The Change Management Challenge</h2>
+          <p><strong>Unverifiable output.</strong> A fluent answer with no source is a liability in professional work. Prefer setups where every answer links to the document it came from, and where the assistant says so when it cannot find support.</p>
 
-<p>The technology is not the hard part. The hard part is getting senior professionals to change how they work. Partners who have been successful for decades with their current methods are understandably sceptical of tools that promise to do things differently.</p>
+          <p><strong>Confidentiality and privilege.</strong> Client material carries obligations. Know where each tool stores and processes data, whether it is used for training, and who can see what. Keep matter-level access controls in the retrieval layer, not just in the user interface.</p>
 
-<p>The firms succeeding with AI adoption share common traits. They start with use cases that solve a genuine pain point — not impressive demos, but tools that save time on tasks people actively dislike. They involve senior practitioners in the design process so the tools reflect how work actually gets done. They measure and communicate results relentlessly, turning early sceptics into advocates with hard data on time saved and quality improved.</p>
+          <p><strong>Decisions about people.</strong> If a tool informs significant decisions about individuals, such as hiring or credit, the Privacy Act's new transparency obligation from 10 December 2026 may apply. See <a href="/blog/privacy-act-2024-ai.html">what changes on 10 December 2026</a>.</p>
 
-<p>Mandatory training sessions and top-down mandates rarely work. What works is making the tools so useful that people voluntarily adopt them, then gradually expanding from there.</p>
+          <h2>The change management challenge</h2>
 
-<h2>Real Productivity Gains</h2>
+          <p>The technology is not the hard part. Getting experienced professionals to change how they work is. Partners who have succeeded for decades with their current methods are reasonably sceptical of tools that promise to do things differently.</p>
 
-<p>The firms that have moved past pilots and into production are seeing meaningful results. Document review tasks that took hours now take minutes. First-draft production for routine documents is 60 to 80 per cent faster. Knowledge discovery across the firm's historical work has improved dramatically. Time recording compliance has increased, recovering previously lost revenue.</p>
+          <p>What tends to work: start with a task people actively dislike, not an impressive demo. Involve senior practitioners in the design so the tool reflects how the work is really done. Measure the results and share them, so sceptics see evidence rather than claims.</p>
 
-<p>The aggregate effect is not that firms need fewer professionals — it is that each professional can handle more complex work, serve more clients, and spend less time on low-value administrative tasks. For firms facing talent shortages and rising client expectations, this is a genuine competitive advantage.</p>
+          <p>Mandatory training and top-down mandates rarely work on their own. Making the tool genuinely useful, then expanding from there, does.</p>
 
-<h2>How OzAI Digital Works with Professional Services Firms</h2>
+          <h2>What results to expect</h2>
 
-<p>At OzAI Digital, we work with Australian law firms, consultancies, and professional services organisations to identify where AI will deliver the most value, build systems that integrate with existing workflows, and manage the change process that makes adoption stick. Every implementation is designed with Australian data sovereignty and professional privilege requirements in mind.</p>
+          <p>The realistic gains are faster review of document-heavy tasks, quicker first drafts of routine material, easier discovery of the firm's own past work, and more complete time records. The size of each gain depends on the firm, the practice and the quality of the underlying documents, so set a baseline before you start and measure against it.</p>
 
-<p>If your firm is exploring AI and wants a pragmatic assessment of where to start, <a href="/#contact">get in touch</a> for a confidential conversation.</p>
+          <p>The aggregate effect is not that firms need fewer professionals. Each professional spends less time on administration and more on the complex work clients pay for.</p>
 
+          <h2>Where we fit</h2>
+
+          <p>Two of our fixed-price workflow builds are aimed squarely at professional services: an internal knowledge assistant that answers over a controlled document set and links every answer to its source, and a proposal or tender drafting assistant that turns requirements and past examples into first drafts your team reviews. See the <a href="/ai-workflow-builds.html#catalogue">build catalogue</a>, or <a href="/#contact">book a scoping call</a> to talk through your firm's documents.</p>
+        </div>
+        </div>
+      </div>
+    </article>
+
+    <section class="section section-alt related" aria-labelledby="related-h">
+      <div class="container">
+        <div class="related-head">
+          <h2 id="related-h">Keep reading</h2>
+          <a class="link-arrow" href="/blog.html">All insights <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </div>
+        <div class="related-grid">
+          <a class="card related-card reveal" href="/blog/rag-architecture-patterns.html" style="--d:0ms">
+            <span class="related-cat">Retrieval</span>
+            <h3>Retrieval patterns for knowledge assistants</h3>
+            <p>Four ways to ground a language model in your own documents, from simple to involved, and how to choose between them without losing track of where your data goes.</p>
+            <div class="card-foot"><span class="mono">Updated 29 October 2026</span><span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+          </a>
+          <a class="card related-card reveal" href="/blog/data-readiness-ai.html" style="--d:80ms">
+            <span class="related-cat">Data</span>
+            <h3>Your AI strategy will fail without data readiness</h3>
+            <p>Most projects stall on data, not models. Four pillars of data readiness, the problems that stall projects, and a checklist to run before you build.</p>
+            <div class="card-foot"><span class="mono">Updated 29 October 2026</span><span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+          </a>
+          <a class="card related-card reveal" href="/blog/privacy-act-2024-ai.html" style="--d:160ms">
+            <span class="related-cat">Privacy</span>
+            <h3>Privacy Act automated-decision transparency: what changes on 10 December 2026</h3>
+            <p>From 10 December 2026, organisations covered by the Privacy Act must describe in their privacy policy when computer programs make, or substantially inform, significant decisions about people. Here is what the law requires, what it does not, and how to prepare.</p>
+            <div class="card-foot"><span class="mono">Updated 29 October 2026</span><span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-cta article-cta">
+      <div class="container reveal">
+        <span class="eyebrow">Next step</span>
+        <h2>Have a workflow or system in mind?</h2>
+        <p>30 minutes. Free. You leave with a view on scope, price and how we'd test it.</p>
+        <div class="cta-actions">
+          <a href="/#contact" class="btn btn-lg">Book a scoping call <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         </div>
       </div>
     </section>
 
   </main>
 
+  <!-- ============ FOOTER (canonical) ============ -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
         <a href="/" class="logo" aria-label="OzAI Digital home">
-          <svg class="logo-mark" width="28" height="28" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogoF" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogoF)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
+          <svg class="logo-mark" width="28" height="28" viewBox="0 0 600 600" fill="none" aria-hidden="true"><defs><linearGradient id="gLogoF" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogoF)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
           <span class="logo-text">OzAI Digital</span>
         </a>
-        <p class="footer-tagline">Pragmatic AI consulting for Australian businesses.</p>
+        <p class="footer-tagline">Working systems, built with AI. Priced up front, tested before acceptance, kept running.</p>
+        <p class="footer-tagline">Melbourne &middot; Sydney, Australia</p>
+        <a href="https://www.linkedin.com/company/ozai-digital" class="team-link footer-social" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
       </div>
       <div class="footer-links">
         <div class="footer-col">
-          <h4>Solutions</h4>
-          <a href="/consulting.html">AI Strategy &amp; Consulting</a>
-          <a href="/integration.html">Systems Integration</a>
-          <a href="/agents.html">AI Agents &amp; Automation</a>
-          <a href="/managed.html">Managed AI Services</a>
+          <h4>What we do</h4>
+          <a href="/agentic-software-delivery.html">Agentic software delivery</a>
+          <a href="/ai-workflow-builds.html">Workflow builds</a>
+          <a href="/delivery-model.html#run">Run (ongoing operation)</a>
+          <a href="/ai-coaching.html">Team enablement</a>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
-          <a href="/ai-coaching.html">AI Coaching</a>
-          <a href="/#about">About</a>
-          <a href="/#team">Team</a>
-          <a href="/#industries">Industries</a>
-          <a href="/#contact">Contact</a>
+          <a href="/delivery-model.html">How we deliver</a>
+          <a href="/about.html">About</a>
+          <a href="/blog.html">Insights</a>
+          <a href="/#contact">Book a scoping call</a>
         </div>
         <div class="footer-col">
-          <h4>Legal</h4>
-          <a href="/privacy.html">Privacy Policy</a>
-          <a href="/terms.html">Terms of Service</a>
+          <h4>Materials</h4>
+          <a href="/ai-training-deck.html">Company AI training deck</a>
+          <a href="/ai-dev-team-transformation-deck.html">Engineering team deck</a>
+          <a href="/fridge-catalogue-ai-deck.html">Catalogue assistant deck</a>
+          <a href="/surgery-voice-receptionist-deck.html">Voice receptionist deck</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 OzAI Digital Pty Ltd. All rights reserved. Melbourne &middot; Sydney, Australia.</p>
+      <p>&copy; 2026 OzAI Digital Pty Ltd</p>
+      <p class="footer-legal"><a href="/privacy.html">Privacy Policy</a> <span aria-hidden="true">&middot;</span> <a href="/terms.html">Terms of Service</a></p>
     </div>
+    <div class="footer-wordmark" aria-hidden="true">OzAI Digital</div>
   </footer>
 
 </div>

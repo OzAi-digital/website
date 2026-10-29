@@ -3,221 +3,280 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Why Your AI Pilot Isn't Scaling — And What to Do About It — OzAI Digital</title>
-  <meta name="description" content="Eighty per cent of AI projects never make it past experimentation. Here are the five most common reasons AI pilots fail to scale and a practical checklist to avoid the pilot trap.">
-  <meta property="og:title" content="Why Your AI Pilot Isn't Scaling — And What to Do About It — OzAI Digital">
-  <meta property="og:description" content="Eighty per cent of AI projects never make it past experimentation. Here are the five most common reasons and what to do about them.">
+  <title>Why pilots stall, and what gets them to production — OzAI Digital</title>
+  <meta name="description" content="Five reasons pilots stall before production, what production-ready means, and ten questions to answer before you fund the next one, starting with the acceptance tests.">
+  <meta property="og:title" content="Why pilots stall, and what gets them to production — OzAI Digital">
+  <meta property="og:description" content="Five reasons pilots stall before production, what production-ready means, and ten questions to answer before you fund the next one, starting with the acceptance tests.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://ozai.digital/blog/pilot-to-production-ai.html">
   <meta property="og:image" content="https://ozai.digital/logo-linkedin.png">
+  <meta property="article:published_time" content="2026-03-22">
+  <meta property="article:modified_time" content="2026-10-29">
   <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0a09" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://ozai.digital/blog/pilot-to-production-ai.html">
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../icon-180.png">
-  <link rel="manifest" href="../site.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="/site.js" defer></script>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/css/article.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Why pilots stall, and what gets them to production", "description": "Five reasons pilots stall before production, what production-ready means, and ten questions to answer before you fund the next one, starting with the acceptance tests.", "datePublished": "2026-03-22", "dateModified": "2026-10-29", "author": {"@type": "Organization", "name": "OzAI Digital", "url": "https://ozai.digital/"}, "publisher": {"@type": "Organization", "name": "OzAI Digital", "logo": {"@type": "ImageObject", "url": "https://ozai.digital/logo-linkedin.png"}}, "mainEntityOfPage": "https://ozai.digital/blog/pilot-to-production-ai.html", "image": "https://ozai.digital/logo-linkedin.png"}</script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <div class="page">
 
+  <!-- ============ HEADER (canonical) ============ -->
   <header class="nav">
     <div class="nav-inner">
       <a href="/" class="logo" aria-label="OzAI Digital home">
-        <svg class="logo-mark" width="36" height="36" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogo" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogo)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
+        <svg class="logo-mark" width="30" height="30" viewBox="0 0 600 600" fill="none" aria-hidden="true"><defs><linearGradient id="gLogo" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogo)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
         <span class="logo-text">OzAI Digital</span>
       </a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <div class="nav-item">
-          <a href="/solutions.html">Solutions</a>
-          <div class="nav-menu">
-            <a href="/ai-workflow-builds.html">Fixed-scope AI builds</a>
-            <a href="/consulting.html">AI strategy and roadmap</a>
-            <a href="/integration.html">Systems integration</a>
-            <a href="/agents.html">Agents and automation</a>
-            <a href="/managed.html">Managed AI operations</a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <a href="/use-cases.html">Use Cases</a>
-          <div class="nav-menu">
-            <a href="/fridge-catalogue-ai-deck.html">Catalogue chat deck</a>
-            <a href="/surgery-voice-receptionist-deck.html">Voice receptionist deck</a>
-            <a href="/ai-workflow-builds.html#catalogue">Build catalogue</a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <a href="/ai-coaching.html">Coaching</a>
-          <div class="nav-menu">
-            <a href="/ai-coaching.html">AI coaching overview</a>
-            <a href="/ai-training-deck.html">Company AI training deck</a>
-            <a href="/ai-dev-team-transformation-deck.html">Dev team transformation deck</a>
-            <a href="/enablement.html">Training services</a>
-          </div>
-        </div>
-        <a href="/industries.html">Industries</a>
-        <a href="/delivery-model.html">Delivery</a>
-        <div class="nav-item">
-          <a href="/resources.html">Resources</a>
-          <div class="nav-menu">
-            <a href="/case-studies.html">Case studies</a>
-            <a href="/blog.html">Insights</a>
-          </div>
-        </div>
-        <a href="/#contact">Contact</a>
+      <nav class="nav-links" id="primary-nav" aria-label="Primary navigation">
+        <a href="/agentic-software-delivery.html">Agentic delivery</a>
+        <a href="/ai-workflow-builds.html">Workflow builds</a>
+        <a href="/delivery-model.html">How we deliver</a>
+        <a href="/ai-coaching.html">Team enablement</a>
+        <a href="/about.html">About</a>
+        <a href="/blog.html" aria-current="page">Insights</a>
+        <a href="/#contact" class="nav-drawer-cta">Book a scoping call</a>
       </nav>
-      <a href="/#contact" class="btn btn-sm">Get in Touch</a>
+      <div class="nav-actions">
+        <a href="/#contact" class="btn btn-sm nav-cta">Book a scoping call</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu"><span></span><span></span></button>
+      </div>
     </div>
   </header>
 
-  <main>
+  <main id="main">
+    <article class="article">
+      <header class="article-header">
+        <div class="container">
+          <div class="article-col">
+            <a class="back-link" href="/blog.html"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4"/></svg> All insights</a>
+            <div class="article-kicker">
+              <span class="eyebrow">Delivery</span>
+              <span class="updated-badge">Updated 29 October 2026</span>
+            </div>
+            <h1>Why pilots stall, and what gets them to production</h1>
+            <p class="article-dek">Five reasons promising pilots never reach production, what “production-ready” actually means, and ten questions to answer before you fund the next one.</p>
+            <div class="article-meta">
+              <span class="article-author"><svg viewBox="0 0 600 600" fill="none" aria-hidden="true"><defs><linearGradient id="gAuthor" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="140" fill="url(#gAuthor)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>OzAI Digital</span>
+              <span class="sep" aria-hidden="true"></span>
+              <span>Published <time datetime="2026-03-22">22 March 2026</time></span>
+              <span class="sep" aria-hidden="true"></span>
+              <span>Updated <time datetime="2026-10-29">29 October 2026</time></span>
+              <span class="sep" aria-hidden="true"></span>
+              <span>6 min read</span>
+            </div>
+          </div>
+        </div>
+      </header>
 
-    <section class="section">
-      <div class="container" style="max-width:780px">
-        <p style="margin-bottom:.5rem"><a href="/blog.html" style="color:var(--accent);text-decoration:none">&larr; Back to Insights</a></p>
-        <div class="pill" style="margin-bottom:1rem">22 March 2026</div>
-        <h1 style="margin-bottom:1.5rem">Why Your AI Pilot Isn't Scaling — And What to Do About It</h1>
+      <div class="article-main">
+        <div class="container">
+        <div class="article-body prose">
+          <aside class="callout callout--update" aria-label="Update note">
+            <span class="callout-label">Updated 29 October 2026</span>
+            <p><strong>Corrected.</strong> The earlier version opened with an “80 per cent of AI projects” figure attributed to Gartner that we could not trace. It is replaced with Gartner’s sourced July 2024 prediction. The checklist now ties to acceptance tests and ongoing operation.</p>
+          </aside>
 
-        <div class="legal-content">
+          <p>Many pilots start with excitement, produce a promising demo, and then quietly stall. The pilot works in a controlled setting but never reaches production. The budget runs out, the team moves on, and the organisation is left with a proof of concept that proved only that the hard part was still ahead.</p>
 
-<p>Here is a statistic that should concern every Australian business leader investing in AI: according to Gartner, roughly 80 per cent of AI projects never make it past the experimentation phase. They start with excitement, produce a promising demo, and then quietly stall. The pilot works in a controlled environment but never transitions to production. The budget runs out, the team moves on, and the organisation is left with a proof of concept that proved nothing except that AI is hard to operationalise.</p>
+          <p>This is common enough that analysts forecast it. In July 2024 Gartner <a href="https://www.intelligentcio.com/apac/2024/08/05/gartner-predicts-30-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025/">predicted that at least 30 per cent of generative AI projects would be abandoned after proof of concept by the end of 2025</a>, citing poor data quality, inadequate risk controls, escalating costs and unclear business value. That was a prediction, not a measurement, but the reasons it gives match what we see. Understanding why pilots stall, and what to do differently, is the difference between a system people rely on and an expensive experiment.</p>
 
-<p>If this sounds familiar, you are not alone. The gap between AI pilot and AI production is the single biggest challenge facing Australian businesses today. Understanding why pilots fail to scale — and what to do differently — is the difference between AI as a strategic asset and AI as an expensive experiment.</p>
+          <h2>Five reasons pilots stall</h2>
 
-<h2>The Five Most Common Reasons AI Pilots Fail to Scale</h2>
+          <h3>1. No clear business case</h3>
 
-<h3>1. No Clear Business Case</h3>
+          <p>Many pilots were never built to solve a specific business problem. They were built because an executive read an article, a vendor offered a free proof of concept, or the innovation team needed something for the next board meeting.</p>
 
-<p>The most common reason AI pilots do not scale is that they were never built to solve a real business problem. They were built because someone in the executive team read an article about AI, or because a vendor offered a free proof of concept, or because the innovation team needed something to demonstrate at the next board meeting.</p>
+          <p>When a pilot exists to show off technology rather than fix a measurable problem, there is no natural route to production. Nobody owns the outcome and nobody can put a number on its value. When it is time to fund the move to production, which always costs more than the pilot, there is no case to make.</p>
 
-<p>When a pilot is built to showcase technology rather than solve a specific, measurable business problem, there is no natural path to production. Nobody owns the outcome. Nobody can quantify the value. And when it comes time to fund the transition from pilot to production — which always costs more than the pilot itself — there is no business case to justify the investment.</p>
+          <p>The fix is simple to state: start with the business problem, the expected value and how you will measure success. If you cannot write these down, you are not ready for a pilot.</p>
 
-<p>The fix is straightforward: start every AI project with a clear articulation of the business problem, the expected value, and how you will measure success. If you cannot define these upfront, you are not ready for a pilot.</p>
+          <h3>2. Data that is not production-ready</h3>
 
-<h3>2. Data Is Not Production-Ready</h3>
+          <p>Pilots usually run on curated data. The team picks a sample, cleans it, formats it and gets impressive results. Then the system meets real production data and falls over.</p>
 
-<p>AI pilots almost always work on curated, clean data. The team selects a representative sample, cleans it up, formats it correctly, and gets impressive results. Then they try to connect the system to real production data and everything falls apart.</p>
+          <p>Real data is messy: missing fields, inconsistent formats, duplicates, stale records and edge cases the demo never saw. A model that did well on the clean sample produces unreliable results on the real thing, and confidence evaporates.</p>
 
-<p>Real data is messy. It has missing fields, inconsistent formats, duplicates, stale records, and edge cases that never appeared in the demo dataset. The model that performed brilliantly on clean data produces unreliable results on real data. Performance degrades, errors increase, and confidence in the system evaporates.</p>
+          <p>Production needs production-ready data. That means investing in quality, building pipelines that cope with real conditions, and testing against genuinely representative samples, including the ugly ones, before calling the pilot a success.</p>
 
-<p>Production-ready AI requires production-ready data. This means investing in data quality, building data pipelines that handle the full range of real-world conditions, and testing the system against genuinely representative data — including the ugly cases — before declaring the pilot a success.</p>
+          <h3>3. No integration plan</h3>
 
-<h3>3. No Integration Plan</h3>
+          <p>A surprising number of pilots are built as standalone tools: a notebook, a separate web page, a script someone runs by hand. They do not connect to the CRM, the ERP, the case management system or whatever staff work in every day.</p>
 
-<p>A stunning number of AI pilots are built as standalone applications. The model runs in a Jupyter notebook, or in a separate web interface, or as a script that someone runs manually. It does not connect to the CRM, the ERP, the case management system, or whatever platform your staff actually work in every day.</p>
+          <p>So even when the output is useful, using it means copying data out of one system, pasting it into the tool, and pasting the result back. In practice people stop doing that. The tool sits unused and the pilot is called a failure, not because the model did not work, but because nobody designed it into the workflow.</p>
 
-<p>This means that even when the pilot produces valuable outputs, using it requires staff to switch contexts — copy data out of one system, paste it into the AI tool, get a result, and paste it back. In practice, people do not do this. The AI tool sits unused, and the pilot is declared a failure — not because the AI did not work, but because nobody designed it to fit into existing workflows.</p>
+          <p>Plan integration from day one. Know where the system fits in the user's day, which systems it must connect to, and what the data flow looks like end to end.</p>
 
-<p>Integration planning needs to start from day one, not after the pilot succeeds. Understand where the AI system fits in the user's workflow, what systems it needs to connect to, and what the data flow looks like end to end.</p>
+          <h3>4. Change management ignored</h3>
 
-<h3>4. Change Management Ignored</h3>
+          <p>Adoption is a people problem. You can build an accurate, well-integrated system and it will still fail if the people meant to use it do not trust it, do not understand it, or resist it.</p>
 
-<p>Technology adoption is a human problem, not a technology problem. You can build the most accurate, well-integrated AI system in the world, and it will still fail if the people who are supposed to use it do not trust it, do not understand it, or actively resist it.</p>
+          <p>Automation raises particular worries. People fear being replaced. They distrust outputs they cannot check. They have years of expertise and do not want to defer to a machine. If those concerns are not addressed early, adoption stays low however good the system is.</p>
 
-<p>AI triggers unique change management challenges. People worry about being replaced. They distrust outputs they cannot understand. They have years of expertise and do not want to defer to a machine. If these concerns are not addressed proactively, adoption will be low regardless of how good the technology is.</p>
+          <p>What helps: involve end users in the design, be honest about what the system can and cannot do, train people hands-on rather than handing over a guide, point out the cases where it clearly helps, and give users a way to report problems and see them fixed.</p>
 
-<p>Effective change management for AI includes involving end users early in the design process, being transparent about what the system can and cannot do, providing hands-on training (not just a user guide), celebrating early wins where AI demonstrably helps people do their jobs better, and creating feedback channels so users can report issues and see them addressed.</p>
+          <h3>5. No owner after handover</h3>
 
-<h3>5. No Ownership After Handover</h3>
+          <p>Pilots are often built by vendors or innovation teams separate from the business unit that will own the result. When the pilot ends, the builders move on and the business is left with a system nobody knows how to maintain.</p>
 
-<p>AI pilots are often built by external vendors or internal innovation teams that are separate from the business units that will ultimately own the system. When the pilot ends, the vendor walks away, the innovation team moves to the next project, and the business is left with a system that nobody knows how to maintain, update, or troubleshoot.</p>
+          <p>These systems are not static. Model behaviour drifts as the data changes, providers retire models, integrations break when upstream systems change, and new edge cases appear. Without an owner and the means to maintain it, even a successful pilot decays in production.</p>
 
-<p>AI systems are not static. Models degrade over time as the data they were trained on becomes less representative of current conditions. Integrations break when upstream systems change. New edge cases emerge that the original system was not designed to handle. Without clear ownership and the capability to maintain the system, even a successful pilot will deteriorate in production.</p>
+          <p>Before any pilot starts, decide who will run it in production, and make sure they have the skills, budget and mandate. If that cannot be arranged, reconsider the project, or arrange for someone to run it for you.</p>
 
-<p>Before any pilot begins, define who will own the system in production. Ensure that team has the skills, budget, and mandate to maintain it. If those conditions cannot be met, reconsider whether the project should proceed.</p>
+          <h2>What production-ready means</h2>
 
-<h2>What "Production-Ready" Actually Means</h2>
+          <p>A production-ready system is different from a working prototype. It meets a clear bar on five dimensions.</p>
 
-<p>A production-ready AI system is fundamentally different from a working prototype. Production-ready means the system meets a clear bar across five dimensions.</p>
+          <p><strong>Reliability.</strong> It works consistently, handles edge cases, and fails safely on inputs outside its expected range.</p>
 
-<p><strong>Reliability.</strong> The system works consistently, handles edge cases gracefully, and fails safely when it encounters inputs outside its expected range. It does not crash, hang, or produce dangerous outputs.</p>
+          <p><strong>Monitoring.</strong> You can see how it is performing (accuracy, latency, error rates, usage), and you hear about problems before your users do.</p>
 
-<p><strong>Monitoring.</strong> You can see how the system is performing in real time — accuracy, latency, error rates, usage patterns. When something goes wrong, you know about it before your users do.</p>
+          <p><strong>Security.</strong> It handles data appropriately, respects access controls and adds no new attack surface. Where it processes personal information, it meets the Privacy Act.</p>
 
-<p><strong>Security.</strong> The system handles data appropriately, respects access controls, and does not introduce new attack surfaces. For AI systems processing personal information, this includes compliance with the Privacy Act.</p>
+          <p><strong>Scalability.</strong> It copes with production volumes, not ten requests a day during a pilot but hundreds or thousands across the business.</p>
 
-<p><strong>Scalability.</strong> The system can handle production workloads — not just ten requests a day during a pilot, but hundreds or thousands when rolled out across the business.</p>
+          <p><strong>Maintainability.</strong> It is documented, the code is clean, and someone understands it well enough to fix issues, swap models and evolve it.</p>
 
-<p><strong>Maintainability.</strong> The system is documented, the code is clean, and someone on your team understands how it works well enough to fix issues, update models, and evolve the system over time.</p>
+          <p>A pilot that does not address all five is a demo, not a path to production.</p>
 
-<p>If your pilot does not address all five dimensions, it is a demo, not a path to production.</p>
+          <h2>Build for production from the start</h2>
 
-<h2>The OzAI Digital Approach: Production-Ready From Day One</h2>
+          <p>We do not build pilots that have to be rebuilt for production. Every workflow build starts with a one-page scope, a fixed price and written acceptance tests covering inputs (including messy real cases), outputs, exceptions, where people approve, cost and latency thresholds, and the audit trail. We build against those tests on your real data, train the people who use it, and hand over the source, configuration and an acceptance record. If you want, we keep it running afterwards under a <a href="/delivery-model.html#run">Run agreement</a>: we watch it, re-test it when prompts or models change, and make the small fixes that keep it useful.</p>
 
-<p>At OzAI Digital, we do not build pilots that need to be rebuilt for production. Every engagement is designed with production in mind from the first line of code. That means we start with the business case and integration requirements, not the model. We build on your real data, not curated samples. We design for monitoring, security, and maintainability from the start. We include change management and training as part of the delivery. And we define clear ownership and handover criteria before the project begins.</p>
+          <p>That costs a little more up front than a quick proof of concept. It avoids the much larger cost of a pilot that works in a demo and fails in production.</p>
 
-<p>This approach costs slightly more upfront than a quick proof of concept. But it eliminates the far greater cost of a pilot that succeeds in demo but fails in production — which is where most AI investment is wasted.</p>
+          <h2>Ten questions to ask before you approve a project</h2>
 
-<h2>Ten Questions to Ask Before Greenlighting an AI Project</h2>
+          <p>Before you approve the next project, ask these. If you cannot answer them clearly, it is not ready.</p>
 
-<p>Before you approve your next AI initiative, ask these ten questions. If you cannot answer them clearly, the project is not ready.</p>
+          <ol>
+            <li>What specific business problem does this solve, and what acceptance tests will show it is solved?</li>
+            <li>What value do we expect, and over what timeframe?</li>
+            <li>Is the data we need available, clean enough and representative of real conditions, including the messy cases?</li>
+            <li>How will this fit into existing workflows and systems?</li>
+            <li>Who will use it day to day, and have they been involved in the design?</li>
+            <li>What happens when it gets something wrong: what are the failure modes and the fallback?</li>
+            <li>Where does a person approve before anything reaches a customer or a system of record?</li>
+            <li>Who will run it in production, and how will we monitor performance and detect drift?</li>
+            <li>Does it make or inform significant decisions about individuals, and if so, what must our privacy policy say?</li>
+            <li>Who is responsible for adoption, and how will we know it is being used?</li>
+          </ol>
 
-<ol>
-  <li>What specific business problem does this solve, and how will we measure success?</li>
-  <li>What is the expected return on investment, and over what timeframe?</li>
-  <li>Is the data we need available, clean, and representative of real-world conditions?</li>
-  <li>How will this system integrate with existing workflows and platforms?</li>
-  <li>Who will use this system day to day, and have they been involved in the design?</li>
-  <li>What happens when the system gets it wrong — what are the failure modes and fallback processes?</li>
-  <li>Who will own this system in production, and do they have the skills and budget to maintain it?</li>
-  <li>How will we monitor performance and detect degradation over time?</li>
-  <li>Does this system make or influence decisions about individuals, and if so, how will we meet our transparency obligations?</li>
-  <li>What is the change management plan, and who is responsible for driving adoption?</li>
-</ol>
+          <p>If you can answer all ten with confidence, the project is worth funding. If not, spend the effort answering them before you spend it building.</p>
 
-<p>If you can answer all ten questions with confidence, you have a project worth investing in. If you cannot, invest in answering them before you invest in building anything.</p>
+          <h2>Moving forward</h2>
 
-<h2>Moving Forward</h2>
+          <p>The gap between pilot and production is real, but not inevitable. Start with a clear business case, build on real data, design for integration and adoption, write the acceptance tests first, and decide who runs it before you start.</p>
 
-<p>The gap between AI pilot and AI production is real, but it is not inevitable. With the right approach — starting with a clear business case, building on real data, designing for integration and adoption, and planning for production from day one — Australian businesses can move past the pilot trap and start realising genuine value from AI.</p>
+          <p>If a pilot is stuck, or you want the next one built for production from day one, <a href="/#contact">book a scoping call</a>. We will tell you whether it fits a fixed scope, what the acceptance tests should be, and roughly what it costs.</p>
+        </div>
 
-<p>If you are stuck in the pilot phase or want to ensure your next AI project is built for production from the start, <a href="/#contact">book a discovery call</a> with our team. We will help you assess where you are, identify what is holding you back, and build a clear path to production.</p>
+        <section class="article-sources" aria-labelledby="sources-h">
+          <h2 id="sources-h">Sources</h2>
+          <ol>
+            <li><a href="https://www.intelligentcio.com/apac/2024/08/05/gartner-predicts-30-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025/" rel="noopener">Intelligent CIO (APAC) — Gartner predicts 30% of generative AI projects will be abandoned after proof of concept by end of 2025</a></li>
+          </ol>
+        </section>
+        </div>
+      </div>
+    </article>
 
+    <section class="section section-alt related" aria-labelledby="related-h">
+      <div class="container">
+        <div class="related-head">
+          <h2 id="related-h">Keep reading</h2>
+          <a class="link-arrow" href="/blog.html">All insights <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </div>
+        <div class="related-grid">
+          <a class="card related-card reveal" href="/blog/data-readiness-ai.html" style="--d:0ms">
+            <span class="related-cat">Data</span>
+            <h3>Your AI strategy will fail without data readiness</h3>
+            <p>Most projects stall on data, not models. Four pillars of data readiness, the problems that stall projects, and a checklist to run before you build.</p>
+            <div class="card-foot"><span class="mono">Updated 29 October 2026</span><span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+          </a>
+          <a class="card related-card reveal" href="/blog/ai-governance-framework-australia.html" style="--d:80ms">
+            <span class="related-cat">Governance</span>
+            <h3>Building an AI governance framework for Australian organisations</h3>
+            <p>A practical, six-pillar framework that is proportionate to risk, consistent with current Australian obligations, and usable by the teams who build and run the systems.</p>
+            <div class="card-foot"><span class="mono">Updated 29 October 2026</span><span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+          </a>
+          <a class="card related-card reveal" href="/blog/choosing-llm-for-business.html" style="--d:160ms">
+            <span class="related-cat">Models</span>
+            <h3>Choosing a model: test it on your work, not a leaderboard</h3>
+            <p>Model rankings change every few months. A method that lasts: test candidates on your own work, compare cost per accepted output, and check where each model processes data.</p>
+            <div class="card-foot"><span class="mono">Updated 29 October 2026</span><span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-cta article-cta">
+      <div class="container reveal">
+        <span class="eyebrow">Next step</span>
+        <h2>Have a workflow or system in mind?</h2>
+        <p>30 minutes. Free. You leave with a view on scope, price and how we'd test it.</p>
+        <div class="cta-actions">
+          <a href="/#contact" class="btn btn-lg">Book a scoping call <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         </div>
       </div>
     </section>
 
   </main>
 
+  <!-- ============ FOOTER (canonical) ============ -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
         <a href="/" class="logo" aria-label="OzAI Digital home">
-          <svg class="logo-mark" width="28" height="28" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogoF" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogoF)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
+          <svg class="logo-mark" width="28" height="28" viewBox="0 0 600 600" fill="none" aria-hidden="true"><defs><linearGradient id="gLogoF" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogoF)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
           <span class="logo-text">OzAI Digital</span>
         </a>
-        <p class="footer-tagline">Pragmatic AI consulting for Australian businesses.</p>
+        <p class="footer-tagline">Working systems, built with AI. Priced up front, tested before acceptance, kept running.</p>
+        <p class="footer-tagline">Melbourne &middot; Sydney, Australia</p>
+        <a href="https://www.linkedin.com/company/ozai-digital" class="team-link footer-social" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
       </div>
       <div class="footer-links">
         <div class="footer-col">
-          <h4>Solutions</h4>
-          <a href="/consulting.html">AI Strategy &amp; Consulting</a>
-          <a href="/integration.html">Systems Integration</a>
-          <a href="/agents.html">AI Agents &amp; Automation</a>
-          <a href="/managed.html">Managed AI Services</a>
+          <h4>What we do</h4>
+          <a href="/agentic-software-delivery.html">Agentic software delivery</a>
+          <a href="/ai-workflow-builds.html">Workflow builds</a>
+          <a href="/delivery-model.html#run">Run (ongoing operation)</a>
+          <a href="/ai-coaching.html">Team enablement</a>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
-          <a href="/ai-coaching.html">AI Coaching</a>
-          <a href="/#about">About</a>
-          <a href="/#team">Team</a>
-          <a href="/#industries">Industries</a>
-          <a href="/#contact">Contact</a>
+          <a href="/delivery-model.html">How we deliver</a>
+          <a href="/about.html">About</a>
+          <a href="/blog.html">Insights</a>
+          <a href="/#contact">Book a scoping call</a>
         </div>
         <div class="footer-col">
-          <h4>Legal</h4>
-          <a href="/privacy.html">Privacy Policy</a>
-          <a href="/terms.html">Terms of Service</a>
+          <h4>Materials</h4>
+          <a href="/ai-training-deck.html">Company AI training deck</a>
+          <a href="/ai-dev-team-transformation-deck.html">Engineering team deck</a>
+          <a href="/fridge-catalogue-ai-deck.html">Catalogue assistant deck</a>
+          <a href="/surgery-voice-receptionist-deck.html">Voice receptionist deck</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 OzAI Digital Pty Ltd. All rights reserved. Melbourne &middot; Sydney, Australia.</p>
+      <p>&copy; 2026 OzAI Digital Pty Ltd</p>
+      <p class="footer-legal"><a href="/privacy.html">Privacy Policy</a> <span aria-hidden="true">&middot;</span> <a href="/terms.html">Terms of Service</a></p>
     </div>
+    <div class="footer-wordmark" aria-hidden="true">OzAI Digital</div>
   </footer>
 
 </div>

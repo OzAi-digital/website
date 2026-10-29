@@ -3,195 +3,264 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Agents Are Not Chatbots: What Australian Businesses Need to Know — OzAI Digital</title>
-  <meta name="description" content="Chatbots answer questions. AI agents take action. Understanding the difference is critical for businesses looking to automate complex, multi-step workflows.">
-  <meta property="og:title" content="AI Agents Are Not Chatbots: What Australian Businesses Need to Know — OzAI Digital">
-  <meta property="og:description" content="Understanding the difference between chatbots and AI agents is critical for businesses looking to automate complex workflows.">
+  <title>AI agents are not chatbots — OzAI Digital</title>
+  <meta name="description" content="Chatbots answer questions; agents take actions. The difference, the controls that matter (approval gates and evaluations), and business agents versus coding agents.">
+  <meta property="og:title" content="AI agents are not chatbots — OzAI Digital">
+  <meta property="og:description" content="Chatbots answer questions; agents take actions. The difference, the controls that matter (approval gates and evaluations), and business agents versus coding agents.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://ozai.digital/blog/ai-agents-beyond-chatbots.html">
   <meta property="og:image" content="https://ozai.digital/logo-linkedin.png">
+  <meta property="article:published_time" content="2026-03-20">
+  <meta property="article:modified_time" content="2026-10-29">
   <meta name="twitter:card" content="summary">
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../icon-180.png">
-  <link rel="manifest" href="../site.webmanifest">
+  <meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0a09" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://ozai.digital/blog/ai-agents-beyond-chatbots.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="/site.js" defer></script>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/css/article.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "AI agents are not chatbots: what Australian businesses need to know", "description": "Chatbots answer questions; agents take actions. The difference, the controls that matter (approval gates and evaluations), and business agents versus coding agents.", "datePublished": "2026-03-20", "dateModified": "2026-10-29", "author": {"@type": "Organization", "name": "OzAI Digital", "url": "https://ozai.digital/"}, "publisher": {"@type": "Organization", "name": "OzAI Digital", "logo": {"@type": "ImageObject", "url": "https://ozai.digital/logo-linkedin.png"}}, "mainEntityOfPage": "https://ozai.digital/blog/ai-agents-beyond-chatbots.html", "image": "https://ozai.digital/logo-linkedin.png"}</script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <div class="page">
 
+  <!-- ============ HEADER (canonical) ============ -->
   <header class="nav">
     <div class="nav-inner">
       <a href="/" class="logo" aria-label="OzAI Digital home">
-        <svg class="logo-mark" width="36" height="36" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogo" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogo)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
+        <svg class="logo-mark" width="30" height="30" viewBox="0 0 600 600" fill="none" aria-hidden="true"><defs><linearGradient id="gLogo" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogo)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
         <span class="logo-text">OzAI Digital</span>
       </a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <div class="nav-item">
-          <a href="/solutions.html">Solutions</a>
-          <div class="nav-menu">
-            <a href="/ai-workflow-builds.html">Fixed-scope AI builds</a>
-            <a href="/consulting.html">AI strategy and roadmap</a>
-            <a href="/integration.html">Systems integration</a>
-            <a href="/agents.html">Agents and automation</a>
-            <a href="/managed.html">Managed AI operations</a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <a href="/use-cases.html">Use Cases</a>
-          <div class="nav-menu">
-            <a href="/fridge-catalogue-ai-deck.html">Catalogue chat deck</a>
-            <a href="/surgery-voice-receptionist-deck.html">Voice receptionist deck</a>
-            <a href="/ai-workflow-builds.html#catalogue">Build catalogue</a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <a href="/ai-coaching.html">Coaching</a>
-          <div class="nav-menu">
-            <a href="/ai-coaching.html">AI coaching overview</a>
-            <a href="/ai-training-deck.html">Company AI training deck</a>
-            <a href="/ai-dev-team-transformation-deck.html">Dev team transformation deck</a>
-            <a href="/enablement.html">Training services</a>
-          </div>
-        </div>
-        <a href="/industries.html">Industries</a>
-        <a href="/delivery-model.html">Delivery</a>
-        <div class="nav-item">
-          <a href="/resources.html">Resources</a>
-          <div class="nav-menu">
-            <a href="/case-studies.html">Case studies</a>
-            <a href="/blog.html">Insights</a>
-          </div>
-        </div>
-        <a href="/#contact">Contact</a>
+      <nav class="nav-links" id="primary-nav" aria-label="Primary navigation">
+        <a href="/agentic-software-delivery.html">Agentic delivery</a>
+        <a href="/ai-workflow-builds.html">Workflow builds</a>
+        <a href="/delivery-model.html">How we deliver</a>
+        <a href="/ai-coaching.html">Team enablement</a>
+        <a href="/about.html">About</a>
+        <a href="/blog.html" aria-current="page">Insights</a>
+        <a href="/#contact" class="nav-drawer-cta">Book a scoping call</a>
       </nav>
-      <a href="/#contact" class="btn btn-sm">Get in Touch</a>
+      <div class="nav-actions">
+        <a href="/#contact" class="btn btn-sm nav-cta">Book a scoping call</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu"><span></span><span></span></button>
+      </div>
     </div>
   </header>
 
-  <main>
+  <main id="main">
+    <article class="article">
+      <header class="article-header">
+        <div class="container">
+          <div class="article-col">
+            <a class="back-link" href="/blog.html"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4"/></svg> All insights</a>
+            <div class="article-kicker">
+              <span class="eyebrow">Agents</span>
+              <span class="updated-badge">Updated 29 October 2026</span>
+            </div>
+            <h1>AI agents are not chatbots: what Australian businesses need to know</h1>
+            <p class="article-dek">A chatbot answers questions. An agent completes tasks. That difference changes what you can expect, what can go wrong, and which controls matter.</p>
+            <div class="article-meta">
+              <span class="article-author"><svg viewBox="0 0 600 600" fill="none" aria-hidden="true"><defs><linearGradient id="gAuthor" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="140" fill="url(#gAuthor)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>OzAI Digital</span>
+              <span class="sep" aria-hidden="true"></span>
+              <span>Published <time datetime="2026-03-20">20 March 2026</time></span>
+              <span class="sep" aria-hidden="true"></span>
+              <span>Updated <time datetime="2026-10-29">29 October 2026</time></span>
+              <span class="sep" aria-hidden="true"></span>
+              <span>6 min read</span>
+            </div>
+          </div>
+        </div>
+      </header>
 
-    <section class="section">
-      <div class="container" style="max-width:780px">
-        <p style="margin-bottom:.5rem"><a href="/blog.html" style="color:var(--accent);text-decoration:none">&larr; Back to Insights</a></p>
-        <div class="pill" style="margin-bottom:1rem">20 March 2026</div>
-        <h1 style="margin-bottom:1.5rem">AI Agents Are Not Chatbots: What Australian Businesses Need to Know</h1>
+      <div class="article-main">
+        <div class="container">
+        <div class="article-body prose">
+          <aside class="callout callout--update" aria-label="Update note">
+            <span class="callout-label">Updated 29 October 2026</span>
+            <p><strong>Updated.</strong> Added approval gates and evaluations as the operational difference, and the distinction between business agents and coding agents. Removed dated model and framework references, and corrected the Privacy Act description to match the enacted obligation.</p>
+          </aside>
 
-        <div class="legal-content">
+          <p>When most business leaders hear "AI", they think of chatbots. That is understandable: conversational assistants are the most visible form of the technology. But much of the practical value is not in better conversations. It is in agents that can actually <em>do things</em>.</p>
 
-<p>When most Australian business leaders hear "AI," they think of chatbots. That is understandable — ChatGPT made conversational AI the most visible face of the AI revolution. But the next wave of practical AI is not about better conversations. It is about AI agents that can actually <em>do things</em>.</p>
+          <p>The distinction matters because it changes what you can expect, and what can go wrong. A chatbot answers questions. An agent completes tasks. If you plan around what chatbots do, you will probably underestimate the opportunity and misjudge the risks.</p>
 
-<p>The distinction matters because it changes what AI can deliver for your business. A chatbot answers questions. An agent completes tasks. If you are planning AI investments based on what chatbots can do, you are likely underestimating the opportunity — and misunderstanding the risks.</p>
+          <h2>What makes an agent different</h2>
 
-<h2>What Makes an Agent Different</h2>
+          <p>A chatbot takes a message, generates a reply and waits. However capable the underlying model, it is working in an input-output loop.</p>
 
-<p>A chatbot takes a user's message, generates a response, and waits for the next message. It is fundamentally reactive and conversational. Even a very sophisticated chatbot powered by GPT-4 or Claude is still operating in this input-output loop.</p>
+          <p>An agent adds three things.</p>
 
-<p>An AI agent, by contrast, has three capabilities that chatbots lack.</p>
+          <p><strong>Tool use.</strong> Agents act on external systems: databases, APIs, file stores, browsers, email and business applications. They do not just describe the work; they do it. An agent can look up a customer record, generate an invoice, send an email, update the CRM and log what it did, in one workflow.</p>
 
-<p><strong>Tool use.</strong> Agents can interact with external systems — databases, APIs, file systems, web browsers, email, and enterprise applications. They do not just talk about doing things; they do them. An agent can look up a customer record, generate an invoice, send an email, update a CRM, and log the action — all in a single workflow.</p>
+          <p><strong>Planning.</strong> Agents break a goal into steps, check progress and change approach if something does not work. This is not fixed if-then logic; the model reasons about the problem as it goes.</p>
 
-<p><strong>Reasoning and planning.</strong> Agents break complex goals into steps, evaluate progress, and adjust their approach. If one strategy does not work, they try another. This is not simple conditional logic — it is dynamic planning powered by large language models' ability to reason about problems.</p>
+          <p><strong>Autonomy.</strong> Agents can run with more or less independence. Some need a person's approval at each step. Others run whole workflows and escalate only when they hit something outside their limits. The level of autonomy is a design choice, not a property of the technology.</p>
 
-<p><strong>Autonomy.</strong> Agents can operate with varying degrees of independence. Some require human approval at each step. Others can execute entire workflows autonomously, only escalating when they encounter situations outside their defined boundaries. The level of autonomy is a design choice, not a fixed property.</p>
+          <h2>The operational difference: approvals and evaluations</h2>
 
-<h2>Agent Topologies</h2>
+          <p>Because an agent changes things, two controls matter far more than they do for a chatbot.</p>
 
-<p>Not all agents are architected the same way. The topology you choose depends on the complexity of the task and the level of reliability you need.</p>
+          <p><strong>Approval gates.</strong> Decide in advance which actions an agent may take on its own and which need a person to approve. Reading a record might be automatic. Sending a customer email, changing a booking or paying an invoice should usually wait for a person, at least until the agent has a track record. Build the gate into the workflow, not into a policy document.</p>
 
-<p><strong>Single agent.</strong> One agent with access to a set of tools handles the entire task from start to finish. This is the simplest topology and works well for focused, well-defined workflows — processing a support ticket, generating a report from multiple data sources, or triaging incoming emails. Most businesses should start here.</p>
+          <p><strong>Evaluations.</strong> Before an agent goes live, and every time its prompts, model or tools change, run it against a fixed set of test cases with known correct outcomes, including the awkward ones. That is how you know a change made things better rather than different. The same test set becomes the acceptance test at handover.</p>
 
-<p><strong>Pipeline.</strong> Multiple agents are chained in sequence, each handling one stage of a workflow. The output of one agent becomes the input for the next. This is effective for processes with clear, distinct stages — for example, an intake agent that classifies documents, a processing agent that extracts key data, and a review agent that validates the output. Each agent is simpler and more reliable because its scope is narrower.</p>
+          <h2>Two kinds of agent</h2>
 
-<p><strong>Hierarchical.</strong> A manager agent delegates tasks to specialist worker agents, reviews their output, and coordinates the overall workflow. This mirrors how human teams operate and is useful for complex tasks that require different types of expertise. A research agent, a writing agent, and a fact-checking agent might all report to an orchestrator agent that manages the end-to-end process.</p>
+          <p>The word "agent" now covers two quite different things, and it helps to keep them apart.</p>
 
-<p><strong>Swarm.</strong> Multiple agents operate in parallel on different aspects of a problem, sharing information and coordinating through a shared state or message-passing system. This is the most complex topology and is suited to problems that are naturally parallelisable — analysing a large document set, monitoring multiple data streams, or exploring multiple solution paths simultaneously.</p>
+          <p><strong>Business agents</strong> run an operational workflow: triaging enquiries, extracting data from documents, handling reception admin. They act on your business systems, usually with staff approving anything that reaches a customer or a system of record. These are what we deliver as <a href="/ai-workflow-builds.html">workflow builds</a>.</p>
 
-<h2>Real-World Use Cases in Australian Business</h2>
+          <p><strong>Coding agents</strong> write and change software. They work in a repository, propose changes, and run tests. Used without controls they produce code nobody wants to own. Used inside specified issues, automated quality and security gates, independent review and human-approved merges, they are a fast way to build software. That is how we run <a href="/agentic-software-delivery.html">agentic software delivery</a>.</p>
 
-<p>Here are scenarios where Australian businesses are deploying agents today.</p>
+          <p>The rest of this post is about business agents.</p>
 
-<p><strong>Accounts payable automation.</strong> An agent receives invoices via email, extracts line items and totals using OCR and language understanding, matches them against purchase orders in the ERP, flags discrepancies for human review, and processes approved invoices for payment. What previously required a team member spending hours per day now happens in minutes.</p>
+          <h2>Agent topologies</h2>
 
-<p><strong>Customer service escalation.</strong> An agent monitors incoming support tickets, classifies them by urgency and topic, drafts initial responses for straightforward queries, and routes complex issues to the right specialist with a summary of the customer's history and the likely issue. The human agent spends their time solving problems, not triaging.</p>
+          <p>Agents are not all built the same way. The structure you choose depends on the task and how reliable it must be.</p>
 
-<p><strong>Compliance monitoring.</strong> In financial services, agents continuously monitor transactions against regulatory rules, generate suspicious matter reports when thresholds are met, and maintain audit trails. This is particularly relevant for Australian businesses subject to AML/CTF obligations, where the volume of monitoring often exceeds human capacity.</p>
+          <p><strong>Single agent.</strong> One agent with a set of tools handles the task end to end. This is the simplest structure and suits focused workflows: processing a support ticket, building a report from several sources, triaging an inbox. Most businesses should start here.</p>
 
-<p><strong>Property management.</strong> Agents handle tenant enquiries, schedule maintenance requests by contacting tradespeople, generate lease summaries, and flag upcoming lease renewals — coordinating across email, property management software, and accounting systems.</p>
+          <p><strong>Pipeline.</strong> Several agents run in sequence, each handling one stage; the output of one is the input of the next. This suits processes with distinct stages, for example an intake agent that classifies documents, a processing agent that extracts data, and a review agent that checks the result. Each agent is simpler and more reliable because its job is narrower.</p>
 
-<h2>Common Pitfalls and How to Avoid Them</h2>
+          <p><strong>Hierarchical.</strong> A coordinating agent hands work to specialist agents, reviews what they return and manages the whole. This mirrors a human team and suits work needing different kinds of expertise, such as research, drafting and fact-checking.</p>
 
-<p><strong>Over-automating too early.</strong> The temptation is to give agents maximum autonomy from day one. Resist it. Start with human-in-the-loop workflows where the agent drafts actions and a person approves them. As you build confidence in the agent's reliability, gradually increase autonomy. This approach also helps you catch edge cases before they become costly mistakes.</p>
+          <p><strong>Swarm.</strong> Several agents work in parallel on parts of a problem, sharing state or passing messages. This is the most complex structure and suits naturally parallel problems: analysing a large document set, watching several data streams, exploring several options at once.</p>
 
-<p><strong>Ignoring error handling.</strong> Agents interact with real systems that go down, return unexpected data, or change their APIs. A well-designed agent needs graceful degradation — the ability to pause, retry, escalate, or roll back when things go wrong. Agents that work perfectly in demos but fail silently in production are worse than no automation at all.</p>
+          <h2>Where agents fit</h2>
 
-<p><strong>Insufficient observability.</strong> You need to see what your agents are doing. Every action, every decision, every tool call should be logged and auditable. This is not just good engineering practice — under the Privacy Act amendments, you may be legally required to explain automated decisions. Build observability in from the start, not as an afterthought.</p>
+          <p>Some workflows where agents are a good fit:</p>
 
-<p><strong>Choosing the wrong topology.</strong> Starting with a swarm architecture when a single agent would suffice adds unnecessary complexity, cost, and failure modes. Match the topology to the task. You can always evolve the architecture as requirements grow.</p>
+          <p><strong>Accounts payable.</strong> An agent receives invoices by email, extracts line items and totals, matches them against purchase orders in the ERP, flags discrepancies for a person, and queues approved invoices for payment. Work that took a person a large share of each day becomes a short review of the exceptions.</p>
 
-<h2>Build vs Buy vs Configure</h2>
+          <p><strong>Enquiry and support triage.</strong> An agent reads incoming tickets, classifies them by urgency and topic, drafts replies to straightforward ones for staff to approve, and routes complex cases to the right specialist with a summary of the customer's history. People spend their time solving problems, not sorting them.</p>
 
-<p>Australian businesses broadly have three options for deploying agents.</p>
+          <p><strong>Compliance monitoring.</strong> In financial services, agents can check transactions against rules, prepare draft reports for a compliance officer when thresholds are met, and keep an audit trail. For businesses with AML/CTF obligations, where monitoring volumes are high, the human decision stays with the officer.</p>
 
-<p><strong>Buy</strong> an off-the-shelf agent product. Platforms like Salesforce Einstein, HubSpot AI, and industry-specific tools offer pre-built agent capabilities. These are fastest to deploy but least flexible. Good for standard use cases that match the vendor's assumptions.</p>
+          <p><strong>Property management.</strong> Agents handle tenant enquiries, arrange maintenance with tradespeople, summarise leases and flag upcoming renewals, working across email, property software and accounts.</p>
 
-<p><strong>Configure</strong> using a low-code agent platform. Tools like n8n, Make, and Microsoft Copilot Studio let you build agent workflows by connecting pre-built components. This suits businesses with capable technical staff who need custom workflows but do not want to write code from scratch.</p>
+          <h2>Common pitfalls</h2>
 
-<p><strong>Build</strong> custom agents using frameworks like LangChain, CrewAI, or AutoGen. This gives you maximum control and flexibility but requires software engineering capability. Custom builds are the right choice when your workflow is unique, your data is sensitive, or the off-the-shelf options do not fit.</p>
+          <p><strong>Too much autonomy too early.</strong> Resist giving agents full independence on day one. Start with the agent drafting actions and a person approving them. Widen its autonomy as the evaluations and the track record justify it. You will catch edge cases before they become expensive.</p>
 
-<p>Most businesses will use a combination. Buy where you can, configure where you need to, and build only where you must.</p>
+          <p><strong>Weak error handling.</strong> Agents work against real systems that go down, return unexpected data or change their APIs. A well-built agent can pause, retry, escalate or roll back. An agent that works in a demo and fails silently in production is worse than no automation.</p>
 
-<h2>OzAI Digital's Approach to Agent Development</h2>
+          <p><strong>Too little visibility.</strong> You need to see what agents are doing. Log every action, decision and tool call. It is good engineering, and from 10 December 2026 organisations covered by the Privacy Act must describe in their privacy policy the kinds of significant decisions that computer programs make or substantially inform. You cannot describe what you cannot see. See <a href="/blog/privacy-act-2024-ai.html">what changes on 10 December 2026</a>.</p>
 
-<p>At OzAI Digital, we design and build AI agents for Australian businesses across all three approaches. We start by mapping your workflows, identifying where agents create the most value, and recommending the simplest architecture that meets your needs. We build with human oversight, full observability, and Australian data residency as non-negotiable defaults.</p>
+          <p><strong>The wrong structure.</strong> Starting with a swarm when one agent would do adds complexity, cost and failure modes. Match the structure to the task; you can grow it later.</p>
 
-<p>If you are exploring AI agents for your business, <a href="/#contact">get in touch</a>. We will help you separate the hype from the practical opportunity.</p>
+          <h2>Buy, configure or build</h2>
 
+          <p>There are three broad routes.</p>
+
+          <p><strong>Buy</strong> an off-the-shelf product. Many CRM, helpdesk and industry platforms now include agent features. They are fastest to deploy and least flexible, and suit standard processes that match the vendor's assumptions.</p>
+
+          <p><strong>Configure</strong> a workflow platform. Tools such as n8n and Microsoft Copilot Studio let you assemble agent workflows from pre-built parts. This suits teams with capable technical staff who need custom workflows without writing everything from scratch.</p>
+
+          <p><strong>Build</strong> a custom agent in code. This gives the most control and flexibility but needs software engineering. It is the right choice when the workflow is unusual, the data is sensitive, or nothing off the shelf fits.</p>
+
+          <p>Most businesses end up using a mix. Buy where you can, configure where you need to, and build only where you must.</p>
+
+          <h2>Where we fit</h2>
+
+          <p>We build business agents as fixed-price workflow builds: one workflow, written acceptance tests, approval gates where staff need them, and full logging. We start with the simplest structure that passes the tests, and we name up front where each service stores and processes your data. If you have a workflow in mind, <a href="/#contact">book a scoping call</a>.</p>
+        </div>
+        </div>
+      </div>
+    </article>
+
+    <section class="section section-alt related" aria-labelledby="related-h">
+      <div class="container">
+        <div class="related-head">
+          <h2 id="related-h">Keep reading</h2>
+          <a class="link-arrow" href="/blog.html">All insights <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </div>
+        <div class="related-grid">
+          <a class="card related-card reveal" href="/blog/mcp-model-context-protocol.html" style="--d:0ms">
+            <span class="related-cat">Connections</span>
+            <h3>MCP explained: connecting assistants to your systems safely</h3>
+            <p>Model Context Protocol is an open standard for connecting assistants to tools and data. Here is how it works, how it differs from function calling, and what it does and does not do for governance.</p>
+            <div class="card-foot"><span class="mono">Updated 29 October 2026</span><span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+          </a>
+          <a class="card related-card reveal" href="/blog/pilot-to-production-ai.html" style="--d:80ms">
+            <span class="related-cat">Delivery</span>
+            <h3>Why pilots stall, and what gets them to production</h3>
+            <p>Five reasons promising pilots never reach production, what “production-ready” actually means, and ten questions to answer before you fund the next one.</p>
+            <div class="card-foot"><span class="mono">Updated 29 October 2026</span><span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+          </a>
+          <a class="card related-card reveal" href="/blog/privacy-act-2024-ai.html" style="--d:160ms">
+            <span class="related-cat">Privacy</span>
+            <h3>Privacy Act automated-decision transparency: what changes on 10 December 2026</h3>
+            <p>From 10 December 2026, organisations covered by the Privacy Act must describe in their privacy policy when computer programs make, or substantially inform, significant decisions about people. Here is what the law requires, what it does not, and how to prepare.</p>
+            <div class="card-foot"><span class="mono">Updated 29 October 2026</span><span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-cta article-cta">
+      <div class="container reveal">
+        <span class="eyebrow">Next step</span>
+        <h2>Have a workflow or system in mind?</h2>
+        <p>30 minutes. Free. You leave with a view on scope, price and how we'd test it.</p>
+        <div class="cta-actions">
+          <a href="/#contact" class="btn btn-lg">Book a scoping call <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         </div>
       </div>
     </section>
 
   </main>
 
+  <!-- ============ FOOTER (canonical) ============ -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
         <a href="/" class="logo" aria-label="OzAI Digital home">
-          <svg class="logo-mark" width="28" height="28" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogoF" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogoF)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
+          <svg class="logo-mark" width="28" height="28" viewBox="0 0 600 600" fill="none" aria-hidden="true"><defs><linearGradient id="gLogoF" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogoF)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
           <span class="logo-text">OzAI Digital</span>
         </a>
-        <p class="footer-tagline">Pragmatic AI consulting for Australian businesses.</p>
+        <p class="footer-tagline">Working systems, built with AI. Priced up front, tested before acceptance, kept running.</p>
+        <p class="footer-tagline">Melbourne &middot; Sydney, Australia</p>
+        <a href="https://www.linkedin.com/company/ozai-digital" class="team-link footer-social" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
       </div>
       <div class="footer-links">
         <div class="footer-col">
-          <h4>Solutions</h4>
-          <a href="/consulting.html">AI Strategy &amp; Consulting</a>
-          <a href="/integration.html">Systems Integration</a>
-          <a href="/agents.html">AI Agents &amp; Automation</a>
-          <a href="/managed.html">Managed AI Services</a>
+          <h4>What we do</h4>
+          <a href="/agentic-software-delivery.html">Agentic software delivery</a>
+          <a href="/ai-workflow-builds.html">Workflow builds</a>
+          <a href="/delivery-model.html#run">Run (ongoing operation)</a>
+          <a href="/ai-coaching.html">Team enablement</a>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
-          <a href="/ai-coaching.html">AI Coaching</a>
-          <a href="/#about">About</a>
-          <a href="/#team">Team</a>
-          <a href="/#industries">Industries</a>
-          <a href="/#contact">Contact</a>
+          <a href="/delivery-model.html">How we deliver</a>
+          <a href="/about.html">About</a>
+          <a href="/blog.html">Insights</a>
+          <a href="/#contact">Book a scoping call</a>
         </div>
         <div class="footer-col">
-          <h4>Legal</h4>
-          <a href="/privacy.html">Privacy Policy</a>
-          <a href="/terms.html">Terms of Service</a>
+          <h4>Materials</h4>
+          <a href="/ai-training-deck.html">Company AI training deck</a>
+          <a href="/ai-dev-team-transformation-deck.html">Engineering team deck</a>
+          <a href="/fridge-catalogue-ai-deck.html">Catalogue assistant deck</a>
+          <a href="/surgery-voice-receptionist-deck.html">Voice receptionist deck</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 OzAI Digital Pty Ltd. All rights reserved. Melbourne &middot; Sydney, Australia.</p>
+      <p>&copy; 2026 OzAI Digital Pty Ltd</p>
+      <p class="footer-legal"><a href="/privacy.html">Privacy Policy</a> <span aria-hidden="true">&middot;</span> <a href="/terms.html">Terms of Service</a></p>
     </div>
+    <div class="footer-wordmark" aria-hidden="true">OzAI Digital</div>
   </footer>
 
 </div>

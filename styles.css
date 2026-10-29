@@ -4,7 +4,7 @@
    01 Tokens            08 Cards & legacy grids     15 Footer
    02 Dark mode         09 Homepage components      16 Cookie banner
    03 Inverse surfaces  10 Steps / stats / stack    17 Prose (blog, legal)
-   04 Base & type       11 Offer pages              18 Case studies
+   04 Base & type       11 Offer pages              18 (retired)
    05 Layout            12 Team                     19 Decks
    06 Nav               13 CTA band & forms         20 Responsive
    07 Buttons & chips   14 Contact (home)           21 Motion prefs, print
@@ -397,6 +397,15 @@ html.js .nav:not(.is-scrolled):has(.nav-toggle){border-bottom-color:transparent}
 .nav-menu a:hover::after{opacity:.6;transform:none}
 .nav-cta{white-space:nowrap}
 .nav-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.nav-links>a{white-space:nowrap}
+/* Drawer-only CTA: hidden in the desktop row, shown as a button in the mobile drawer */
+.nav-links>a.nav-drawer-cta{display:none}
+@media (min-width:961px) and (max-width:1180px){
+  /* keep six links on one line between the drawer breakpoint and full width */
+  .nav-inner{gap:12px}
+  .nav-links>a{padding:0 9px;font-size:.8125rem}
+  .nav:has(.nav-toggle) .logo-text{display:none}
+}
 
 .nav-toggle{
   display:none;position:relative;
@@ -503,8 +512,7 @@ a:hover>.link-arrow .arrow{transform:translateX(3px)}
 .operate-grid>div,
 .outcome-grid div,
 .maturity-step,
-.team-card,
-.case-study{
+.team-card{
   position:relative;
   background:var(--bg-elev);
   border:1px solid var(--line);
@@ -996,6 +1004,8 @@ a.card:hover .card-arrow{background:var(--btn-bg);color:var(--btn-ink);border-co
 .section-cta .container>.btn,
 .section-cta .cta-form .btn{margin-top:4px}
 .cta-form{display:flex;gap:12px;max-width:520px;margin:0 auto 24px;justify-content:center;flex-wrap:wrap}
+.cta-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.section-cta .eyebrow{margin-bottom:20px}
 .cta-note{font-size:var(--fs-sm);color:var(--ink-3)}
 .cta-note strong{color:var(--ink-2)}
 
@@ -1085,6 +1095,15 @@ a.card:hover .card-arrow{background:var(--btn-bg);color:var(--btn-ink);border-co
 }
 .footer-col a{font-size:var(--fs-sm);color:var(--ink-2);transition:color var(--dur-1);width:fit-content}
 .footer-col a:hover{color:var(--ink)}
+.footer-brand .footer-tagline+.footer-tagline{margin-top:8px;color:var(--ink-3)}
+.footer-social{margin-top:20px}
+.footer-legal a{color:var(--ink-3);transition:color var(--dur-1)}
+.footer-legal a:hover{color:var(--ink)}
+.footer-legal span{margin:0 6px}
+@media (min-width:1081px){
+  .footer-brand{max-width:320px}
+  .footer-col{min-width:160px}
+}
 .footer-bottom{
   width:calc(100% - 2 * var(--gutter));max-width:calc(var(--max-w) - 2 * var(--gutter));
   margin:56px auto 0;padding:24px 0 28px;
@@ -1196,18 +1215,28 @@ a.card:hover .card-arrow{background:var(--btn-bg);color:var(--btn-ink);border-co
 .legal-content pre code,.prose pre code{background:none;border:0;padding:0;color:inherit}
 .legal-content hr,.prose hr{border:0;border-top:1px solid var(--line);margin:2.5em 0}
 .legal-content img,.prose img{border-radius:var(--r-lg);border:1px solid var(--line)}
-.legal-content table,
-.prose table,
+.prose .legal-effective{margin-top:3rem;font-size:var(--fs-sm);color:var(--ink-3)}
+/* Tables: bare <table> gets layout only. Ruled rows and mono column
+   headers are opt-in via .prose / .legal-content / .table, and only
+   thead th is uppercased, so row-label th's (tbody th) stay readable. */
 table{
   width:100%;border-collapse:collapse;font-size:.9375rem;line-height:1.5;
   font-variant-numeric:tabular-nums;
 }
+th,td{text-align:left;vertical-align:top}
 .legal-content table,.prose table{display:block;overflow-x:auto}
-th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:top}
-th{
+.legal-content :is(th,td),
+.prose :is(th,td),
+.table :is(th,td){padding:12px 16px;border-bottom:1px solid var(--line)}
+.legal-content thead th,
+.prose thead th,
+.table thead th{
   font-family:var(--font-mono);font-size:.75rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;
   color:var(--ink-3);border-bottom-color:var(--line-strong);
 }
+.legal-content tbody th,
+.prose tbody th,
+.table tbody th{font-weight:600;color:var(--ink)}
 
 /* Article header (blog) */
 .article-head{max-width:var(--max-w-narrow);margin:0 auto clamp(40px,5vw,56px)}
@@ -1220,27 +1249,7 @@ th{
 /* Legacy blog markup: <div class="container" style="max-width:780px"> + plain h1 */
 .section>.container>h1{margin-bottom:28px}
 
-/* ===== 18 CASE STUDIES ===== */
-.case-study{padding:clamp(28px,3.5vw,44px);margin-bottom:24px}
-.case-study-industry{
-  display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:var(--r-full);
-  font-family:var(--font-mono);font-size:.6875rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
-  color:var(--accent-ink);background:var(--accent-soft);margin-bottom:16px;
-}
-.case-study h3{font-size:clamp(1.375rem,1.2rem + .6vw,1.75rem);letter-spacing:var(--tracking-tight);margin-bottom:24px}
-.case-study-body{display:grid;grid-template-columns:1fr 1fr;gap:32px}
-.case-study-left,.case-study-right{display:flex;flex-direction:column;gap:20px}
-.case-study-block h4{
-  font-family:var(--font-mono);font-size:.75rem;font-weight:500;letter-spacing:var(--tracking-caps);
-  text-transform:uppercase;color:var(--ink-3);margin-bottom:8px;
-}
-.case-study-block p{font-size:.9375rem;color:var(--ink-2);line-height:1.65}
-.case-study-results{display:flex;flex-direction:column;gap:6px}
-.case-study-results li{font-size:.9375rem;color:var(--ink-2);line-height:1.6;padding-left:20px;position:relative}
-.case-study-results li::before{content:"";position:absolute;left:2px;top:9px;width:6px;height:6px;border-radius:50%;background:var(--brand-ember)}
-.case-study-footer{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
-.case-study-timeline{font-size:var(--fs-sm);font-weight:500;color:var(--ink);margin-right:auto}
-.case-study-timeline span{color:var(--ink-2);font-weight:400}
+/* ===== 18 (retired: case studies) ===== */
 
 /* ===== 19 DECKS ===== */
 .deck-page{background:var(--bg)}
@@ -1428,6 +1437,11 @@ html.js .reveal.is-visible{opacity:1;transform:none;animation:none}
   }
   .nav.is-open .nav-item>a::after{display:none}
   .nav.is-open .nav-links>*{flex-shrink:0}
+  .nav.is-open .nav-links>a.nav-drawer-cta{
+    display:inline-flex;justify-content:center;
+    height:52px;margin-top:20px;border:0;border-radius:var(--r-full);
+    background:var(--btn-bg);color:var(--btn-ink);font-size:1rem;
+  }
   .nav.is-open .nav-menu{
     position:static;opacity:1;visibility:visible;transform:none;
     min-width:0;padding:6px 0 14px;border:0;border-bottom:1px solid var(--line);border-radius:0;
@@ -1463,9 +1477,6 @@ html.js .reveal.is-visible{opacity:1;transform:none;animation:none}
   .outcome-grid{grid-template-columns:1fr 1fr}
   .feature-grid,.industry-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .directory{grid-template-columns:repeat(2,minmax(0,1fr))}
-  /* Shim: legacy inline grid-template-columns (integration, enablement). Remove inline styles in phase 2. */
-  .feature-grid[style*="grid-template-columns"],
-  .steps-grid[style*="grid-template-columns"]{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
   .directory a,.directory a:not(:nth-child(3n+1)){padding:24px 24px 24px 0;border-right:0}
   .directory a:nth-child(2n){padding-left:24px;padding-right:0;border-left:1px solid var(--line)}
   .contact-grid{grid-template-columns:1fr}
@@ -1476,9 +1487,6 @@ html.js .reveal.is-visible{opacity:1;transform:none;animation:none}
   :root{--section-y:clamp(64px,14vw,96px)}
   .section-head--split{grid-template-columns:1fr}
   .feature-grid,.industry-grid,.why-grid,.team-grid,.stats-grid{grid-template-columns:1fr}
-  .feature-grid[style*="grid-template-columns"],
-  .steps-grid[style*="grid-template-columns"],
-  .stats-grid[style*="grid-template-columns"]{grid-template-columns:1fr !important}
   .bento{grid-template-columns:1fr}
   .bento .span-2{grid-column:auto}
   .bento>.card{min-height:0}
@@ -1501,6 +1509,7 @@ html.js .reveal.is-visible{opacity:1;transform:none;animation:none}
   .footer-inner{flex-direction:column;gap:40px}
   .footer-links{flex-wrap:wrap;gap:32px 48px}
   .cta-form{flex-direction:column;align-items:stretch}
+  .cta-actions .btn{flex:1 1 100%;justify-content:center}
   .contact-fields{grid-template-columns:1fr}
   .hero-actions .btn{flex:1 1 auto}
   .hero-link{flex:1 1 100%;justify-content:center;padding:6px 0}
@@ -1513,7 +1522,6 @@ html.js .reveal.is-visible{opacity:1;transform:none;animation:none}
   .creds-inner{flex-direction:column;align-items:flex-start;gap:16px}
   .creds-list{justify-content:flex-start;gap:12px 28px}
   .pricing-summary{grid-template-columns:1fr}
-  .case-study-body{grid-template-columns:1fr}
   .cookie-banner{left:12px;right:12px;bottom:12px;max-width:none}
 
   .deck-slide{min-height:auto;padding:56px var(--gutter)}
@@ -1539,6 +1547,10 @@ html.js .reveal.is-visible{opacity:1;transform:none;animation:none}
   body.deck-is-presenting .track-item{min-height:auto}
 }
 
+@media (max-width:440px){
+  /* keep logo + CTA + toggle on one line at 360 */
+  .nav:has(.nav-toggle) .logo-text{display:none}
+}
 @media (max-width:400px){
   :root{--gutter:16px}
   .nav:has(.nav-toggle) .nav-cta{padding:0 12px}

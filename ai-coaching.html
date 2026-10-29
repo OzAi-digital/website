@@ -3,138 +3,314 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Coaching - OzAI Digital</title>
-  <meta name="description" content="OzAI Digital AI coaching for companies and development teams: general AI adoption, safe-use practices, and developer transformation from coding with AI to supervising agents.">
-  <meta property="og:title" content="AI Coaching - OzAI Digital">
-  <meta property="og:description" content="Separate coaching paths for company-wide AI adoption and AI transformation for development teams.">
+  <title>Team AI enablement and coaching — OzAI Digital</title>
+  <meta name="description" content="Coaching that gets staff using AI tools safely on real work: approved tools, data rules, role-based practice, internal champions, and a 90-day rollout.">
+  <meta property="og:title" content="Team AI enablement and coaching — OzAI Digital">
+  <meta property="og:description" content="Coaching that gets staff using AI tools safely on real work: approved tools, data rules, role-based practice, internal champions, and a 90-day rollout.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ozai.digital/ai-coaching.html">
   <meta property="og:image" content="https://ozai.digital/logo-linkedin.png">
   <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0a09" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://ozai.digital/ai-coaching.html">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="/site.js" defer></script>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/css/enablement.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <div class="page">
+
+  <!-- ============ HEADER (canonical) ============ -->
   <header class="nav">
     <div class="nav-inner">
       <a href="/" class="logo" aria-label="OzAI Digital home">
-        <svg class="logo-mark" width="36" height="36" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogo" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogo)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
+        <svg class="logo-mark" width="30" height="30" viewBox="0 0 600 600" fill="none" aria-hidden="true"><defs><linearGradient id="gLogo" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogo)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
         <span class="logo-text">OzAI Digital</span>
       </a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <div class="nav-item">
-          <a href="/solutions.html">Solutions</a>
-          <div class="nav-menu">
-            <a href="/ai-workflow-builds.html">Fixed-scope AI builds</a>
-            <a href="/consulting.html">AI strategy and roadmap</a>
-            <a href="/integration.html">Systems integration</a>
-            <a href="/agents.html">Agents and automation</a>
-            <a href="/managed.html">Managed AI operations</a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <a href="/use-cases.html">Use Cases</a>
-          <div class="nav-menu">
-            <a href="/fridge-catalogue-ai-deck.html">Catalogue chat deck</a>
-            <a href="/surgery-voice-receptionist-deck.html">Voice receptionist deck</a>
-            <a href="/ai-workflow-builds.html#catalogue">Build catalogue</a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <a href="/ai-coaching.html">Coaching</a>
-          <div class="nav-menu">
-            <a href="/ai-coaching.html">AI coaching overview</a>
-            <a href="/ai-training-deck.html">Company AI training deck</a>
-            <a href="/ai-dev-team-transformation-deck.html">Dev team transformation deck</a>
-            <a href="/enablement.html">Training services</a>
-          </div>
-        </div>
-        <a href="/industries.html">Industries</a>
-        <a href="/delivery-model.html">Delivery</a>
-        <div class="nav-item">
-          <a href="/resources.html">Resources</a>
-          <div class="nav-menu">
-            <a href="/case-studies.html">Case studies</a>
-            <a href="/blog.html">Insights</a>
-          </div>
-        </div>
-        <a href="/#contact">Contact</a>
+      <nav class="nav-links" id="primary-nav" aria-label="Primary navigation">
+        <a href="/agentic-software-delivery.html">Agentic delivery</a>
+        <a href="/ai-workflow-builds.html">Workflow builds</a>
+        <a href="/delivery-model.html">How we deliver</a>
+        <a href="/ai-coaching.html" aria-current="page">Team enablement</a>
+        <a href="/about.html">About</a>
+        <a href="/blog.html">Insights</a>
+        <a href="/#contact" class="nav-drawer-cta">Book a scoping call</a>
       </nav>
-      <a href="/#contact" class="btn btn-sm nav-cta">Book a Scoping Call</a>
+      <div class="nav-actions">
+        <a href="/#contact" class="btn btn-sm nav-cta">Book a scoping call</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu"><span></span><span></span></button>
+      </div>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-copy fade-up">
-          <div class="pill">AI coaching</div>
-          <h1>Coaching is separate from solution delivery.</h1>
-          <p class="hero-sub">OzAI Digital coaching is about changing how people work with AI. We keep company-wide adoption and developer-team transformation as separate tracks because the tools, risks, and habits are different.</p>
-          <div class="hero-actions">
-            <a href="/ai-training-deck.html?present=1" class="btn btn-lg">Company AI Training Deck</a>
-            <a href="/ai-dev-team-transformation-deck.html?present=1" class="btn btn-ghost btn-lg">Dev Team Transformation Deck</a>
+  <main id="main">
+
+    <!-- ============ E1 HERO ============ -->
+    <section class="hero en-hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="pill fade-up">Team enablement</div>
+          <h1 class="fade-up" style="animation-delay:.06s">From tool access to <span class="accent-serif text-gradient">confident, safe everyday use.</span></h1>
+          <p class="hero-sub fade-up" style="animation-delay:.12s">Licences don't change how people work. Coaching on their own tasks does. We take a company from scattered or no AI use to approved tools, clear data rules and habits staff actually keep — measured by what they can do, not by attendance.</p>
+          <div class="hero-actions fade-up" style="animation-delay:.18s">
+            <a href="/#contact" class="btn btn-lg">Book a scoping call <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            <a href="/ai-training-deck.html" class="btn btn-ghost btn-lg">Open the training deck</a>
           </div>
+          <p class="en-hero-note fade-up" style="animation-delay:.24s">30 minutes. Free. You leave with a view on scope, price and how we'd test it.</p>
+        </div>
+
+        <div class="hero-visual fade-up" style="animation-delay:.3s">
+          <figure class="spec-card">
+            <div class="spec-card-head">
+              <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="mono">enablement-plan.md</span>
+              <a class="link-arrow" href="#rollout">Rollout <svg class="arrow" width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            </div>
+            <div class="spec-card-body">
+              <span class="eyebrow">Company-wide adoption</span>
+              <h2 class="en-spec-title">A 90-day rollout, in five stages</h2>
+              <dl class="spec-list">
+                <div><dt>Audience</dt><dd>Executives, managers, staff and champions</dd></div>
+                <div><dt>Tools</dt><dd>ChatGPT, Claude, Gemini or Copilot</dd></div>
+                <div><dt>Practice</dt><dd>Role-based, on your own tasks</dd></div>
+                <div><dt>Measured by</dt><dd>What people can do, not attendance</dd></div>
+              </dl>
+            </div>
+            <ol class="gates" aria-label="Rollout stages">
+              <li>Baseline</li><li>Set up</li><li>Train</li><li>Practise</li><li>Embed</li>
+            </ol>
+          </figure>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt">
+    <!-- ============ E2 TWO TRACKS ============ -->
+    <section class="section section-alt" id="tracks">
       <div class="container">
-        <div class="section-header">
-          <h2>Two different coaching journeys</h2>
-          <p>General business AI adoption is not the same as changing software delivery practice.</p>
+        <div class="section-head section-head--split reveal">
+          <span class="eyebrow">Two tracks</span>
+          <h2>Two audiences, two tracks.</h2>
+          <p>Company-wide adoption and engineering practice need different tools, risks and habits, so we coach them separately.</p>
         </div>
-        <div class="why-grid">
-          <a href="/ai-training-deck.html" class="why-card feature-link fade-up">
-            <h3>Company AI Training</h3>
-            <p>For executives, managers, staff, and champions moving from no AI tooling to confident everyday use with safe practices.</p>
-            <span class="learn-more">Open company deck &rarr;</span>
-          </a>
-          <a href="/ai-dev-team-transformation-deck.html" class="why-card feature-link fade-up" style="animation-delay:.06s">
-            <h3>AI Transformation for Dev Teams</h3>
-            <p>For software teams moving from writing code manually to using Cursor-style tools, coding agents, review workflows, and agent supervision.</p>
-            <span class="learn-more">Open dev team deck &rarr;</span>
-          </a>
+        <div class="en-tracks">
+          <article class="card card-feature en-track reveal">
+            <span class="icon-tile icon-tile--brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></span>
+            <span class="en-track-num mono">Track 01</span>
+            <h3>Company-wide adoption</h3>
+            <p>For executives, managers, staff and champions. Approved tools, safe-use rules, role-based practice.</p>
+            <div class="chip-row">
+              <span class="tag">Executives</span><span class="tag">Managers</span><span class="tag">Staff</span><span class="tag">Champions</span>
+            </div>
+            <div class="en-track-links">
+              <a href="/ai-training-deck.html" class="link-arrow">Open the training deck <svg class="arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            </div>
+          </article>
+          <article class="card en-track reveal" style="--d:80ms">
+            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+            <span class="en-track-num mono">Track 02</span>
+            <h3>Engineering teams</h3>
+            <p>For developers and tech leads moving to coding agents. This is now part of our agentic engineering setup, with coaching attached.</p>
+            <div class="chip-row">
+              <span class="tag">Developers</span><span class="tag">Tech leads</span>
+            </div>
+            <div class="en-track-links">
+              <a href="/agentic-software-delivery.html#setup" class="link-arrow">Agentic engineering setup <svg class="arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+              <a href="/ai-dev-team-transformation-deck.html" class="link-arrow">Engineering team deck <svg class="arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <!-- ============ E3 90-DAY ROLLOUT ============ -->
+    <section class="section" id="rollout">
       <div class="container">
-        <div class="section-header">
-          <h2>How coaching stays practical</h2>
-          <p>Each coaching path produces operating habits, not just awareness.</p>
+        <div class="section-head section-head--split reveal">
+          <span class="eyebrow">The 90-day rollout</span>
+          <h2>Five stages, from baseline to habit.</h2>
+          <p>Each stage leaves something in place, so the change holds after the sessions end.</p>
         </div>
-        <div class="steps-grid">
-          <div class="step fade-up"><div class="step-num">1</div><h3>Baseline</h3><p>Understand current tools, confidence, risks, workflows, and leadership goals.</p></div>
-          <div class="step fade-up" style="animation-delay:.06s"><div class="step-num">2</div><h3>Train</h3><p>Teach role-specific practices using real work, not generic examples.</p></div>
-          <div class="step fade-up" style="animation-delay:.12s"><div class="step-num">3</div><h3>Embed</h3><p>Transfer playbooks, review routines, champion habits, and adoption measures.</p></div>
+        <ol class="timeline en-rollout">
+          <li class="reveal"><span class="marker" aria-hidden="true"></span><span class="num">01</span><h3>Baseline</h3><p>Current tools, confidence, data risks and priority work.</p></li>
+          <li class="reveal" style="--d:60ms"><span class="marker" aria-hidden="true"></span><span class="num">02</span><h3>Set up</h3><p>Approved tools, usage rules, starter prompts, manager expectations.</p></li>
+          <li class="reveal" style="--d:120ms"><span class="marker" aria-hidden="true"></span><span class="num">03</span><h3>Train</h3><p>Role-based sessions for executives, managers, staff and champions.</p></li>
+          <li class="reveal" style="--d:180ms"><span class="marker" aria-hidden="true"></span><span class="num">04</span><h3>Practise</h3><p>Coaching inside real work until it's repeatable and reviewable.</p></li>
+          <li class="reveal" style="--d:240ms"><span class="marker" aria-hidden="true"></span><span class="num">05</span><h3>Embed</h3><p>Playbooks, office hours, champion routines, adoption measures.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ E4 SESSIONS ============ -->
+    <section class="section section-alt" id="sessions">
+      <div class="container">
+        <div class="section-head section-head--split reveal">
+          <span class="eyebrow">Sessions</span>
+          <h2>Formats for each role.</h2>
+          <p>Sessions use your real work patterns wherever possible, with sensitive details removed or handled under agreed rules.</p>
+        </div>
+        <div class="en-sessions">
+          <article class="card en-session reveal">
+            <div class="en-session-head">
+              <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
+              <span class="en-format mono">Half day</span>
+            </div>
+            <h3>Leadership briefing</h3>
+            <p>What the tools can and can't do, governance posture, where to invest.</p>
+            <p class="en-audience"><span class="mono">For</span> Executives and boards</p>
+          </article>
+          <article class="card en-session reveal" style="--d:60ms">
+            <div class="en-session-head">
+              <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>
+              <span class="en-format mono">1&ndash;2 days</span>
+            </div>
+            <h3>Working with AI tools</h3>
+            <p>Drafting, analysis, research and summarising with ChatGPT, Claude, Gemini or Copilot, plus checking the output.</p>
+            <p class="en-audience"><span class="mono">For</span> All staff</p>
+          </article>
+          <article class="card en-session reveal" style="--d:120ms">
+            <div class="en-session-head">
+              <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></span>
+              <span class="en-format mono">4&ndash;8 weeks</span>
+            </div>
+            <h3>Champions programme</h3>
+            <p>Internal coaches who run office hours and capture reusable patterns.</p>
+            <p class="en-audience"><span class="mono">For</span> Selected staff</p>
+          </article>
+          <article class="card en-session reveal" style="--d:180ms">
+            <div class="en-session-head">
+              <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></span>
+              <span class="en-format mono">Workshop</span>
+            </div>
+            <h3>Managing AI-assisted work</h3>
+            <p>Reviewing AI-assisted work, setting quality expectations, spotting candidate workflows.</p>
+            <p class="en-audience"><span class="mono">For</span> Managers</p>
+          </article>
         </div>
       </div>
     </section>
+
+    <!-- ============ E5 CAPABILITIES (dark) ============ -->
+    <section class="section section-dark" id="outcomes">
+      <div class="container">
+        <div class="section-head section-head--split reveal">
+          <span class="eyebrow">Afterwards</span>
+          <h2>What people can do afterwards.</h2>
+          <p>Training is measured by whether staff can use the tools safely on real work, not by generic productivity claims.</p>
+        </div>
+        <ul class="en-capabilities">
+          <li class="reveal"><span class="num">01</span><h3>Draft</h3><p>Emails, reports and briefs, with a review habit.</p></li>
+          <li class="reveal" style="--d:60ms"><span class="num">02</span><h3>Verify</h3><p>Check sources and catch unsupported claims.</p></li>
+          <li class="reveal" style="--d:120ms"><span class="num">03</span><h3>Protect</h3><p>Handle client and sensitive data under approved rules.</p></li>
+          <li class="reveal"><span class="num">04</span><h3>Reuse</h3><p>Prompt patterns and templates for common tasks.</p></li>
+          <li class="reveal" style="--d:60ms"><span class="num">05</span><h3>Manage</h3><p>Set expectations and review AI-assisted work.</p></li>
+          <li class="reveal" style="--d:120ms"><span class="num">06</span><h3>Escalate</h3><p>Know when a task should become a governed workflow build.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ E6 WHAT YOU KEEP ============ -->
+    <section class="section" id="artefacts">
+      <div class="container">
+        <div class="split">
+          <div class="split-aside reveal">
+            <span class="eyebrow">What you keep</span>
+            <h2>Artefacts, not just awareness.</h2>
+            <p>Every engagement leaves behind material your team keeps using after we've gone.</p>
+            <a href="https://ozai-digital.github.io/ai-training-kb/" class="link-arrow" target="_blank" rel="noopener">Browse the training knowledge base <svg class="arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg><span class="sr-only">(opens in a new tab)</span></a>
+          </div>
+          <ol class="en-keep reveal" style="--d:80ms">
+            <li><span class="en-keep-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span><span class="en-keep-name">Maturity baseline</span><span class="mono">01</span></li>
+            <li><span class="en-keep-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span><span class="en-keep-name">Approved-use map</span><span class="mono">02</span></li>
+            <li><span class="en-keep-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span><span class="en-keep-name">Safe-use checklist</span><span class="mono">03</span></li>
+            <li><span class="en-keep-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span><span class="en-keep-name">Prompt playbook</span><span class="mono">04</span></li>
+            <li><span class="en-keep-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span><span class="en-keep-name">Champion guide</span><span class="mono">05</span></li>
+            <li><span class="en-keep-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span><span class="en-keep-name">Adoption measures</span><span class="mono">06</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ E7 CTA ============ -->
+    <section class="section-cta" id="next">
+      <div class="container">
+        <span class="eyebrow reveal">From training to builds</span>
+        <h2 class="reveal">When a task keeps coming up, build it.</h2>
+        <p class="reveal">Training surfaces the repeated jobs worth automating. Those become fixed-price workflow builds with acceptance tests.</p>
+        <div class="en-cta-actions reveal">
+          <a href="/#contact" class="btn btn-lg">Book a scoping call <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a href="/ai-workflow-builds.html" class="btn btn-ghost btn-lg">Workflow builds</a>
+        </div>
+        <p class="cta-note reveal">30 minutes. Free. You leave with a view on scope, price and how we'd test it. &middot; <a href="https://ozai-digital.github.io/ai-training-kb/" target="_blank" rel="noopener">Training knowledge base<span class="sr-only"> (opens in a new tab)</span></a></p>
+      </div>
+    </section>
+
   </main>
 
+  <!-- ============ FOOTER (canonical) ============ -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <a href="/" class="logo" aria-label="OzAI Digital home"><svg class="logo-mark" width="28" height="28" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogoF" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogoF)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg><span class="logo-text">OzAI Digital</span></a>
-        <p class="footer-tagline">Pragmatic AI consulting for Australian businesses.</p>
+        <a href="/" class="logo" aria-label="OzAI Digital home">
+          <svg class="logo-mark" width="28" height="28" viewBox="0 0 600 600" fill="none" aria-hidden="true"><defs><linearGradient id="gLogoF" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogoF)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
+          <span class="logo-text">OzAI Digital</span>
+        </a>
+        <p class="footer-tagline">Working systems, built with AI. Priced up front, tested before acceptance, kept running.</p>
+        <p class="footer-tagline">Melbourne &middot; Sydney, Australia</p>
+        <a href="https://www.linkedin.com/company/ozai-digital" class="team-link footer-social" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
       </div>
       <div class="footer-links">
-        <div class="footer-col"><h4>Solutions</h4><a href="/ai-workflow-builds.html">AI Workflow Builds</a><a href="/consulting.html">AI Strategy &amp; Consulting</a><a href="/integration.html">Systems Integration</a><a href="/agents.html">AI Agents &amp; Automation</a><a href="/managed.html">Managed AI Services</a></div>
-        <div class="footer-col"><h4>Coaching</h4><a href="/ai-coaching.html">AI Coaching</a><a href="/ai-training-deck.html">Company AI Training Deck</a><a href="/ai-dev-team-transformation-deck.html">Dev Team Transformation Deck</a></div>
-        <div class="footer-col"><h4>Company</h4>
-          <a href="/ai-coaching.html">AI Coaching</a><a href="/use-cases.html">Use Cases</a><a href="/industries.html">Industries</a><a href="/resources.html">Resources</a><a href="/#contact">Contact</a></div>
+        <div class="footer-col">
+          <h4>What we do</h4>
+          <a href="/agentic-software-delivery.html">Agentic software delivery</a>
+          <a href="/ai-workflow-builds.html">Workflow builds</a>
+          <a href="/delivery-model.html#run">Run (ongoing operation)</a>
+          <a href="/ai-coaching.html">Team enablement</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="/delivery-model.html">How we deliver</a>
+          <a href="/about.html">About</a>
+          <a href="/blog.html">Insights</a>
+          <a href="/#contact">Book a scoping call</a>
+        </div>
+        <div class="footer-col">
+          <h4>Materials</h4>
+          <a href="/ai-training-deck.html">Company AI training deck</a>
+          <a href="/ai-dev-team-transformation-deck.html">Engineering team deck</a>
+          <a href="/fridge-catalogue-ai-deck.html">Catalogue assistant deck</a>
+          <a href="/surgery-voice-receptionist-deck.html">Voice receptionist deck</a>
+        </div>
       </div>
     </div>
-    <div class="footer-bottom"><p>&copy; 2026 OzAI Digital Pty Ltd. All rights reserved. Melbourne &middot; Sydney, Australia.</p></div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 OzAI Digital Pty Ltd</p>
+      <p class="footer-legal"><a href="/privacy.html">Privacy Policy</a> <span aria-hidden="true">&middot;</span> <a href="/terms.html">Terms of Service</a></p>
+    </div>
+    <div class="footer-wordmark" aria-hidden="true">OzAI Digital</div>
   </footer>
+
+</div><!-- .page -->
+<!-- Cookie Banner -->
+<div class="cookie-banner" id="cookieBanner">
+  <span>We use cookies to improve your experience and analyse site traffic. See our <a href="/privacy.html">Privacy Policy</a>.</span>
+  <button class="cookie-banner-btn cookie-accept" onclick="acceptCookies()">Accept</button>
+  <button class="cookie-banner-btn cookie-decline" onclick="declineCookies()">Decline</button>
 </div>
+<script>
+function acceptCookies(){document.getElementById("cookieBanner").classList.remove("visible");localStorage.setItem("ozai_cookies","accepted")}
+function declineCookies(){document.getElementById("cookieBanner").classList.remove("visible");localStorage.setItem("ozai_cookies","declined")}
+if(!localStorage.getItem("ozai_cookies")){setTimeout(function(){document.getElementById("cookieBanner").classList.add("visible")},1500)}
+</script>
 </body>
 </html>

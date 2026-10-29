@@ -3,190 +3,240 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Insights — OzAI Digital Blog</title>
-  <meta name="description" content="Practical perspectives on AI strategy, implementation, and governance for Australian businesses.">
-  <meta property="og:title" content="Insights — OzAI Digital Blog">
-  <meta property="og:description" content="Practical perspectives on AI strategy, implementation, and governance for Australian businesses.">
+  <title>Insights — OzAI Digital</title>
+  <meta name="description" content="Practical notes on agentic delivery, workflow builds, governance and Australian privacy obligations, from the engineers doing the work.">
+  <meta property="og:title" content="Insights — OzAI Digital">
+  <meta property="og:description" content="Practical notes on agentic delivery, workflow builds, governance and Australian privacy obligations, from the engineers doing the work.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ozai.digital/blog.html">
   <meta property="og:image" content="https://ozai.digital/logo-linkedin.png">
   <meta name="twitter:card" content="summary">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="icon-180.png">
-  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0a09" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://ozai.digital/blog.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="/site.js" defer></script>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/css/insights.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <div class="page">
 
+  <!-- ============ HEADER (canonical) ============ -->
   <header class="nav">
     <div class="nav-inner">
       <a href="/" class="logo" aria-label="OzAI Digital home">
-        <svg class="logo-mark" width="36" height="36" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogo" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogo)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
+        <svg class="logo-mark" width="30" height="30" viewBox="0 0 600 600" fill="none" aria-hidden="true"><defs><linearGradient id="gLogo" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogo)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
         <span class="logo-text">OzAI Digital</span>
       </a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <div class="nav-item">
-          <a href="/solutions.html">Solutions</a>
-          <div class="nav-menu">
-            <a href="/ai-workflow-builds.html">Fixed-scope AI builds</a>
-            <a href="/consulting.html">AI strategy and roadmap</a>
-            <a href="/integration.html">Systems integration</a>
-            <a href="/agents.html">Agents and automation</a>
-            <a href="/managed.html">Managed AI operations</a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <a href="/use-cases.html">Use Cases</a>
-          <div class="nav-menu">
-            <a href="/fridge-catalogue-ai-deck.html">Catalogue chat deck</a>
-            <a href="/surgery-voice-receptionist-deck.html">Voice receptionist deck</a>
-            <a href="/ai-workflow-builds.html#catalogue">Build catalogue</a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <a href="/ai-coaching.html">Coaching</a>
-          <div class="nav-menu">
-            <a href="/ai-coaching.html">AI coaching overview</a>
-            <a href="/ai-training-deck.html">Company AI training deck</a>
-            <a href="/ai-dev-team-transformation-deck.html">Dev team transformation deck</a>
-            <a href="/enablement.html">Training services</a>
-          </div>
-        </div>
-        <a href="/industries.html">Industries</a>
-        <a href="/delivery-model.html">Delivery</a>
-        <div class="nav-item">
-          <a href="/resources.html">Resources</a>
-          <div class="nav-menu">
-            <a href="/case-studies.html">Case studies</a>
-            <a href="/blog.html">Insights</a>
-          </div>
-        </div>
-        <a href="/#contact">Contact</a>
+      <nav class="nav-links" id="primary-nav" aria-label="Primary navigation">
+        <a href="/agentic-software-delivery.html">Agentic delivery</a>
+        <a href="/ai-workflow-builds.html">Workflow builds</a>
+        <a href="/delivery-model.html">How we deliver</a>
+        <a href="/ai-coaching.html">Team enablement</a>
+        <a href="/about.html">About</a>
+        <a href="/blog.html" aria-current="page">Insights</a>
+        <a href="/#contact" class="nav-drawer-cta">Book a scoping call</a>
       </nav>
-      <a href="/#contact" class="btn btn-sm">Get in Touch</a>
+      <div class="nav-actions">
+        <a href="/#contact" class="btn btn-sm nav-cta">Book a scoping call</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu"><span></span><span></span></button>
+      </div>
     </div>
   </header>
 
-  <main>
+  <main id="main">
 
-    <section class="hero">
+    <!-- ============ HERO ============ -->
+    <section class="hero in-hero">
       <div class="hero-inner">
-        <div class="hero-copy fade-up">
-          <h1>Insights</h1>
-          <p class="hero-sub">Practical perspectives on AI strategy, implementation, and governance for Australian businesses.</p>
+        <div class="hero-copy">
+          <div class="pill fade-up">Insights</div>
+          <h1 class="fade-up" style="animation-delay:.06s">Notes from <span class="accent-serif text-gradient">the work.</span></h1>
+          <p class="hero-sub fade-up" style="animation-delay:.12s">Practical writing on building and running systems with AI in Australia. Posts are dated and revised when the facts change.</p>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <!-- ============ FEATURED ============ -->
+    <section class="in-featured-wrap" aria-labelledby="featured-title">
       <div class="container">
-        <div class="feature-grid">
-          <a href="blog/mcp-model-context-protocol.html" class="feature feature-link fade-up">
-            <div class="pill" style="margin-bottom:.5rem">30 March 2026</div>
-            <h3>MCP Explained: Why Model Context Protocol Changes Everything for AI Agents</h3>
-            <p>Anthropic's open standard for connecting AI models to external tools and data. What it is, how it works, and why Australian enterprises should care.</p>
-            <span class="learn-more">Read more &rarr;</span>
-          </a>
-          <a href="blog/rag-architecture-patterns.html" class="feature feature-link fade-up" style="animation-delay:.06s">
-            <div class="pill" style="margin-bottom:.5rem">28 March 2026</div>
-            <h3>RAG Architecture Patterns for Australian Enterprise</h3>
-            <p>From basic retrieval-augmented generation to agentic and graph-based patterns — choosing the right RAG architecture with data sovereignty front of mind.</p>
-            <span class="learn-more">Read more &rarr;</span>
-          </a>
-          <a href="blog/ai-governance-framework-australia.html" class="feature feature-link fade-up" style="animation-delay:.12s">
-            <div class="pill" style="margin-bottom:.5rem">27 March 2026</div>
-            <h3>Building an AI Governance Framework for Australian Organisations</h3>
-            <p>The 6 pillars of effective AI governance — from policy and risk assessment to monitoring and audit. Aligned with the Privacy Act 2024 amendments and National AI Plan.</p>
-            <span class="learn-more">Read more &rarr;</span>
-          </a>
-          <a href="blog/privacy-act-2024-ai.html" class="feature feature-link fade-up">
-            <div class="pill" style="margin-bottom:.5rem">25 March 2026</div>
-            <h3>What the Privacy Act 2024 Amendments Mean for Your AI Systems</h3>
-            <p>Automated decision-making transparency requirements commence December 2026. Penalties up to $50M. Here's what your business needs to do now.</p>
-            <span class="learn-more">Read more &rarr;</span>
-          </a>
-          <a href="blog/pilot-to-production-ai.html" class="feature feature-link fade-up" style="animation-delay:.06s">
-            <div class="pill" style="margin-bottom:.5rem">22 March 2026</div>
-            <h3>Why Your AI Pilot Isn't Scaling — And What to Do About It</h3>
-            <p>80% of AI projects never make it past experimentation. The 5 most common reasons and a practical checklist to get to production.</p>
-            <span class="learn-more">Read more &rarr;</span>
-          </a>
-          <a href="blog/ai-agents-beyond-chatbots.html" class="feature feature-link fade-up" style="animation-delay:.12s">
-            <div class="pill" style="margin-bottom:.5rem">20 March 2026</div>
-            <h3>AI Agents Are Not Chatbots: What Australian Businesses Need to Know</h3>
-            <p>Chatbots answer questions. AI agents take action. Understanding the difference is critical for businesses automating complex workflows.</p>
-            <span class="learn-more">Read more &rarr;</span>
-          </a>
-          <a href="blog/choosing-llm-for-business.html" class="feature feature-link fade-up">
-            <div class="pill" style="margin-bottom:.5rem">15 March 2026</div>
-            <h3>How to Choose the Right LLM for Your Business</h3>
-            <p>GPT-4.5 vs Claude vs Gemini vs Llama 4 — an honest comparison by use case, cost, and Australian data sovereignty requirements.</p>
-            <span class="learn-more">Read more &rarr;</span>
-          </a>
-          <a href="blog/ai-for-professional-services.html" class="feature feature-link fade-up" style="animation-delay:.06s">
-            <div class="pill" style="margin-bottom:.5rem">10 March 2026</div>
-            <h3>AI in Professional Services: What Law Firms and Consultancies Are Actually Doing</h3>
-            <p>Document review, knowledge management, client comms, and billing — real AI use cases delivering real productivity gains in Australian professional services.</p>
-            <span class="learn-more">Read more &rarr;</span>
-          </a>
-          <a href="blog/data-readiness-ai.html" class="feature feature-link fade-up" style="animation-delay:.12s">
-            <div class="pill" style="margin-bottom:.5rem">5 March 2026</div>
-            <h3>Your AI Strategy Will Fail Without Data Readiness</h3>
-            <p>Data readiness is the #1 predictor of AI success. The 4 pillars you need to get right before investing in AI — and quick wins you can fix in 30 days.</p>
-            <span class="learn-more">Read more &rarr;</span>
-          </a>
+        <a class="in-featured card card-feature reveal" href="/blog/privacy-act-2024-ai.html">
+          <div class="in-featured-art" aria-hidden="true">
+            <span class="in-featured-label mono">Commences</span>
+            <span class="in-featured-date"><span>10</span><span>Dec</span><span class="text-gradient">2026</span></span>
+            <span class="in-featured-label mono">APPs 1.7&ndash;1.9</span>
+          </div>
+          <div class="in-featured-body">
+            <div class="in-featured-meta">
+              <span class="eyebrow">Featured &middot; Privacy</span>
+              <time class="mono" datetime="2026-03-25">25 March 2026</time>
+            </div>
+            <h2 id="featured-title">Privacy Act automated-decision transparency: what changes on 10 December 2026</h2>
+            <p>From 10 December 2026, privacy policies must disclose the kinds of personal information used, and the kinds of decisions made, by computer programs that could significantly affect individuals. What the enacted law requires, and what it doesn't.</p>
+            <span class="link-arrow">Read the post <svg class="arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ ALL POSTS ============ -->
+    <section class="section in-list-section" aria-labelledby="all-posts">
+      <div class="container">
+        <div class="in-list-head reveal">
+          <h2 id="all-posts">All posts</h2>
+          <span class="mono">9 posts &middot; newest first</span>
         </div>
+        <ol class="in-list">
+          <li class="reveal">
+            <a class="in-row" href="/blog/mcp-model-context-protocol.html">
+              <span class="in-row-meta"><time datetime="2026-03-30">30 March 2026</time><span class="in-topic">Architecture</span></span>
+              <span class="in-row-main">
+                <h3>MCP explained: connecting assistants to your systems safely</h3>
+                <p>What the Model Context Protocol is, how it works, and why a single logged path for tool access helps produce an audit trail.</p>
+              </span>
+              <span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </a>
+          </li>
+          <li class="reveal" style="--d:60ms">
+            <a class="in-row" href="/blog/rag-architecture-patterns.html">
+              <span class="in-row-meta"><time datetime="2026-03-28">28 March 2026</time><span class="in-topic">Architecture</span></span>
+              <span class="in-row-main">
+                <h3>Retrieval patterns for knowledge assistants</h3>
+                <p>From basic retrieval to agentic and graph-based patterns, and how to choose one with data residency in mind.</p>
+              </span>
+              <span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </a>
+          </li>
+          <li class="reveal" style="--d:120ms">
+            <a class="in-row" href="/blog/ai-governance-framework-australia.html">
+              <span class="in-row-meta"><time datetime="2026-03-27">27 March 2026</time><span class="in-topic">Governance</span></span>
+              <span class="in-row-main">
+                <h3>Building an AI governance framework for Australian organisations</h3>
+                <p>Policy, risk assessment, monitoring and audit, set against the Australian Government's Guidance for AI Adoption (October 2025).</p>
+              </span>
+              <span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </a>
+          </li>
+          <li class="reveal">
+            <a class="in-row" href="/blog/pilot-to-production-ai.html">
+              <span class="in-row-meta"><time datetime="2026-03-22">22 March 2026</time><span class="in-topic">Delivery</span></span>
+              <span class="in-row-main">
+                <h3>Why pilots stall, and what gets them to production</h3>
+                <p>The common reasons pilots stall, and a practical checklist tied to acceptance tests and ongoing operation.</p>
+              </span>
+              <span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </a>
+          </li>
+          <li class="reveal" style="--d:60ms">
+            <a class="in-row" href="/blog/ai-agents-beyond-chatbots.html">
+              <span class="in-row-meta"><time datetime="2026-03-20">20 March 2026</time><span class="in-topic">Delivery</span></span>
+              <span class="in-row-main">
+                <h3>AI agents are not chatbots: what Australian businesses need to know</h3>
+                <p>Chatbots answer questions; agents take action. Approval gates and evaluations are the operational difference.</p>
+              </span>
+              <span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </a>
+          </li>
+          <li class="reveal" style="--d:120ms">
+            <a class="in-row" href="/blog/choosing-llm-for-business.html">
+              <span class="in-row-meta"><time datetime="2026-03-15">15 March 2026</time><span class="in-topic">Model choice</span></span>
+              <span class="in-row-main">
+                <h3>Choosing a model: test it on your work, not a leaderboard</h3>
+                <p>Test candidates against your acceptance tests, then compare cost per accepted output, latency, and where data is processed.</p>
+              </span>
+              <span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </a>
+          </li>
+          <li class="reveal">
+            <a class="in-row" href="/blog/ai-for-professional-services.html">
+              <span class="in-row-meta"><time datetime="2026-03-10">10 March 2026</time><span class="in-topic">Industry</span></span>
+              <span class="in-row-main">
+                <h3>AI in professional services: where it helps and where it doesn't</h3>
+                <p>Document review, knowledge management, client communications and billing: where assistants help in professional firms, and where they don't.</p>
+              </span>
+              <span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </a>
+          </li>
+          <li class="reveal" style="--d:60ms">
+            <a class="in-row" href="/blog/data-readiness-ai.html">
+              <span class="in-row-meta"><time datetime="2026-03-05">5 March 2026</time><span class="in-topic">Data</span></span>
+              <span class="in-row-main">
+                <h3>Your AI strategy will fail without data readiness</h3>
+                <p>The data foundations to get right before investing, with a checklist for where to start.</p>
+              </span>
+              <span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </a>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section-cta">
+      <div class="container">
+        <span class="eyebrow reveal">Work with us</span>
+        <h2 class="reveal">Priced before you commit, tested before you accept, kept running after launch.</h2>
+        <p class="reveal">30 minutes. Free. You leave with a view on scope, price and how we'd test it.</p>
+        <a href="/#contact" class="btn btn-lg reveal">Book a scoping call <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </section>
 
   </main>
 
+  <!-- ============ FOOTER (canonical) ============ -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
         <a href="/" class="logo" aria-label="OzAI Digital home">
-          <svg class="logo-mark" width="28" height="28" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogoF" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogoF)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
+          <svg class="logo-mark" width="28" height="28" viewBox="0 0 600 600" fill="none" aria-hidden="true"><defs><linearGradient id="gLogoF" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogoF)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
           <span class="logo-text">OzAI Digital</span>
         </a>
-        <p class="footer-tagline">Pragmatic AI consulting for Australian businesses.</p>
+        <p class="footer-tagline">Working systems, built with AI. Priced up front, tested before acceptance, kept running.</p>
+        <p class="footer-tagline">Melbourne &middot; Sydney, Australia</p>
+        <a href="https://www.linkedin.com/company/ozai-digital" class="team-link footer-social" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
       </div>
       <div class="footer-links">
         <div class="footer-col">
-          <h4>Solutions</h4>
-          <a href="consulting.html">AI Strategy &amp; Consulting</a>
-          <a href="integration.html">Systems Integration</a>
-          <a href="agents.html">AI Agents &amp; Automation</a>
-          <a href="managed.html">Managed AI Services</a>
+          <h4>What we do</h4>
+          <a href="/agentic-software-delivery.html">Agentic software delivery</a>
+          <a href="/ai-workflow-builds.html">Workflow builds</a>
+          <a href="/delivery-model.html#run">Run (ongoing operation)</a>
+          <a href="/ai-coaching.html">Team enablement</a>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
-          <a href="/ai-coaching.html">AI Coaching</a>
-          <a href="/#about">About</a>
-          <a href="/#team">Team</a>
-          <a href="/#industries">Industries</a>
-          <a href="/case-studies.html">Case Studies</a>
+          <a href="/delivery-model.html">How we deliver</a>
+          <a href="/about.html">About</a>
           <a href="/blog.html">Insights</a>
-          <a href="/#contact">Contact</a>
+          <a href="/#contact">Book a scoping call</a>
         </div>
         <div class="footer-col">
-          <h4>Legal</h4>
-          <a href="/privacy.html">Privacy Policy</a>
-          <a href="/terms.html">Terms of Service</a>
+          <h4>Materials</h4>
+          <a href="/ai-training-deck.html">Company AI training deck</a>
+          <a href="/ai-dev-team-transformation-deck.html">Engineering team deck</a>
+          <a href="/fridge-catalogue-ai-deck.html">Catalogue assistant deck</a>
+          <a href="/surgery-voice-receptionist-deck.html">Voice receptionist deck</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 OzAI Digital Pty Ltd. All rights reserved. Melbourne &middot; Sydney, Australia.</p>
+      <p>&copy; 2026 OzAI Digital Pty Ltd</p>
+      <p class="footer-legal"><a href="/privacy.html">Privacy Policy</a> <span aria-hidden="true">&middot;</span> <a href="/terms.html">Terms of Service</a></p>
     </div>
+    <div class="footer-wordmark" aria-hidden="true">OzAI Digital</div>
   </footer>
 
-</div>
+</div><!-- .page -->
 <!-- Cookie Banner -->
 <div class="cookie-banner" id="cookieBanner">
   <span>We use cookies to improve your experience and analyse site traffic. See our <a href="/privacy.html">Privacy Policy</a>.</span>

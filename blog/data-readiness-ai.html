@@ -3,203 +3,262 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your AI Strategy Will Fail Without Data Readiness — OzAI Digital</title>
-  <meta name="description" content="Why data readiness is the number one predictor of AI project success — covering data quality, accessibility, governance, and infrastructure, with practical steps for Australian businesses.">
-  <meta property="og:title" content="Your AI Strategy Will Fail Without Data Readiness — OzAI Digital">
-  <meta property="og:description" content="Why data readiness is the number one predictor of AI project success, with practical steps for Australian businesses.">
+  <title>Data readiness for AI projects — OzAI Digital</title>
+  <meta name="description" content="Quality, accessibility, governance and infrastructure: the four data checks that decide whether a workflow reaches production, with a checklist to run before you build.">
+  <meta property="og:title" content="Data readiness for AI projects — OzAI Digital">
+  <meta property="og:description" content="Quality, accessibility, governance and infrastructure: the four data checks that decide whether a workflow reaches production, with a checklist to run before you build.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://ozai.digital/blog/data-readiness-ai.html">
   <meta property="og:image" content="https://ozai.digital/logo-linkedin.png">
+  <meta property="article:published_time" content="2026-03-05">
+  <meta property="article:modified_time" content="2026-10-29">
   <meta name="twitter:card" content="summary">
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../icon-180.png">
-  <link rel="manifest" href="../site.webmanifest">
+  <meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0a09" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://ozai.digital/blog/data-readiness-ai.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="/site.js" defer></script>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/css/article.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Your AI strategy will fail without data readiness", "description": "Quality, accessibility, governance and infrastructure: the four data checks that decide whether a workflow reaches production, with a checklist to run before you build.", "datePublished": "2026-03-05", "dateModified": "2026-10-29", "author": {"@type": "Organization", "name": "OzAI Digital", "url": "https://ozai.digital/"}, "publisher": {"@type": "Organization", "name": "OzAI Digital", "logo": {"@type": "ImageObject", "url": "https://ozai.digital/logo-linkedin.png"}}, "mainEntityOfPage": "https://ozai.digital/blog/data-readiness-ai.html", "image": "https://ozai.digital/logo-linkedin.png"}</script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <div class="page">
 
+  <!-- ============ HEADER (canonical) ============ -->
   <header class="nav">
     <div class="nav-inner">
       <a href="/" class="logo" aria-label="OzAI Digital home">
-        <svg class="logo-mark" width="36" height="36" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogo" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogo)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
+        <svg class="logo-mark" width="30" height="30" viewBox="0 0 600 600" fill="none" aria-hidden="true"><defs><linearGradient id="gLogo" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogo)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
         <span class="logo-text">OzAI Digital</span>
       </a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <div class="nav-item">
-          <a href="/solutions.html">Solutions</a>
-          <div class="nav-menu">
-            <a href="/ai-workflow-builds.html">Fixed-scope AI builds</a>
-            <a href="/consulting.html">AI strategy and roadmap</a>
-            <a href="/integration.html">Systems integration</a>
-            <a href="/agents.html">Agents and automation</a>
-            <a href="/managed.html">Managed AI operations</a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <a href="/use-cases.html">Use Cases</a>
-          <div class="nav-menu">
-            <a href="/fridge-catalogue-ai-deck.html">Catalogue chat deck</a>
-            <a href="/surgery-voice-receptionist-deck.html">Voice receptionist deck</a>
-            <a href="/ai-workflow-builds.html#catalogue">Build catalogue</a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <a href="/ai-coaching.html">Coaching</a>
-          <div class="nav-menu">
-            <a href="/ai-coaching.html">AI coaching overview</a>
-            <a href="/ai-training-deck.html">Company AI training deck</a>
-            <a href="/ai-dev-team-transformation-deck.html">Dev team transformation deck</a>
-            <a href="/enablement.html">Training services</a>
-          </div>
-        </div>
-        <a href="/industries.html">Industries</a>
-        <a href="/delivery-model.html">Delivery</a>
-        <div class="nav-item">
-          <a href="/resources.html">Resources</a>
-          <div class="nav-menu">
-            <a href="/case-studies.html">Case studies</a>
-            <a href="/blog.html">Insights</a>
-          </div>
-        </div>
-        <a href="/#contact">Contact</a>
+      <nav class="nav-links" id="primary-nav" aria-label="Primary navigation">
+        <a href="/agentic-software-delivery.html">Agentic delivery</a>
+        <a href="/ai-workflow-builds.html">Workflow builds</a>
+        <a href="/delivery-model.html">How we deliver</a>
+        <a href="/ai-coaching.html">Team enablement</a>
+        <a href="/about.html">About</a>
+        <a href="/blog.html" aria-current="page">Insights</a>
+        <a href="/#contact" class="nav-drawer-cta">Book a scoping call</a>
       </nav>
-      <a href="/#contact" class="btn btn-sm">Get in Touch</a>
+      <div class="nav-actions">
+        <a href="/#contact" class="btn btn-sm nav-cta">Book a scoping call</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu"><span></span><span></span></button>
+      </div>
     </div>
   </header>
 
-  <main>
+  <main id="main">
+    <article class="article">
+      <header class="article-header">
+        <div class="container">
+          <div class="article-col">
+            <a class="back-link" href="/blog.html"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4"/></svg> All insights</a>
+            <div class="article-kicker">
+              <span class="eyebrow">Data</span>
+              <span class="updated-badge">Updated 29 October 2026</span>
+            </div>
+            <h1>Your AI strategy will fail without data readiness</h1>
+            <p class="article-dek">Most projects stall on data, not models. Four pillars of data readiness, the problems that stall projects, and a checklist to run before you build.</p>
+            <div class="article-meta">
+              <span class="article-author"><svg viewBox="0 0 600 600" fill="none" aria-hidden="true"><defs><linearGradient id="gAuthor" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="140" fill="url(#gAuthor)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>OzAI Digital</span>
+              <span class="sep" aria-hidden="true"></span>
+              <span>Published <time datetime="2026-03-05">5 March 2026</time></span>
+              <span class="sep" aria-hidden="true"></span>
+              <span>Updated <time datetime="2026-10-29">29 October 2026</time></span>
+              <span class="sep" aria-hidden="true"></span>
+              <span>5 min read</span>
+            </div>
+          </div>
+        </div>
+      </header>
 
-    <section class="section">
-      <div class="container" style="max-width:780px">
-        <p style="margin-bottom:.5rem"><a href="/blog.html" style="color:var(--accent);text-decoration:none">&larr; Back to Insights</a></p>
-        <div class="pill" style="margin-bottom:1rem">5 March 2026</div>
-        <h1 style="margin-bottom:1.5rem">Your AI Strategy Will Fail Without Data Readiness</h1>
+      <div class="article-main">
+        <div class="container">
+        <div class="article-body prose">
+          <aside class="callout callout--update" aria-label="Update note">
+            <span class="callout-label">Updated 29 October 2026</span>
+            <p><strong>Updated.</strong> Softened unsourced claims to our own view and added a sourced reference; replaced the “30 days” framing with a checklist tied to acceptance-test inputs; added the Privacy Act transparency obligation from 10 December 2026.</p>
+          </aside>
 
-        <div class="legal-content">
+          <p>In our experience, most projects of this kind do not fail because of the model. They fail because of the data: poor quality, formats that resist automation, unclear ownership, missing governance. Gartner's <a href="https://www.intelligentcio.com/apac/2024/08/05/gartner-predicts-30-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025/">2024 prediction</a> that many generative AI projects would be abandoned after proof of concept named poor data quality first among its reasons. Yet many organisations go straight to choosing a model and designing the use case without checking whether their data can support it.</p>
 
-<p>Most AI projects do not fail because of the model. They fail because of the data. Industry research consistently shows that data-related issues — poor quality, inaccessible formats, unclear ownership, missing governance — are the primary cause of AI project failure. Yet most organisations jump straight to model selection and use case design without honestly assessing whether their data is ready to support what they are trying to build.</p>
+          <p>Data readiness is not glamorous and does not make for an exciting board paper. But it is, in our view, the most reliable early signal of whether a project will reach production or stall as an expensive pilot.</p>
 
-<p>Data readiness is not glamorous. It does not make for exciting board presentations. But it is the single most reliable predictor of whether your AI investment will deliver returns or become an expensive pilot that never reaches production.</p>
+          <h2>Four pillars of data readiness</h2>
 
-<h2>The Four Pillars of Data Readiness</h2>
+          <h3>1. Data quality</h3>
 
-<h3>1. Data Quality</h3>
+          <p>Language models are unforgiving of bad data. A knowledge assistant built on documents with inconsistent formatting, outdated content and duplicates will give unreliable answers, and unreliable answers destroy trust faster than anything else.</p>
 
-<p>AI systems are ruthlessly unforgiving of bad data. A RAG system built on documents with inconsistent formatting, outdated information, and duplicate records will produce unreliable answers — and unreliable answers destroy user trust faster than anything else.</p>
+          <p>Quality has four dimensions. <strong>Completeness</strong>: are the fields filled in? <strong>Accuracy</strong>: does the data reflect reality, or has it drifted? <strong>Consistency</strong>: is the same thing represented the same way across systems? <strong>Timeliness</strong>: is it current enough for the decisions it supports?</p>
 
-<p>Data quality has four dimensions. <strong>Completeness</strong> — are the fields populated, or are there gaps? <strong>Accuracy</strong> — does the data reflect reality, or has it drifted over time? <strong>Consistency</strong> — is the same entity represented the same way across different systems? <strong>Timeliness</strong> — is the data current enough for the decisions it needs to support?</p>
+          <p>You do not need perfect data to start. You do need to know where the problems are, and have a plan for the ones that matter to your use case.</p>
 
-<p>You do not need perfect data to start an AI project. But you do need to know where the quality issues are and have a plan to address the ones that matter for your specific use case.</p>
+          <h3>2. Data accessibility</h3>
 
-<h3>2. Data Accessibility</h3>
+          <p>Data that cannot be reached might as well not exist. In most organisations, important information is spread across CRMs, ERPs, file shares, email archives, SharePoint sites, legacy databases and the occasional spreadsheet on someone's desktop.</p>
 
-<p>Data that exists but cannot be reached is as good as data that does not exist at all. In most Australian enterprises, critical information is scattered across dozens of systems — CRMs, ERPs, file shares, email archives, SharePoint sites, legacy databases, and the occasional spreadsheet on someone's desktop.</p>
+          <p>Automated workflows need programmatic access, ideally through APIs or well-structured database connections. If the only way to get the data is a manual export, screen scraping or asking someone in finance to email a CSV every Monday, that will bottleneck everything you build on it.</p>
 
-<p>AI systems need programmatic access to data, ideally through APIs or well-structured database connections. If your data can only be accessed through manual exports, screen scraping, or asking someone in finance to email you a CSV file every Monday, you have an accessibility problem that will bottleneck your AI ambitions.</p>
+          <p>The test: can we get the data we need, in a usable format, automatically, within an acceptable time? If not, for any critical source, fix that before, or alongside, the build.</p>
 
-<p>The question to ask is: can we get the data we need, in a usable format, through an automated process, within an acceptable timeframe? If the answer is no for any critical data source, that needs to be fixed before — or at least alongside — any AI implementation.</p>
+          <h3>3. Data governance</h3>
 
-<h3>3. Data Governance</h3>
+          <p>Governance answers the questions that matter when something goes wrong. Who owns this data? Where did it come from? Who may access it? What privacy classification does it carry? How long must it be kept?</p>
 
-<p>Governance answers the questions that matter when things go wrong. Who owns this data? Where did it come from? Who is allowed to access it? What privacy classification does it carry? How long must it be retained?</p>
+          <p>For these systems, governance matters even more, because outputs are only as trustworthy as their inputs. If an assistant answers from a document, you need to trace the answer to that source, know who wrote it, confirm it is current, and check that the person asking is allowed to see it.</p>
 
-<p>For AI systems, governance is especially important because the model's outputs are only as trustworthy as the lineage of its inputs. If a RAG system returns an answer based on a document, you need to be able to trace that answer back to a specific source, verify who authored it, confirm it is current, and establish whether the user asking the question is authorised to see that information.</p>
+          <p>Australian organisations also have obligations under the <em>Privacy Act 1988</em>. Personal information used in these systems must be handled under the Australian Privacy Principles, with clear processes covering purpose, use and disclosure, and individuals' rights of access and correction. From 10 December 2026, if a program makes or substantially informs significant decisions about people, your privacy policy must also describe the kinds of personal information used and the kinds of decisions involved. See <a href="/blog/privacy-act-2024-ai.html">what changes on 10 December 2026</a>.</p>
 
-<p>Australian businesses face specific governance requirements under the Privacy Act 1988 and its ongoing reforms. Personal information used in AI systems must be handled in accordance with the Australian Privacy Principles, and organisations need clear processes for how AI systems interact with personal data — including consent, purpose limitation, and the right to access and correction.</p>
+          <h3>4. Data infrastructure</h3>
 
-<h3>4. Data Infrastructure</h3>
+          <p>These workloads need slightly different infrastructure from traditional reporting. Semantic search needs a vector index. Pipelines must generate embeddings and keep indexes current. Storage must handle structured records and unstructured documents: PDFs, emails, images, transcripts.</p>
 
-<p>AI workloads have different infrastructure requirements from traditional analytics. Vector databases are needed for semantic search. Data pipelines must handle embedding generation and index updates. Storage needs to accommodate both structured data and unstructured documents — PDFs, emails, images, audio transcripts.</p>
+          <p>None of it needs to be complicated. A Postgres database with the pgvector extension, a straightforward ingestion pipeline and cloud storage for source documents can support a capable system. But it does need to exist, and be designed for the workload.</p>
 
-<p>The infrastructure does not need to be complex. A PostgreSQL database with the pgvector extension, a straightforward ingestion pipeline, and cloud storage for source documents can support a remarkably capable AI system. But the infrastructure does need to exist, and it needs to be designed with AI workloads in mind from the start.</p>
+          <h2>Common data problems that stall projects</h2>
 
-<h2>Common Data Problems That Kill AI Projects</h2>
+          <p><strong>Dirty data.</strong> Inconsistent naming, duplicate records, stale entries and free-text fields that resist automated processing. Dirty inputs produce dirty outputs.</p>
 
-<p><strong>Dirty data.</strong> Inconsistent naming conventions, duplicate records, outdated entries, and unstructured free-text fields that resist automated processing. An AI system trained on or retrieving from dirty data will produce dirty outputs.</p>
+          <p><strong>No single source of truth.</strong> When the same fact has different values in different systems, such as a customer's address in the CRM and the billing system, the system cannot tell which is right. Outputs become inconsistent and trust erodes.</p>
 
-<p><strong>No single source of truth.</strong> When the same information exists in multiple systems with different values — a customer's address is different in the CRM and the billing system — the AI has no way to determine which is correct. This leads to inconsistent and unreliable outputs that erode trust.</p>
+          <p><strong>Regulatory constraints.</strong> Data that cannot be used for the purpose because of privacy restrictions, contract terms or consent gaps. Finding this after you have built is expensive. Finding it before you start is good planning.</p>
 
-<p><strong>Regulatory constraints.</strong> Data that cannot be used for AI purposes due to privacy restrictions, contractual limitations, or consent gaps. Discovering these constraints after you have built the system is expensive and demoralising. Discovering them before you start is good planning.</p>
+          <p><strong>Siloed ownership.</strong> Data controlled by different departments with no shared standards or integration layer. Breaking down silos is as much a political job as a technical one.</p>
 
-<p><strong>Siloed ownership.</strong> Data controlled by different departments with no shared standards, no integration layer, and no governance framework to enable cross-functional use. Breaking down these silos is as much a political challenge as a technical one.</p>
+          <h2>A readiness checklist</h2>
 
-<h2>Quick Wins: What You Can Fix in 30 Days</h2>
+          <p>Data readiness does not need a two-year programme before you start. Work through this list for the one workflow you want to build first.</p>
 
-<p>Data readiness does not require a two-year transformation programme before you can start with AI. There are practical steps you can take in the first month to unblock progress.</p>
+          <ul>
+            <li><strong>Pick the source that matters most.</strong> Identify the data set that, if ready, would support your most valuable workflow. Start there rather than trying to fix everything.</li>
+            <li><strong>Collect real samples.</strong> Gather a set of real inputs, including the messy, incomplete and unusual ones. These become the "Inputs" part of your <a href="/ai-workflow-builds.html">acceptance tests</a>.</li>
+            <li><strong>Profile quality.</strong> Measure completeness, duplicates and format consistency, and quantify the problems so you can fix them in order of impact.</li>
+            <li><strong>Confirm automated access.</strong> Make sure the source can be read by an API or scheduled extract. A nightly export in a structured format is a real improvement over manual steps.</li>
+            <li><strong>Record ownership and sensitivity.</strong> Note who owns each source, its privacy classification, and the legal basis for using it in this workflow.</li>
+            <li><strong>Know where it will be processed.</strong> List each service that will store or process the data, and its region.</li>
+          </ul>
 
-<p><strong>Identify your highest-value data source.</strong> For most organisations, this is the one data set that, if made AI-ready, would support the most impactful use case. Focus there first rather than trying to fix everything at once.</p>
+          <h2>The data audit</h2>
 
-<p><strong>Run a quality assessment.</strong> Profile the data for completeness, duplicates, and format consistency. Quantify the issues so you can prioritise fixes based on impact.</p>
+          <p>For larger programmes, a structured audit is an efficient way to see where you stand across all four pillars. It maps what data exists, where it lives, how it is reached, who owns it and what condition it is in, then assesses each source and produces a prioritised list of fixes for the workflows you want to build.</p>
 
-<p><strong>Establish basic access.</strong> Set up API access or automated extraction for the priority data source. Even a nightly batch export into a structured format is a meaningful improvement over manual processes.</p>
+          <p>It involves people from IT, data teams, the business and legal or compliance. The output should be a concrete plan with owners, timelines and dependencies, not a theoretical framework.</p>
 
-<p><strong>Document ownership and sensitivity.</strong> Create a simple register of who owns each data source, what privacy classification it carries, and what consent or legal basis exists for its use in AI systems.</p>
+          <h2>Privacy and data residency</h2>
 
-<h2>The Data Audit</h2>
+          <p>For Australian organisations, data readiness and regulatory compliance cannot be separated. Strong data governance now makes it far easier to meet the Privacy Act's new automated-decision transparency obligation and any later reforms. Retrofitting it into systems not designed for it is harder.</p>
 
-<p>A structured data audit is the most efficient way to understand your readiness across all four pillars. A good audit maps your data landscape — what data exists, where it lives, how it is accessed, who owns it, and what condition it is in. It assesses each source against the four pillars and produces a prioritised roadmap of what needs to be fixed, in what order, to support your target AI use cases.</p>
+          <p>Data residency matters just as much. Knowing where data is stored, processed and sent is a prerequisite for any build, and a design decision that shapes architecture, vendor choice and cost.</p>
 
-<p>The audit typically takes two to four weeks and involves stakeholders from IT, data teams, business units, and legal or compliance. The output is not a theoretical framework — it is a concrete action plan with clear owners, timelines, and dependencies.</p>
+          <h2>Where we fit</h2>
 
-<h2>Privacy Act Compliance and Data Sovereignty</h2>
+          <p>Every workflow build starts by agreeing the inputs: approved samples that represent normal and messy real cases. That step surfaces most readiness problems before any build money is spent, and we tell you where each service will store and process your data before we start. If you want to check whether your data is ready for a specific workflow, <a href="/#contact">book a scoping call</a>.</p>
+        </div>
 
-<p>For Australian organisations, data readiness is inseparable from regulatory compliance. The Privacy Act reforms currently underway will introduce stricter requirements around data handling, automated decision-making, and individual rights. Organisations that build strong data governance now will be well-positioned for these changes. Those that do not will find themselves retrofitting compliance into systems that were not designed for it.</p>
+        <section class="article-sources" aria-labelledby="sources-h">
+          <h2 id="sources-h">Sources</h2>
+          <ol>
+            <li><a href="https://www.intelligentcio.com/apac/2024/08/05/gartner-predicts-30-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025/" rel="noopener">Intelligent CIO (APAC) — Gartner predicts 30% of generative AI projects will be abandoned after proof of concept by end of 2025</a></li>
+          </ol>
+        </section>
+        </div>
+      </div>
+    </article>
 
-<p>Data sovereignty is equally important. Understanding where your data is stored, processed, and transmitted is a prerequisite for any AI implementation — not just a compliance checkbox, but a fundamental design decision that affects architecture, vendor selection, and cost.</p>
+    <section class="section section-alt related" aria-labelledby="related-h">
+      <div class="container">
+        <div class="related-head">
+          <h2 id="related-h">Keep reading</h2>
+          <a class="link-arrow" href="/blog.html">All insights <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </div>
+        <div class="related-grid">
+          <a class="card related-card reveal" href="/blog/pilot-to-production-ai.html" style="--d:0ms">
+            <span class="related-cat">Delivery</span>
+            <h3>Why pilots stall, and what gets them to production</h3>
+            <p>Five reasons promising pilots never reach production, what “production-ready” actually means, and ten questions to answer before you fund the next one.</p>
+            <div class="card-foot"><span class="mono">Updated 29 October 2026</span><span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+          </a>
+          <a class="card related-card reveal" href="/blog/rag-architecture-patterns.html" style="--d:80ms">
+            <span class="related-cat">Retrieval</span>
+            <h3>Retrieval patterns for knowledge assistants</h3>
+            <p>Four ways to ground a language model in your own documents, from simple to involved, and how to choose between them without losing track of where your data goes.</p>
+            <div class="card-foot"><span class="mono">Updated 29 October 2026</span><span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+          </a>
+          <a class="card related-card reveal" href="/blog/ai-governance-framework-australia.html" style="--d:160ms">
+            <span class="related-cat">Governance</span>
+            <h3>Building an AI governance framework for Australian organisations</h3>
+            <p>A practical, six-pillar framework that is proportionate to risk, consistent with current Australian obligations, and usable by the teams who build and run the systems.</p>
+            <div class="card-foot"><span class="mono">Updated 29 October 2026</span><span class="card-arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+          </a>
+        </div>
+      </div>
+    </section>
 
-<h2>How OzAI Digital Can Help</h2>
-
-<p>At OzAI Digital, we offer data readiness assessments designed specifically for organisations planning AI initiatives. We audit your data landscape across all four pillars, identify the gaps that will block your AI ambitions, and deliver a prioritised roadmap to close them. Our assessments are practical, not theoretical — focused on unblocking specific AI use cases rather than boiling the ocean.</p>
-
-<p>If you are planning an AI initiative and want to understand whether your data is ready, <a href="/#contact">get in touch</a> for a no-obligation conversation about where to start.</p>
-
+    <section class="section-cta article-cta">
+      <div class="container reveal">
+        <span class="eyebrow">Next step</span>
+        <h2>Have a workflow or system in mind?</h2>
+        <p>30 minutes. Free. You leave with a view on scope, price and how we'd test it.</p>
+        <div class="cta-actions">
+          <a href="/#contact" class="btn btn-lg">Book a scoping call <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         </div>
       </div>
     </section>
 
   </main>
 
+  <!-- ============ FOOTER (canonical) ============ -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
         <a href="/" class="logo" aria-label="OzAI Digital home">
-          <svg class="logo-mark" width="28" height="28" viewBox="0 0 600 600" fill="none"><defs><linearGradient id="gLogoF" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogoF)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
+          <svg class="logo-mark" width="28" height="28" viewBox="0 0 600 600" fill="none" aria-hidden="true"><defs><linearGradient id="gLogoF" x1="0" y1="0" x2="600" y2="600"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs><rect width="600" height="600" rx="110" fill="url(#gLogoF)"/><text x="300" y="380" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="200" fill="#fff" font-weight="800" letter-spacing="-8">OzAI</text></svg>
           <span class="logo-text">OzAI Digital</span>
         </a>
-        <p class="footer-tagline">Pragmatic AI consulting for Australian businesses.</p>
+        <p class="footer-tagline">Working systems, built with AI. Priced up front, tested before acceptance, kept running.</p>
+        <p class="footer-tagline">Melbourne &middot; Sydney, Australia</p>
+        <a href="https://www.linkedin.com/company/ozai-digital" class="team-link footer-social" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
       </div>
       <div class="footer-links">
         <div class="footer-col">
-          <h4>Solutions</h4>
-          <a href="/consulting.html">AI Strategy &amp; Consulting</a>
-          <a href="/integration.html">Systems Integration</a>
-          <a href="/agents.html">AI Agents &amp; Automation</a>
-          <a href="/managed.html">Managed AI Services</a>
+          <h4>What we do</h4>
+          <a href="/agentic-software-delivery.html">Agentic software delivery</a>
+          <a href="/ai-workflow-builds.html">Workflow builds</a>
+          <a href="/delivery-model.html#run">Run (ongoing operation)</a>
+          <a href="/ai-coaching.html">Team enablement</a>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
-          <a href="/ai-coaching.html">AI Coaching</a>
-          <a href="/#about">About</a>
-          <a href="/#team">Team</a>
-          <a href="/#industries">Industries</a>
-          <a href="/#contact">Contact</a>
+          <a href="/delivery-model.html">How we deliver</a>
+          <a href="/about.html">About</a>
+          <a href="/blog.html">Insights</a>
+          <a href="/#contact">Book a scoping call</a>
         </div>
         <div class="footer-col">
-          <h4>Legal</h4>
-          <a href="/privacy.html">Privacy Policy</a>
-          <a href="/terms.html">Terms of Service</a>
+          <h4>Materials</h4>
+          <a href="/ai-training-deck.html">Company AI training deck</a>
+          <a href="/ai-dev-team-transformation-deck.html">Engineering team deck</a>
+          <a href="/fridge-catalogue-ai-deck.html">Catalogue assistant deck</a>
+          <a href="/surgery-voice-receptionist-deck.html">Voice receptionist deck</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 OzAI Digital Pty Ltd. All rights reserved. Melbourne &middot; Sydney, Australia.</p>
+      <p>&copy; 2026 OzAI Digital Pty Ltd</p>
+      <p class="footer-legal"><a href="/privacy.html">Privacy Policy</a> <span aria-hidden="true">&middot;</span> <a href="/terms.html">Terms of Service</a></p>
     </div>
+    <div class="footer-wordmark" aria-hidden="true">OzAI Digital</div>
   </footer>
 
 </div>
